@@ -1,0 +1,12 @@
+/**
+ * Avatar
+ */
+ .avatar {
+  border-radius: 50%;
+
+  .site-footer & {
+    height: 150px;
+    width: 150px;
+    margin: 0 25px 10px 0;
+  }
+ }

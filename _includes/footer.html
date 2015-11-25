@@ -2,17 +2,13 @@
 
   <div class="wrapper">
 
-    <h2 class="footer-heading">{{ site.title }}</h2>
-
     <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li>{{ site.title }}</li>
-          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-        </ul>
+
+      <div class="footer-col">
+        <p class='personal-info'><img src='/images/matti.jpg' class='avatar mgn-right-10 float-left' alt='Matti Salokangas, aka Sturdy Nut' />{{ site.description }}</p>
       </div>
 
-      <div class="footer-col footer-col-2">
+      <div class="footer-col">
         <ul class="social-media-list">
           {% if site.github_username %}
           <li>
@@ -26,10 +22,6 @@
           </li>
           {% endif %}
         </ul>
-      </div>
-
-      <div class="footer-col footer-col-3">
-        <p><img src='/images/matti.jpg' class='avatar mgn-right-10 float-left' alt='Matti Salokangas, aka Sturdy Nut' />{{ site.description }}</p>
         <a class='subscribe-link btn text-center mgn-top-10' href="{{ "/feed.xml" | prepend: site.baseurl }}">Subscribe</a>
       </div>
     </div>

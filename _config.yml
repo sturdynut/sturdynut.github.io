@@ -9,10 +9,7 @@
 title: Sturdy Nut
 email: matti.salokangas@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  My focus is on providing value to my clients through intuitive design and
-  test-driven code.  This site is inspired by a decade of developing software and a backlog
-  of thoughts on how things can be done better.  I hope to shake up things and shine some
-  light on conventions that don't make sense or simply need to go away.
+  My name is Matti Salokangas and I am a software developer focused on intuitive user experiences, great design and test-driven code.  I don't mind shaking things up and I actually intend to do so.  Enjoy and thanks for stopping by.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://sturdynut.com" # the base hostname & protocol for your site
 twitter_username: sturdynut

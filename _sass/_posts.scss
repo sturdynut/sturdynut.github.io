@@ -1,0 +1,94 @@
+/**
+ * Posts
+ */
+.post-list {
+  margin-left: 0;
+  list-style: none;
+}
+
+.post-meta {
+  font-size: $small-font-size;
+  padding: 0 $spacing-unit;
+  color: $primary-color;
+}
+
+.post-link {
+  display: block;
+  font-size: 24px;
+}
+
+.post-header {
+  background-color: $tertiary-color;
+  color: $white;
+  padding-bottom: $spacing-unit;
+  text-align: left;
+}
+
+.post-title {
+  color: $primary-color;
+  font-size: 2em;
+  letter-spacing: -1px;
+  line-height: 1;
+  text-align: left;
+  padding: $spacing-unit $spacing-unit 0;
+
+  @include when-using($laptop) {
+    font-size: 1.8em;
+  }
+}
+
+.post-content {
+  background-color: darken($primary-color, 5%);
+  color: $white;
+  padding: $spacing-unit 0;
+
+  a {
+    color: $white;
+    border-bottom: 1px solid $tertiary-color;
+  }
+
+  h1, h2, h3, h4 {
+    padding: 0 $spacing-unit;
+  }
+
+  h1 {
+    font-size: 2em;
+
+    @include when-using($laptop) {
+      font-size: 1.8em;
+    }
+  }
+
+  h2 {
+      font-size: 1.8em;
+
+      @include when-using($laptop) {
+        font-size: 1.6em;
+      }
+  }
+
+  h3 {
+    color: $white;
+    font-size: 1.6em;
+
+    @include when-using($laptop) {
+      font-size: 1.4em;
+    }
+  }
+
+  h4 {
+      font-size: 1.2em;
+
+      @include when-using($laptop) {
+        font-size: 1em;
+      }
+  }
+
+  figure {
+    margin: $spacing-unit 0;
+  }
+
+  p {
+    padding: 0 $spacing-unit;
+  }
+}

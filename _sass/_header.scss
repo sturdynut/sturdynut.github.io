@@ -1,0 +1,110 @@
+/**
+ * Site header
+ */
+.site-header {
+  min-height: 56px;
+
+  // Positioning context for the mobile navigation icon
+  position: relative;
+}
+
+.site-title {
+  color: $white;
+  display: block;
+  padding-top: $spacing-unit;
+  font-family: $header-font-family;
+  font-size: 26px;
+  font-weight: 300;
+  line-height: 56px;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  text-align: center;
+
+  @include when-using($laptop) {
+    display: flex;
+    align-items: center;
+  }
+
+  .site-logo {
+    background: url(../images/logo.svg);
+    background-size: 65px 65px;
+    height: 65px;
+    width: 65px;
+    display: block;
+    margin: 0 auto;
+
+    @include when-using($laptop) {
+      background-size: 35px 35px;
+      height: 35px;
+      width: 35px;
+      margin-right: 7px;
+    }
+  }
+}
+
+.site-nav {
+  float: right;
+  line-height: 56px;
+
+  .menu-icon {
+    display: none;
+  }
+
+  .page-link {
+    color: $white;
+    line-height: $base-line-height;
+    text-transform: uppercase;
+
+    // Gaps between nav items, but not on the last one
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  @include when-using($mobile) {
+    position: absolute;
+    top: $spacing-unit;
+    right: $spacing-unit;
+    background-color: $background-color;
+    text-align: right;
+
+    .menu-icon {
+      display: block;
+      float: right;
+      width: 36px;
+      height: 26px;
+      line-height: 0;
+      padding-top: 10px;
+      text-align: center;
+
+      > svg {
+        width: 18px;
+        height: 15px;
+
+        path {
+          fill: $white;
+        }
+      }
+    }
+
+    .trigger {
+      clear: both;
+      display: none;
+    }
+
+    &:hover .trigger {
+      display: block;
+      padding-bottom: 5px;
+    }
+
+    .page-link {
+      display: block;
+      padding: 5px 10px;
+
+      &:not(:last-child) {
+        margin-right: 0;
+      }
+      margin-left: 20px;
+    }
+  }
+}
