@@ -47,13 +47,15 @@ $directions: top right bottom left;
  * Page content
  */
 .page {
-    height: calc(100vh - 125px);
+  height: calc(100vh - 270px);
 
-    &.home {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+  &.home {
+    background: $primary-color url('/images/bg-pixels.jpg') 100% 100%;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .page-heading {

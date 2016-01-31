@@ -5,18 +5,21 @@ $red:  #E56161;
 $yellow:  #FDB24F;
 $purple:  #564A5A;
 $brown:  #714E2F;
-$tan: #EAC180;
+$tan: #F5EDE2;
 $green:  #9FBF7E;
+$dark-grey: #3a3a3a;
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
 $primary-color: $purple;
-$secondary-color: $white;
-$tertiary-color: $yellow;
-$quote-color: $red;
-$header-color: $yellow;
+$secondary-color: $blue;
+$tertiary-color: $tan;
 
-$background-color: lighten($primary-color, 5%);
+$quote-color: $red;
+$header-color: $purple;
+$footer-color: $tan;
+$title-color: $tan;
+$background-color: $dark-grey;
 $text-color: $white;

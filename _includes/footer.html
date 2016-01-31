@@ -1,15 +1,15 @@
-<footer class="site-footer">
+<footer class='site-footer'>
 
-  <div class="wrapper">
+  <div class='wrapper'>
 
-    <div class="footer-col-wrapper">
+    <div class='footer-col-wrapper'>
 
-      <div class="footer-col">
-        <p class='personal-info'><img src='/images/matti.jpg' class='avatar mgn-right-10 float-left' alt='Matti Salokangas, aka Sturdy Nut' />{{ site.description }}</p>
+      <div class='footer-col personal-info'>
+        <p><img src='/images/matti.jpg' class='avatar' alt='Matti Salokangas, aka Sturdy Nut' />{{ site.description }}</p>
       </div>
 
-      <div class="footer-col">
-        <ul class="social-media-list">
+      <div class='footer-col'>
+        <ul class='social-media-list'>
           {% if site.github_username %}
           <li>
             {% include icon-github.html username=site.github_username %}
@@ -22,7 +22,7 @@
           </li>
           {% endif %}
         </ul>
-        <a class='subscribe-link btn text-center mgn-top-10' href="{{ "/feed.xml" | prepend: site.baseurl }}">Subscribe</a>
+        <a class='subscribe-link btn text-center mgn-top-10' target='_blank' href='{{ "/feed.xml" | prepend: site.baseurl }}'>Subscribe</a>
       </div>
     </div>
 

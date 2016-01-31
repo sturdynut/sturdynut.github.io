@@ -1,9 +1,10 @@
+$footer-bp: 775px;
+
 /**
  * Site footer
  */
 .site-footer {
-  background-color: darken($tertiary-color, 5%);
-  color: $white;
+  color: darken($footer-color, 5%);
   padding: $spacing-unit 0 0;
 
   a {
@@ -12,65 +13,124 @@
 }
 
 .footer-heading {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .contact-list,
 .social-media-list {
-    list-style: none;
-    margin: 0;
+  list-style: none;
+  margin: 0;
 }
 
 .footer-col-wrapper {
-    font-size: 15px;
-    margin-left: -$spacing-unit / 2;
-    @extend %clearfix;
+  font-size: 15px;
+  margin-left: -$spacing-unit / 2;
+  @extend %clearfix;
+
+  @include when-using($footer-bp) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .footer-col {
-  @include when-using($laptop) {
-    float: left;
-    padding: 0 $spacing-unit;
+  @include when-using($footer-bp) {
+    flex: 1;
+
+    &:last-child {
+      padding-right: $spacing-unit;
+    }
   }
 }
 
 .personal-info {
   padding: 20px 40px;
+  font-size: 1.2em;
+  line-height: 2;
+  text-align: justify;
+
+  @include when-using($tablet) {
+    font-size: 1.4em;
+    line-height: 1.5;
+  }
+
+  @include when-using($footer-bp) {
+    flex: 3;
+    font-size: 1.6em;
+    padding-left: $spacing-unit;
+
+    p {
+      display: flex;
+      align-items: center;
+    }
+  }
 }
 
 .social-media-list {
   display: flex;
 
+  @include when-using($footer-bp) {
+    flex: 1;
+  }
+
   li {
     flex: 1;
 
-    &:first-child {
-      a {
-        border-right: 1px solid $white;
-      }
-    }
-
     a {
+      color: $footer-color;
       display: block;
       text-align: center;
-      border-top: 1px solid $white;
       padding: 10px 0;
+      transition: all 300ms;
+
+      &:hover {
+        color: lighten($footer-color, 50%);
+
+        .icon svg {
+          path {
+            fill: lighten($footer-color, 50%);
+          }
+        }
+      }
 
       .icon svg {
         height: 25px;
         width: 25px;
+
+        @include when-using($footer-bp) {
+          height: 45px;
+          width: 45px;
+          margin: 0 auto;
+        }
       }
 
       .username {
         display: none;
+
+        @include when-using($footer-bp) {
+          display: block;
+        }
       }
     }
   }
 }
 
-.subscribe-link {
-  color: $white;
-  text-transform: uppercase;
+.btn.subscribe-link {
+  color: $footer-color;
   display: block;
   margin: 0;
+  transition: all 300ms;
+
+  &:hover {
+    background-color: darken($background-color, 2%);
+    color: lighten($footer-color, 25%)
+  }
+
+  @include when-using($footer-bp) {
+    font-size: 1.2em;
+    padding: 10px 0;
+    border: 4px solid darken($background-color, 2%);
+    margin: 25px;
+  }
 }

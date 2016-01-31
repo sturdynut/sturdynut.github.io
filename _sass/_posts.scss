@@ -8,8 +8,14 @@
 
 .post-meta {
   font-size: $small-font-size;
-  padding: 0 $spacing-unit;
   color: $primary-color;
+  text-align: center;
+  padding: 20px 0 0;
+
+  @include when-using($laptop) {
+    text-align: left;
+    padding: 0;
+  }
 }
 
 .post-link {
@@ -18,33 +24,43 @@
 }
 
 .post-header {
-  background-color: $tertiary-color;
-  color: $white;
-  padding-bottom: $spacing-unit;
+  background-color: darken($tertiary-color, 5%);
+  color: $primary-color;
+  padding: 25px 20px;
   text-align: left;
 }
 
 .post-title {
   color: $primary-color;
-  font-size: 2em;
+  font-size: 2.4em;
   letter-spacing: -1px;
-  line-height: 1;
-  text-align: left;
-  padding: $spacing-unit $spacing-unit 0;
+  line-height: 1.2;
+  text-align: center;
+  padding: $spacing-unit 0 0;
 
   @include when-using($laptop) {
-    font-size: 1.8em;
+    font-size: 2.6em;
+    text-align: left;
   }
 }
 
 .post-content {
-  background-color: darken($primary-color, 5%);
-  color: $white;
+  background-color: $tertiary-color;
+  color: $primary-color;
   padding: $spacing-unit 0;
+  text-align: justify;
+
+  @include when-using($laptop) {
+    text-align: left;
+  }
 
   a {
-    color: $white;
-    border-bottom: 1px solid $tertiary-color;
+    color: $primary-color;
+    border-bottom: 1px solid $secondary-color;
+  }
+
+  ul {
+    margin-left: 55px;
   }
 
   h1, h2, h3, h4 {
@@ -60,7 +76,12 @@
   }
 
   h2 {
+      background-color: $primary-color;
+      color: $tertiary-color;
+      width: 75%;
+      max-width: 600px;
       font-size: 1.8em;
+      margin-bottom: $spacing-unit;
 
       @include when-using($laptop) {
         font-size: 1.6em;
@@ -68,11 +89,11 @@
   }
 
   h3 {
-    color: $white;
-    font-size: 1.6em;
+    color: $black;
+    font-size: 1.4em;
 
     @include when-using($laptop) {
-      font-size: 1.4em;
+      font-size: 1.6em;
     }
   }
 
@@ -88,7 +109,17 @@
     margin: $spacing-unit 0;
   }
 
+  pre {
+    padding: 20px 40px;
+  }
+
+  pre, code {
+    border-color: darken($tan, 5%);
+    background-color: lighten($tan, 5%);
+  }
+
   p {
     padding: 0 $spacing-unit;
+    line-height: 2;
   }
 }

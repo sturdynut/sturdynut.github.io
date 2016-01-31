@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 /**
  * Reset some basic elements
  */
@@ -101,7 +105,7 @@ a {
 
     &:hover {
         color: $text-color;
-        text-decoration: underline;
+        text-decoration: none;
     }
 }
 
@@ -158,16 +162,14 @@ pre {
  * Wrapper
  */
 .wrapper {
-    margin-right: auto;
-    margin-left: auto;
-    @extend %clearfix;
+  margin-right: auto;
+  margin-left: auto;
+  @extend %clearfix;
 
-    @include when-using($laptop) {
-        max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
-        max-width:         calc(#{$content-width} - (#{$spacing-unit}));
-        padding-right: $spacing-unit / 2;
-        padding-left: $spacing-unit / 2;
-    }
+  @include when-using($laptop) {
+    padding-right: $spacing-unit;
+    padding-left: $spacing-unit;
+  }
 }
 
 

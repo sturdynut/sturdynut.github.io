@@ -13,9 +13,9 @@ $header-font-family: 'Righteous';
 $content-width:    1200px;
 $spacing-unit:     15px;
 
-$mobile:        480px;
-$tablet:        1024px;
-$laptop:        1200px;
+$mobile:        0px;
+$tablet:        481px;
+$laptop:        1024px;
 
 @mixin when-using($device) {
     @media screen and (min-width: $device) {

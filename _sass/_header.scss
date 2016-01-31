@@ -9,7 +9,7 @@
 }
 
 .site-title {
-  color: $white;
+  color: $title-color;
   display: block;
   padding-top: $spacing-unit;
   font-family: $header-font-family;
@@ -20,91 +20,126 @@
   text-transform: uppercase;
   text-align: center;
 
+  &:hover {
+    color: $title-color;
+  }
+
   @include when-using($laptop) {
     display: flex;
     align-items: center;
+    padding-top: 0;
   }
 
-  .site-logo {
-    background: url(../images/logo.svg);
-    background-size: 65px 65px;
+  .site-logo > svg {
     height: 65px;
     width: 65px;
     display: block;
     margin: 0 auto;
 
     @include when-using($laptop) {
-      background-size: 35px 35px;
+      display: flex;
       height: 35px;
       width: 35px;
-      margin-right: 7px;
+      margin: 0 7px 0 0;
+    }
+
+    .logo-acorn {
+      fill: $title-color;
+    }
+
+    .logo-cap {
+      stroke: $title-color;
+    }
+  }
+}
+
+$menuToggleHeight: 25px;
+$menuToggleWidth: 25px;
+$menuWidth: 300px;
+$menuInitialTop: -15px;
+$menuInitialRight: -235px;
+
+.site-nav-trigger {
+  display: block;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  width: $menuToggleWidth;
+  height: $menuToggleHeight;
+  line-height: 0;
+  text-align: center;
+  z-index: 2;
+
+  path {
+    transition: all 100ms;
+    transform: rotate(0);
+  }
+
+  &.active {
+    width: 30px;
+    height: 30px;
+
+    path {
+      &:first-child {
+        transform: rotate(45deg) translate(1px, 0);
+        transform-origin: 0% 50%;
+      }
+      &:nth-child(2) {
+        display: none;
+      }
+      &:last-child {
+        transform: rotate(-45deg) translate(0, 1px);
+        transform-origin: 0% 50%;
+      }
+    }
+  }
+
+  > svg {
+    width: 25px;
+    height: 25px;
+
+    path {
+      fill: $title-color;
     }
   }
 }
 
 .site-nav {
-  float: right;
-  line-height: 56px;
+  position: absolute;
+  z-index: 1;
+  top: $menuInitialTop;
+  right: $menuInitialRight;
+  width: $menuWidth;
+  transition: all 300ms;
 
-  .menu-icon {
-    display: none;
+  &.active {
+    background-color: darken($background-color, 15%);
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.site-nav-pages {
+  position: relative;
+  top: 55px;
+  opacity: 0;
+  transition: opacity 300ms;
+
+  .active & {
+    opacity: 1;
   }
 
-  .page-link {
-    color: $white;
-    line-height: $base-line-height;
-    text-transform: uppercase;
+  .site-nav-page {
+    list-style: none;
 
-    // Gaps between nav items, but not on the last one
-    &:not(:last-child) {
-      margin-right: 20px;
-    }
-  }
-
-  @include when-using($mobile) {
-    position: absolute;
-    top: $spacing-unit;
-    right: $spacing-unit;
-    background-color: $background-color;
-    text-align: right;
-
-    .menu-icon {
+    a {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      color: $white;
+      line-height: 2;
+      text-transform: uppercase;
       display: block;
-      float: right;
-      width: 36px;
-      height: 26px;
-      line-height: 0;
-      padding-top: 10px;
-      text-align: center;
-
-      > svg {
-        width: 18px;
-        height: 15px;
-
-        path {
-          fill: $white;
-        }
-      }
-    }
-
-    .trigger {
-      clear: both;
-      display: none;
-    }
-
-    &:hover .trigger {
-      display: block;
-      padding-bottom: 5px;
-    }
-
-    .page-link {
-      display: block;
-      padding: 5px 10px;
-
-      &:not(:last-child) {
-        margin-right: 0;
-      }
-      margin-left: 20px;
+      padding: 15px;
     }
   }
 }
