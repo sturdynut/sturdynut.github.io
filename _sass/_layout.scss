@@ -44,24 +44,44 @@ $directions: top right bottom left;
 
 
 /**
- * Page content
+ * Featured post content
  */
-.page {
-  height: calc(100vh - 270px);
 
-  &.home {
-    background: $primary-color url('/images/bg-pixels.jpg') 100% 100%;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+.featured-post-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.featured-post {
+  height: calc(100vh - 136px);
+  background: $primary-color url('/images/bg-pixels.jpg') 100% 100%;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-direction: column;
+
+  .featured-post-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-indent: -99999px;
   }
 }
 
-.page-heading {
-    font-size: 20px;
+.featured-post-heading {
+    font-size: 4.5em;
+    text-shadow: -10px 10px 0px rgba(0, 0, 0, 0.2);
+    transform: skew(2deg) rotate(-2deg);
+    text-align: center;
+    color: $white;
+    line-height: 1;
 
-    .home & a {
+    .active & a {
         color: $white;
         font-size: 4em;
         text-align: center;
@@ -72,9 +92,16 @@ $directions: top right bottom left;
         }
 
         @include when-using($mobile) {
-          font-size: 3em;
-          padding: 0 40px;
+          font-size: 2.5em;
           line-height: 1.5;
         }
     }
+}
+
+.featured-post-meta {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  text-shadow: -10px 10px 0px rgba(0, 0, 0, 0.2);
+  transform: skew(2deg) rotate(-2deg);
 }

@@ -2,22 +2,12 @@
 layout: default
 ---
 
-<div class='home page'>
-
-  <h1 class='page-heading'><a class='post-link' href='{{ site.posts.first.url | prepend: site.baseurl }}'>{{ site.posts.first.title }}</a></h1>
-
-</div>
-
-<div class='posts page' style='display: none;'>
-  <ul class='post-list'>
-    {% for post in site.posts %}
-      <li>
-        <span class='post-meta'>{{ post.date | date: '%b %-d, %Y' }}</span>
-
-        <h2>
-          <a class='post-link' href='{{ post.url | prepend: site.baseurl }}'>{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-</div>
+<main class='featured-post-list'>
+  {% for post in site.posts %}
+    <article class='featured-post'>
+      <h1 class='featured-post-heading'>{{ post.title }}</h1>
+      <span class='featured-post-meta'>{{ post.date | date: '%b %-d, %Y' }}</span>
+      <a class='featured-post-link' href='{{ post.url | prepend: site.baseurl }}'>{{ post.title }}</a>
+    </article>
+  {% endfor %}
+</main>

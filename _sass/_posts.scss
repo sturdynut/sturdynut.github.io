@@ -8,9 +8,10 @@
 
 .post-meta {
   font-size: $small-font-size;
-  color: $primary-color;
+  color: $white;
   text-align: center;
   padding: 20px 0 0;
+  text-shadow: -10px 10px 0px rgba(0, 0, 0, 0.2);
 
   @include when-using($laptop) {
     text-align: left;
@@ -21,33 +22,37 @@
 .post-link {
   display: block;
   font-size: 24px;
+  text-shadow: -10px 10px 0px rgba(0, 0, 0, 0.2);
+  transform: skew(2deg) rotate(-2deg);
 }
 
 .post-header {
-  background-color: darken($tertiary-color, 5%);
-  color: $primary-color;
+  background: $primary-color url('/images/bg-pixels.jpg') top left;
+  color: $white;
   padding: 25px 20px;
   text-align: left;
 }
 
 .post-title {
-  color: $primary-color;
+  color: $white;
   font-size: 2.4em;
   letter-spacing: -1px;
-  line-height: 1.2;
+  line-height: 1;
   text-align: center;
   padding: $spacing-unit 0 0;
+  text-shadow: -10px 10px 0px rgba(0, 0, 0, 0.2);
 
   @include when-using($laptop) {
-    font-size: 2.6em;
+    font-size: 3em;
     text-align: left;
   }
 }
 
 .post-content {
   background-color: $tertiary-color;
+  box-shadow: 0 0 9px 1px rgba(0, 0, 0, 1);
   color: $primary-color;
-  padding: $spacing-unit 0;
+  padding: 20px 20px;
   text-align: justify;
 
   @include when-using($laptop) {
@@ -59,12 +64,20 @@
     border-bottom: 1px solid $secondary-color;
   }
 
+  ol,
   ul {
-    margin-left: 55px;
+    margin-left: 45px;
+    margin-bottom: 10px;
+
+    li {
+      list-style-type: upper-roman;
+      line-height: 2;
+    }
   }
 
   h1, h2, h3, h4 {
     padding: 0 $spacing-unit;
+    margin-top: 20px;
   }
 
   h1 {
@@ -90,10 +103,11 @@
 
   h3 {
     color: $black;
-    font-size: 1.4em;
+    font-size: 1.6em;
+    padding: 0;
 
     @include when-using($laptop) {
-      font-size: 1.6em;
+      font-size: 1.8em;
     }
   }
 
@@ -121,5 +135,6 @@
   p {
     padding: 0 $spacing-unit;
     line-height: 2;
+    margin-bottom: 10px;
   }
 }

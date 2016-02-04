@@ -12,7 +12,9 @@ dl, dd, ol, ul, figure {
     padding: 0;
 }
 
-
+header, footer, nav, article, main {
+  display: block;
+}
 
 /**
  * Basic styling
@@ -69,10 +71,6 @@ figcaption {
 /**
  * Lists
  */
-ul, ol {
-    margin-left: $spacing-unit;
-}
-
 li {
     > ul,
     > ol {
@@ -165,11 +163,6 @@ pre {
   margin-right: auto;
   margin-left: auto;
   @extend %clearfix;
-
-  @include when-using($laptop) {
-    padding-right: $spacing-unit;
-    padding-left: $spacing-unit;
-  }
 }
 
 
