@@ -3,6 +3,7 @@ layout: post
 title:  "Hello World"
 date:   2015-11-11 15:58:29 -0800
 categories: about
+background: '18.jpg'
 ---
 
 ### 3 Things

@@ -84,7 +84,7 @@ li {
  * Headings
  */
 h1, h2, h3 {
-  color: $header-color;
+  color: $heading-color;
   font-family: $header-font-family;
   text-transform: uppercase;
 }
@@ -196,4 +196,13 @@ pre {
             fill: $white;
         }
     }
+}
+
+/**
+ * Site content
+ */
+.site-content {
+  @include when-using($laptop) {
+    margin-top: 56px;
+  }
 }

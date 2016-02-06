@@ -4,10 +4,11 @@ layout: default
 
 <main class='featured-post-list'>
   {% for post in site.posts %}
-    <article class='featured-post'>
-      <h1 class='featured-post-heading'>{{ post.title }}</h1>
-      <span class='featured-post-meta'>{{ post.date | date: '%b %-d, %Y' }}</span>
-      <a class='featured-post-link' href='{{ post.url | prepend: site.baseurl }}'>{{ post.title }}</a>
+    <article name='{{ post.title | replace:" ":"" }}' class='featured-post' style='background-image: linear-gradient( rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7) 100% ), url(/images/backgrounds/{{ post.background }})'>
+      <a href='{{ post.url | prepend: site.baseurl }}'>
+        <h1 class='featured-post-heading'>{{ post.title }}</h1>
+        <span class='featured-post-meta'>{{ post.date | date: '%b %-d, %Y' }}</span>
+      </a>
     </article>
   {% endfor %}
 </main>

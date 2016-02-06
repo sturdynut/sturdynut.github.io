@@ -3,7 +3,10 @@ layout: post
 title:  "XCode Tips"
 date:   2016-1-1 15:58:29 -0800
 categories: xcode
+background: '40.jpg'
 ---
+
+## A handful of helpful tips
 
 ### Multiple Cursors
 

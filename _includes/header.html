@@ -19,16 +19,17 @@
 
 </header>
 
-<nav class='site-nav js-site-nav'>
-  <ul class='site-nav-pages'>
-    {% for post in site.posts %}
-      <li class='site-nav-page'>
-        <a href='{{ post.url | prepend: site.baseurl }}'>
-          <span>{{ post.title }}</span>
-          <span class='site-nav-post-meta'>{{ post.date | date: '%b %-d, %Y' }}</span>
-        </a>
-      </li>
-    {% endfor %}
-  </ul>
-</nav>
-
+<div class='site-nav-container js-site-nav-container'>
+  <nav class='site-nav js-site-nav'>
+    <ul class='site-nav-pages'>
+      {% for post in site.posts %}
+        <li class='site-nav-page'>
+          <a href='{{ post.url | prepend: site.baseurl }}'>
+            <span>{{ post.title }}</span>
+            <span class='site-nav-post-meta'>{{ post.date | date: '%b %-d, %Y' }}</span>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</div>

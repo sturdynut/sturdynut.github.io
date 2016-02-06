@@ -1,6 +1,28 @@
 /**
  * Posts
  */
+
+$post-max-width: 1200px;
+$post-gutters: 30px;
+
+.post-container {
+  background-size: contain;
+}
+
+.post {
+  margin: 0 auto;
+  padding-bottom: $post-gutters;
+
+  @include when-using($tablet) {
+    margin-left: $post-gutters;
+    margin-right: $post-gutters;
+  }
+
+  @include when-using($laptop) {
+    margin-top: 57px;
+  }
+}
+
 .post-list {
   margin-left: 0;
   list-style: none;
@@ -27,9 +49,8 @@
 }
 
 .post-header {
-  background: $primary-color url('/images/bg-pixels.jpg') top left;
   color: $white;
-  padding: 25px 20px;
+  padding: 60px 30px 30px;
   text-align: left;
 }
 
@@ -39,7 +60,8 @@
   letter-spacing: -1px;
   line-height: 1;
   text-align: center;
-  padding: $spacing-unit 0 0;
+  margin: 0;
+  padding: 0;
   text-shadow: -10px 10px 0px rgba(0, 0, 0, 0.2);
 
   @include when-using($laptop) {
@@ -50,12 +72,12 @@
 
 .post-content {
   background-color: $tertiary-color;
-  box-shadow: 0 0 9px 1px rgba(0, 0, 0, 1);
   color: $primary-color;
-  padding: 20px 20px;
+  padding: $post-gutters;
   text-align: justify;
 
-  @include when-using($laptop) {
+  @include when-using($tablet) {
+    border-radius: 4px;
     text-align: left;
   }
 
@@ -76,28 +98,24 @@
   }
 
   h1, h2, h3, h4 {
-    padding: 0 $spacing-unit;
-    margin-top: 20px;
+    padding: 0;
   }
 
   h1 {
-    font-size: 2em;
+    font-size: 2.2em;
 
     @include when-using($laptop) {
-      font-size: 1.8em;
+      font-size: 3em;
     }
   }
 
   h2 {
-      background-color: $primary-color;
-      color: $tertiary-color;
-      width: 75%;
-      max-width: 600px;
-      font-size: 1.8em;
+      color: $grey-color-dark;
+      font-size: 2.0em;
       margin-bottom: $spacing-unit;
 
       @include when-using($laptop) {
-        font-size: 1.6em;
+        font-size: 2.8em;
       }
   }
 
@@ -137,4 +155,60 @@
     line-height: 2;
     margin-bottom: 10px;
   }
+}
+
+
+/**
+ * Featured post content
+ */
+
+
+.featured-post-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.featured-post {
+  height: calc(100vh - 136px);
+  background-color: $black;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-direction: column;
+}
+
+.featured-post-heading {
+    font-size: 4.5em;
+    text-shadow: -10px 10px 0px rgba(0, 0, 0, 0.2);
+    transform: skew(2deg) rotate(-2deg);
+    text-align: center;
+    color: $white;
+    line-height: 1;
+
+    .active & a {
+        color: $white;
+        font-size: 4em;
+        text-align: center;
+
+        &:hover {
+          color: $white;
+          text-decoration: none;
+        }
+
+        @include when-using($mobile) {
+          font-size: 2.5em;
+          line-height: 1.5;
+        }
+    }
+}
+
+.featured-post-meta {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  text-shadow: -10px 10px 0px rgba(0, 0, 0, 0.2);
+  transform: skew(2deg) rotate(-2deg);
+  color: $white;
 }
