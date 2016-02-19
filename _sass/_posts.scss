@@ -19,7 +19,7 @@ $post-gutters: 30px;
   }
 
   @include when-using($laptop) {
-    margin-top: 57px;
+    padding-top: 57px;
   }
 }
 
@@ -56,7 +56,7 @@ $post-gutters: 30px;
 
 .post-title {
   color: $white;
-  font-size: 2.4em;
+  font-size: 4em;
   letter-spacing: -1px;
   line-height: 1;
   text-align: center;
@@ -75,6 +75,7 @@ $post-gutters: 30px;
   color: $primary-color;
   padding: $post-gutters;
   text-align: justify;
+  min-height: 100vh;
 
   @include when-using($tablet) {
     border-radius: 4px;
@@ -169,7 +170,7 @@ $post-gutters: 30px;
 }
 
 .featured-post {
-  height: calc(100vh - 136px);
+  height: 100vh;
   background-color: $black;
   background-size: cover;
   display: flex;
@@ -180,27 +181,35 @@ $post-gutters: 30px;
 }
 
 .featured-post-heading {
-    font-size: 4.5em;
+    font-size: 3.5em;
     text-shadow: -10px 10px 0px rgba(0, 0, 0, 0.2);
     transform: skew(2deg) rotate(-2deg);
     text-align: center;
     color: $white;
     line-height: 1;
 
+    @include when-using($tablet) {
+      font-size: 4.5em;
+    }
+
+    @include when-using($laptop) {
+      font-size: 6.5em;
+    }
+
     .active & a {
+      color: $white;
+      font-size: 4em;
+      text-align: center;
+
+      &:hover {
         color: $white;
-        font-size: 4em;
-        text-align: center;
+        text-decoration: none;
+      }
 
-        &:hover {
-          color: $white;
-          text-decoration: none;
-        }
-
-        @include when-using($mobile) {
-          font-size: 2.5em;
-          line-height: 1.5;
-        }
+      @include when-using($mobile) {
+        font-size: 2.5em;
+        line-height: 1.5;
+      }
     }
 }
 

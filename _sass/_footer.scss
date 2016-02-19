@@ -9,6 +9,11 @@ $footer-bp: 775px;
   color: $white;
   padding: $spacing-unit 0 0;
 
+  @include when-using($laptop) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
   a {
     color: $white;
   }
@@ -48,15 +53,12 @@ $footer-bp: 775px;
 
 .personal-info {
   padding: 20px 40px;
-  font-size: 1.2em;
+  font-size: 1.3em;
+  font-family: 'Over the Rainbow', cursive;
   line-height: 2;
   text-align: justify;
-  color: rgba(255, 255, 255, 0.6);
   transition: color 300ms;
-
-  &:hover {
-    color: $white;
-  }
+  color: $white;
 
   @include when-using($tablet) {
     font-size: 1.4em;
@@ -106,21 +108,22 @@ $footer-bp: 775px;
         path {
           fill: rgba(255, 255, 255, 0.6);
         }
-        height: 25px;
-        width: 25px;
+        height: 45px;
+        width: 45px;
 
         @include when-using($footer-bp) {
-          height: 45px;
-          width: 45px;
+          height: 35px;
+          width: 35px;
           margin: 0 auto;
         }
       }
 
       .username {
-        display: none;
+        color: $white;
+        display: block;
 
-        @include when-using($footer-bp) {
-          display: block;
+        @include when-using($laptop) {
+          padding-top: 5px;
         }
       }
     }
@@ -131,19 +134,20 @@ $footer-bp: 775px;
   border-style: none;
   border-radius: 0;
   display: block;
-  margin: 0;
+  margin: 20px 40px;
   transition: all 300ms;
-  border-bottom: 1px solid transparent;
+  border: 1px solid rgba(255, 255, 255, 0.6);
   color: rgba(255, 255, 255, 0.6);
+  font-size: 1.6em;
 
   &:hover {
     color: $white;
-    border-bottom: 1px solid $white;
+    border: 1px solid $white;
   }
 
   @include when-using($footer-bp) {
     font-size: 1.2em;
     padding: 10px 0;
-    margin: 25px;
+    margin: 25px 0;
   }
 }

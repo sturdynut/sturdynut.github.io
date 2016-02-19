@@ -197,12 +197,3 @@ pre {
         }
     }
 }
-
-/**
- * Site content
- */
-.site-content {
-  @include when-using($laptop) {
-    margin-top: 56px;
-  }
-}

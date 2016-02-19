@@ -9,8 +9,8 @@
     height: 150px;
     width: 150px;
     margin: 0 auto 20px auto;
-    border: 6px solid rgba(255, 255, 255, 0.6);
     transition: all 300ms;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.4);
 
     &:hover {
       border-color: $white;
