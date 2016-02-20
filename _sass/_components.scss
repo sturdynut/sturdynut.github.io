@@ -10,7 +10,8 @@
     width: 150px;
     margin: 0 auto 20px auto;
     transition: all 300ms;
-    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+    float: none;
 
     &:hover {
       border-color: $white;
@@ -19,6 +20,19 @@
     @include when-using($tablet) {
       float: left;
       margin: 0 25px 10px 0;
+    }
+  }
+
+  .site-nav-info & {
+    display: block;
+    height: 150px;
+    width: 150px;
+    margin: 40px auto 10px auto;
+    transition: all 300ms;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      border-color: $white;
     }
   }
  }

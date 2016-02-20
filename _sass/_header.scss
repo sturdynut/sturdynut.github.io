@@ -64,7 +64,7 @@
   }
 }
 
-$menuWidth: 300px;
+$menuWidth: 500px;
 $menuInitialRight: -235px;
 
 .site-nav-trigger {
@@ -78,6 +78,30 @@ $menuInitialRight: -235px;
   line-height: 0;
   text-align: center;
   z-index: 2;
+  color: $white;
+
+  .site-nav-trigger-label {
+    display: none;
+  }
+
+  @include when-using($laptop) {
+    width: 95px;
+    display: flex;
+    align-items: center;
+
+    &.active .site-nav-trigger-label .menu {
+      display: none;
+    }
+
+    .site-nav-trigger-label {
+      display: block;
+      margin-top: 7px;
+
+      .menu {
+        display: block;
+      }
+    }
+  }
 
   path {
     transition: all 100ms;
@@ -134,7 +158,7 @@ $menuInitialRight: -235px;
   }
 
   .site-nav-container.active & {
-    background-color: $secondary-color;
+    background-color: $menu-background-color;
     right: 0;
     bottom: 0;
     z-index: 10;
@@ -147,22 +171,81 @@ $menuInitialRight: -235px;
   transition: opacity 300ms;
   display: flex;
   flex-direction: column;
+  height: 100%;
+  background-color: darken($black, 50%);
 
   .active & {
     opacity: 1;
   }
 
+  .site-nav-info,
+  .site-nav-group-about,
+  .site-nav-group,
   .site-nav-page {
     padding: 0;
     margin: 0;
     list-style: none;
+  }
+
+  .site-nav-group-about,
+  .site-nav-group {
+    background-color: darken($black, 50%);
+    padding: 10px 0;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    min-height: 45px;
+  }
+
+  .site-nav-group-about {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.9);
+    margin-top: auto;
+  }
+
+  .site-nav-info {
+    background-color: darken($black, 25%);
+    padding-bottom: 10px;
+
+    p {
+      padding: 0 20px 20px;
+      text-align: justify;
+      line-height: 1.75;
+
+      &:nth-of-type(1) {
+        padding-top: 20px;
+        font-size: 1.2em;
+      }
+    }
+
+    span.keyword {
+      color: $yellow;
+      border-radius: 3px;
+      padding: 1px 2px;
+    }
+
+    a {
+      color: $yellow;
+      border-bottom: 1px solid $yellow;
+    }
+  }
+
+  .site-nav-page {
+    background-color: $menu-item-background-color;
+    transition: all 300ms;
+
+    &:hover {
+      background-color: $menu-item-background-hover-color;
+
+      a {
+        color: $menu-item-hover-color;
+      }
+    }
 
     a {
       display: flex;
       align-items: center;
       border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-      color: $white;
-      line-height: 2;
+      color: $menu-item-color;
+      line-height: 1.25;
       padding: 15px;
 
       span:first-child {
@@ -171,7 +254,7 @@ $menuInitialRight: -235px;
       }
 
       span:last-child {
-        font-size: 0.8em;
+        font-size: 0.7em;
       }
     }
   }

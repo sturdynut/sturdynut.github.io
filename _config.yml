@@ -9,7 +9,7 @@
 title: Sturdy Nut
 email: matti.salokangas@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Hello, my name is Matti Salokangas.  I am a unicorn developer.  When I write code I like to pretend I'm playing the piano.  Thanks for stopping by.
+  I love working with <span class='keyword'>Agile</span> teams in building beautiful, intuitive and modern web applications using <span class='keyword'>Angular</span>, <span class='keyword'>React</span> or <span class='keyword'>Ember</span>.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://sturdynut.com" # the base hostname & protocol for your site
 twitter_username: sturdynut

@@ -23,56 +23,123 @@
 
   // Window objects
 
-  window.ScrollBeast = new ScrollBeast();
+  window.sturdy = window.sturdy || {};
+  window.sturdy.scrollBeast = new ScrollBeast();
+  window.sturdy.positionNavigation = positionNavigation;
 
   // Initialization
 
   $(init);
 
   function init() {
+    $('.site-content').on('click', function() {
+      $('.js-site-nav-container,.js-site-nav-trigger').removeClass('active');
+    });
+
+    initNavigation();
+    initTextAnimations();
+  }
+
+  function initNavigation() {
     $('.js-site-nav-trigger')
       .on('click', function() {
         $('.js-site-nav-container,.js-site-nav-trigger').toggleClass('active');
+        sturdy.positionNavigation();
       });
 
-    // var maxAnimations = 30;
-    // var animationCount = 0;
-    // $('.site-logo')
-    //   .on('mouseover', _.debounce(function() {
+    $(window).on('scroll', _.debounce(sturdy.positionNavigation, 50));
+    $(window).on('resize', _.debounce(sturdy.positionNavigation, 50));
 
-    //     if (animationCount === maxAnimations) {
-    //       $('.site-logo').off('mouseover');
-    //       return false;
-    //     }
+    sturdy.positionNavigation();
+  }
 
-    //     $('.site-logo svg').velocity({
-    //       translateX: '175px',
-    //       rotateZ: '1440deg'
-    //     }, 500);
+  function initTextAnimations() {
+    $('.featured-post-heading').css({visibility: 'hidden'});
+    animateElement($('.featured-post-heading'), 'fadeInLeftBig');
+  }
 
-    //     $('.site-title').velocity({
-    //       left: '-42px'
-    //     }, 500);
+  function initLogoAnimation() {
+    var maxAnimations = 30;
+    var animationCount = 0;
+    $('.site-header')
+      .on('mouseover', _.debounce(function() {
 
-    //     animationCount++;
-    //   }, 300))
-    //   .on('mouseout', _.debounce(function() {
-    //     if (animationCount === maxAnimations) {
-    //       $('.site-logo').off('mouseout');
-    //       return false;
-    //     }
+        if (animationCount === maxAnimations) {
+          $('.site-header').off('mouseover');
+          return false;
+        }
 
-    //     $('.site-title').velocity('finish').velocity({
-    //       left: '0'
-    //     }, 500);
+        $('.site-logo svg').velocity({
+          translateX: '175px',
+          rotateZ: '1440deg'
+        }, 500);
 
-    //     $('.site-logo svg').velocity('finish').velocity({
-    //       translateX: '0',
-    //       rotateZ: '-1440deg'
-    //     }, 500);
+        $('.site-title').velocity({
+          left: '-42px'
+        }, 500);
 
-    //     animationCount++;
-    //   }, 300));
+        animationCount++;
+      }, 300))
+      .on('mouseout', _.debounce(function() {
+        if (animationCount === maxAnimations) {
+          $('.site-header').off('mouseout');
+          return false;
+        }
+
+        $('.site-title').velocity('finish').velocity({
+          left: '0'
+        }, 500);
+
+        $('.site-logo svg').velocity('finish').velocity({
+          translateX: '0',
+          rotateZ: '-1440deg'
+        }, 500);
+
+        animationCount++;
+      }, 300));
+  }
+
+  // Private
+
+  function positionNavigation() {
+    if (!$('.site-nav').length) {
+      return false;
+    }
+
+    var elementTriggerTopY = $('.site-nav').offset().top;
+    var isLaptop = $(window).width() > 1024;
+    var isAtTop = window.scrollY === 0;
+    var isAtBottom = (window.innerHeight + window.scrollY) >= document.body.offsetHeight;
+    var mobileTop = isAtTop ? 156 : 0;
+    var offset = isLaptop ? 55 : mobileTop;
+    var top = window.scrollY + offset;
+
+    if (isAtBottom === true) {
+      $('.site-nav').velocity('stop')
+        .velocity({
+          duration: 0,
+          easing: 'linear',
+          top: top
+        });
+    } else {
+      $('.site-nav').velocity('stop')
+        .velocity({
+          duration: 0,
+          easing: 'linear',
+          top: top
+        });
+    }
+  }
+
+  function animateElement($element, effect, inCallback) {
+    $element.textillate({
+      minDisplayTime: 3000,
+      in: {
+        effect: effect,
+        sync: true,
+        callback: inCallback
+      }
+    });
   }
 
 })();

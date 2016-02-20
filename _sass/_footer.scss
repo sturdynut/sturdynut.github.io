@@ -37,43 +37,67 @@ $footer-bp: 775px;
   @include when-using($footer-bp) {
     display: flex;
     align-items: center;
-    justify-content: center;
   }
 }
 
 .footer-col {
+  &:not(.personal-info) {
+    @include when-using($laptop) {
+      margin-left: auto;
+    }
+  }
+
   @include when-using($footer-bp) {
     flex: 1;
 
     &:last-child {
-      padding-right: $spacing-unit;
+      padding-right: 20px;
+      max-width: 200px;
     }
+  }
+
+  @include when-using($laptop) {
+    &:last-child {
+      max-width: 278px;
+      padding-left: 40px;
+      border-left: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  span.keyword {
+    color: $yellow;
   }
 }
 
 .personal-info {
   padding: 20px 40px;
-  font-size: 1.3em;
-  font-family: 'Over the Rainbow', cursive;
+  font-size: 1.5em;
   line-height: 2;
   text-align: justify;
   transition: color 300ms;
   color: $white;
+  max-width: 1200px;
+  margin-bottom: 40px;
 
   @include when-using($tablet) {
-    font-size: 1.4em;
-    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    font-size: 1.8em;
+  }
+
+  @include when-using($laptop) {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    text-align: left;
+    font-size: 1.8em;
+    line-height: 1.75;
   }
 
   @include when-using($footer-bp) {
     flex: 3;
-    font-size: 1.6em;
-    padding-left: $spacing-unit;
-
-    p {
-      display: flex;
-      align-items: center;
-    }
+    font-size: 2em;
+    padding-left: 25px;
   }
 }
 
@@ -134,11 +158,11 @@ $footer-bp: 775px;
   border-style: none;
   border-radius: 0;
   display: block;
-  margin: 20px 40px;
+  margin: 15px 30px;
   transition: all 300ms;
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: rgba(255, 255, 255, 0.6);
-  font-size: 1.6em;
+  font-size: 1.2em;
 
   &:hover {
     color: $white;
@@ -146,8 +170,8 @@ $footer-bp: 775px;
   }
 
   @include when-using($footer-bp) {
-    font-size: 1.2em;
+    font-size: 0.9em;
     padding: 10px 0;
-    margin: 25px 0;
+    margin: 15px auto;
   }
 }

@@ -19,8 +19,15 @@ $tertiary-color: $tan;
 
 $quote-color: $red;
 $header-color: $dark-grey;
-$heading-color:$green;
+$heading-color: $green;
 $footer-color: darken(#9FBF7E, 25%);
 $title-color: $tan;
 $background-color: darken(#9FBF7E, 25%);
 $text-color: $white;
+
+/** Site Menu **/
+$menu-background-color: darken($black, 50%);
+$menu-item-color: $white;
+$menu-item-hover-color: $white;
+$menu-item-background-color: darken($black, 25%);
+$menu-item-background-hover-color: darken($black, 15%);

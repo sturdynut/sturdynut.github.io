@@ -1,6 +1,7 @@
 <header class='site-header'>
 
   <a href='javascript:;' class='site-nav-trigger js-site-nav-trigger'>
+    <span class='site-nav-trigger-label'><span class='menu'>menu</span></span>
     <svg viewBox='0 0 18 18'>
       <path fill='#424242' d='M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z'/>
       <path fill='#424242' d='M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z'/>
@@ -8,20 +9,19 @@
     </svg>
   </a>
 
-  <div class='wrapper'>
-
-    <a class='site-title-wrapper' href='{{ site.baseurl }}/'>
-      <span class='site-logo'>{% include logo.svg %}</span>
-      <span class='site-title'>{{ site.title }}</span>
-    </a>
-
-  </div>
+  <a class='site-title-wrapper' href='{{ site.baseurl }}/'>
+    <span class='site-logo'>{% include logo.svg %}</span>
+    <span class='site-title'>{{ site.title }}</span>
+  </a>
 
 </header>
 
 <div class='site-nav-container js-site-nav-container'>
   <nav class='site-nav js-site-nav'>
     <ul class='site-nav-pages'>
+      <li class='site-nav-group'>
+        Recent Posts
+      </li>
       {% for post in site.posts %}
         <li class='site-nav-page'>
           <a href='{{ post.url | prepend: site.baseurl }}'>
@@ -30,6 +30,18 @@
           </a>
         </li>
       {% endfor %}
+      <li class='site-nav-group-about'>
+        About Me
+      </li>
+      <li class='site-nav-info'>
+        <img src='/images/matti.jpg' class='avatar' alt='Matti Salokangas, aka Sturdy Nut' />
+        <p>My name is Matti Salokangas.  I am a <span class='keyword' title='a.k.a. User Experience Developer, User Interface Developer, Product Engineer, etc, etc...'>UX Developer</span>.
+        Known in the streets as a <span class='keyword' title='Not the magical kind.'>unicorn</span>.  I can design and bring it
+        to life with my <span class='keyword'>css</span> and <span class='keyword'>javascript</span> powers.  I write <span class='keyword'>tests</span> first and always submit PR's with quality commits.</p>
+        <p>Follow me <a href='https://twitter.com/sturdynut' target='_blank'>@sturdynut</a>
+        or check out my <span class='keyword'>Open Source Projects</span> on <a href='https://github.com/sturdynut' target='_blank'>GitHub</a>.
+        </p>
+      </li>
     </ul>
   </nav>
 </div>
