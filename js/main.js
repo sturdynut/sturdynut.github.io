@@ -54,8 +54,9 @@
   }
 
   function initTextAnimations() {
-    $('.featured-post-heading').css({visibility: 'hidden'});
-    animateElement($('.featured-post-heading'), 'fadeInLeftBig');
+    animateElement($('.featured-post-heading'), 'fadeInLeftBig', function() {
+      $('.featured-post-button').addClass('active');
+    });
   }
 
   function initLogoAnimation() {

@@ -9,6 +9,7 @@ layout: default
         <h1 class='featured-post-heading'>{{ post.title }}</h1>
         <span class='featured-post-meta'>{{ post.date | date: '%b %-d, %Y' }}</span>
       </a>
+      <a href='{{ post.url | prepend: site.baseurl }}' class='featured-post-button'>Read Post</a>
     </article>
   {% endfor %}
 </main>

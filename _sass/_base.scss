@@ -115,15 +115,17 @@ a {
  * Blockquotes
  */
 blockquote {
-  color: lighten($quote-color, 15%);
-  border-left: 4px solid $quote-color;
-  padding-left: $spacing-unit / 2;
-  font-size: 1em;
-  letter-spacing: -1px;
+  color: $quote-color;
+  padding: 1rem;
+  font-size: 1.8em;
   font-style: italic;
 
   > :last-child {
       margin-bottom: 0;
+  }
+
+  &:first-child {
+    padding-top: 0;
   }
 }
 

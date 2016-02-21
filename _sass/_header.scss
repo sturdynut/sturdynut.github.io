@@ -196,13 +196,10 @@ $menuInitialRight: -235px;
     min-height: 45px;
   }
 
-  .site-nav-group-about {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.9);
-    margin-top: auto;
-  }
-
   .site-nav-info {
-    background-color: darken($black, 25%);
+    border-top: 1px solid rgba(0, 0, 0, 0.9);
+    margin-top: auto;
+    background-color: lighten($black, 10%);
     padding-bottom: 10px;
 
     p {

@@ -3,21 +3,27 @@ layout: post
 title:  "Hello World"
 date:   2015-11-11 15:58:29 -0800
 categories: about
-background: '18.jpg'
+background: '9.jpg'
 ---
 
-### 3 Things
+> In the programming world it is tradition to output the message "Hello World" when writing your first program.  This is my "Hello World" post.
 
-  - We are going to cover many topics including **Culture**, **Code**, **Design** and **User Experience**.
-  - I am targeting **Programmers**, **Designers**, **Executives**, **PM's** and **BO's**.
-  - This is a **TLDR-Free** zone.
+## A little about me
+![Young Matti](/images/01-young-matti.jpg){: .left-rounded-image }
 
-### Format
+I started working at a [technology company](http://www.oeconnection.com) a couple weeks after I graduated high school.  I spent nearly 5 years learning many aspects of software development, from quality assurance, building and deployment strategies to writing automated tests and eventually software.
+Fast forward another 5 years and here I am.
+Throughout the past decade I have worked with a wide variety of software development cultures and paradigms.  I've also worked as a classic W2 employee, to an independent consultant to business owner.  I hope to draw on these experiences to provide more meaningful and applicable articles to your day-to-day.
 
-  - I will provide a topic and a problem that I will attempt to solve.
-  - Any and all data related to the given problem will be presented.
-  - A short analysis and solution will be provided.
+### I have found my place in the nebulous of UX.
 
-### Thank you
+More and more companies are pushing for "UX" and yet, many companies still struggle with implementing a great user experience.
 
-I look forward to sharing and hearing your feedback in the comments section below each post.
+> Although 73% of you plan to invest in better UX this year, most aren’t quite sure where to start. It all begins with how you approach the research.
+[Read the full article from Digital Telepathy](http://www.dtelepathy.com/blog/business/our-first-ever-ux-survey-results)
+
+## What is coming?
+
+It is my hope to distill "UX", topic by topic.  You can expect future posts to be focused on UX, UI patterns and software development culture and methodologies.
+
+Thanks for stopping by and be sure to follow me on [twitter](twitter.com/sturdynut) to get the latest updates.
