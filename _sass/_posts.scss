@@ -10,13 +10,15 @@ $post-spacer: 1.5rem;
   background-size: cover;
 
   @include when-using($laptop) {
-    padding-top: 62px;
+    padding-top: 120px;
+    padding-bottom: 60px;
   }
 }
 
 .post {
   background-color: $white;
   margin: 0 auto;
+  max-width: 1200px;
 }
 
 .post-list {
@@ -33,7 +35,7 @@ $post-spacer: 1.5rem;
 
 .post-header {
   color: $black;
-  padding: 60px $post-spacer $post-spacer;
+  padding: 60px $post-spacer 30px;
   text-align: left;
 }
 
@@ -46,22 +48,32 @@ $post-spacer: 1.5rem;
   margin: 0;
   padding: 0;
 
+  @include when-using($tablet) {
+    font-size: 3.5em;
+  }
+
   @include when-using($laptop) {
-    font-size: 3em;
-    text-align: left;
+    font-size: 5em;
   }
 }
 
 .post-meta {
   font-size: $small-font-size;
-  color: $black;
+  color: rgba(0, 0, 0, 0.2);
   text-align: center;
   padding: $post-spacer 0 $post-spacer;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  max-width: 900px;
+  margin: 0 auto;
 
-  @include when-using($laptop) {
-    text-align: left;
-    padding: 1rem 0;
+  time {
+    margin-right: 20px;
+    color: $black;
+  }
+
+  [itemprop="author"] {
+    margin-left: 20px;
+    color: $black;
   }
 }
 
@@ -91,19 +103,14 @@ $post-spacer: 1.5rem;
   }
 
   blockquote {
-    padding: 0;
-    margin-bottom: $post-gutter;
+    margin: 2rem 0;
+    padding: 3rem 0;
+    background-color: lighten($quote-color, 35%);
+    color: darken($quote-color, 25%);
 
     &:not(:first-child) {
-      border-top: 1px solid lighten($quote-color, 25%);
-      border-bottom: 1px solid lighten($quote-color, 25%);
       margin-top: $post-gutter;
       padding: 2rem 0;
-
-      @include when-using($laptop) {
-        margin-left: $post-gutter;
-        margin-right: $post-gutter;
-      }
     }
 
     p {
@@ -220,6 +227,15 @@ $post-spacer: 1.5rem;
 .featured-post-list {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+}
+
+.no-posts-container {
+  height: 100vh;
+  font-size: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .featured-post {

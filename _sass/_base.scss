@@ -22,6 +22,8 @@ header, footer, nav, article, main {
 body {
     font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
     color: $text-color;
+    background: url('/images/backgrounds/1.jpg') no-repeat;
+    background-size: cover;
     background-color: $background-color;
     -webkit-text-size-adjust: 100%;
     -webkit-font-feature-settings: "kern" 1;

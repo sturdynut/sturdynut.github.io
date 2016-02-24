@@ -1,8 +1,10 @@
 ---
 layout: post
+author: "Matti Salokangas"
+comments: true
 title:  "Hello World"
-date:   2015-11-11 15:58:29 -0800
-categories: about
+date:   2016-4-1 00:00:00 -0800
+categories: About
 background: '9.jpg'
 ---
 
@@ -13,14 +15,14 @@ background: '9.jpg'
 
 I started working at a [technology company](http://www.oeconnection.com) a couple weeks after I graduated high school.  I spent nearly 5 years learning many aspects of software development, from quality assurance, building and deployment strategies to writing automated tests and eventually software.
 Fast forward another 5 years and here I am.
-Throughout the past decade I have worked with a wide variety of software development cultures and paradigms.  I've also worked as a classic W2 employee, to an independent consultant to business owner.  I hope to draw on these experiences to provide more meaningful and applicable articles to your day-to-day.
+Throughout the past decade I have worked with a wide variety of software development cultures and paradigms.  I've also worked as a classic W2 employee, to an independent consultant to business owner.  I hope to draw on these experiences to provide more meaningful and applicable posts to your day-to-day.
 
 ### I have found my place in the nebulous of UX.
 
 More and more companies are pushing for "UX" and yet, many companies still struggle with implementing a great user experience.
 
 > Although 73% of you plan to invest in better UX this year, most aren’t quite sure where to start. It all begins with how you approach the research.
-[Read the full article from Digital Telepathy](http://www.dtelepathy.com/blog/business/our-first-ever-ux-survey-results)
+[Digital Telepathy](http://www.dtelepathy.com/blog/business/our-first-ever-ux-survey-results)
 
 ## What is coming?
 

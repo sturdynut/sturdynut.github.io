@@ -19,18 +19,22 @@
 <div class='site-nav-container js-site-nav-container'>
   <nav class='site-nav js-site-nav'>
     <ul class='site-nav-pages'>
-      <li class='site-nav-group'>
-        Recent Posts
-      </li>
-      {% for post in site.posts %}
-        <li class='site-nav-page'>
-          <a href='{{ post.url | prepend: site.baseurl }}'>
-            <span>{{ post.title }}</span>
-            <span class='site-nav-post-meta'>{{ post.date | date: '%b %-d, %Y' }}</span>
-          </a>
+      {% assign postsLength = site.posts.size %}
+      {% if postsLength > 0  %}
+        <li class='site-nav-group'>
+          Recent Posts
         </li>
-      {% endfor %}
+        {% for post in site.posts %}
+          <li class='site-nav-page'>
+            <a href='{{ post.url | prepend: site.baseurl }}'>
+              <span>{{ post.title }}</span>
+              <span class='site-nav-post-meta'>{{ post.date | date: '%b %-d, %Y' }}</span>
+            </a>
+          </li>
+        {% endfor %}
+      {% endif %}
       <li class='site-nav-info'>
+        <img src='/images/matti.jpg' class='avatar' alt='Matti Salokangas' />
         <p>My name is Matti Salokangas.  I am a <span class='keyword' title='a.k.a. User Experience Developer, User Interface Developer, Product Engineer, etc, etc...'>UX Developer</span>.
         Known in the streets as a <span class='keyword' title='Not the magical kind.'>unicorn</span>.  I can design and bring it
         to life with my <span class='keyword'>css</span> and <span class='keyword'>javascript</span> powers.  I write <span class='keyword'>tests</span> first and always submit PR's with quality commits.</p>

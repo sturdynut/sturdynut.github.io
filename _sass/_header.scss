@@ -80,6 +80,11 @@ $menuInitialRight: -235px;
   z-index: 2;
   color: $white;
 
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+
   .site-nav-trigger-label {
     display: none;
   }
@@ -153,7 +158,7 @@ $menuInitialRight: -235px;
   transition: all 300ms;
 
   @include when-using($laptop) {
-    top: 58px;
+    top: 60px;
     width: $menuWidth;
   }
 
@@ -171,8 +176,12 @@ $menuInitialRight: -235px;
   transition: opacity 300ms;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 100vh;
   background-color: darken($black, 50%);
+
+  @include when-using($laptop) {
+    height: 100%;
+  }
 
   .active & {
     opacity: 1;
@@ -199,7 +208,6 @@ $menuInitialRight: -235px;
   .site-nav-info {
     border-top: 1px solid rgba(0, 0, 0, 0.9);
     margin-top: auto;
-    background-color: lighten($black, 10%);
     padding-bottom: 10px;
 
     p {

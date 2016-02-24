@@ -112,7 +112,7 @@
     var isAtTop = window.scrollY === 0;
     var isAtBottom = (window.innerHeight + window.scrollY) >= document.body.offsetHeight;
     var mobileTop = isAtTop ? 156 : 0;
-    var offset = isLaptop ? 55 : mobileTop;
+    var offset = isLaptop ? 60 : mobileTop;
     var top = window.scrollY + offset;
 
     if (isAtBottom === true) {
