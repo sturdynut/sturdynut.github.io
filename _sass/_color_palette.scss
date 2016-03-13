@@ -15,13 +15,14 @@ $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
 $primary-color: #c0392b;
-$primary-color-dark: darken(#c0392b, 15%);
+$primary-color-dark: darken($primary-color, 15%);
+$primary-color-light: lighten($primary-color, 15%);
 $secondary-color: $blue;
 $tertiary-color: $tan;
 
 $quote-color: $blue;
 $header-color: $black;
-$heading-color: $green;
+$heading-color: $blue;
 $footer-color: $tan;
 $footer-text-color: $black;
 $title-color: $tan;

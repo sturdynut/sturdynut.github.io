@@ -138,17 +138,14 @@ $post-spacer: 1.5rem;
   blockquote {
     font-size: 1em;
     font-family: 'Merriweather';
-    font-style: italic;
     text-align: left;
-    border-top: 1px solid $tertiary-color;
-    border-bottom: 1px solid $tertiary-color;
     margin-bottom: 40px;
     padding: 30px;
 
     &:not(:first-child) {
       margin-top: 40px;
     }
-    
+
     @include when-using($tablet) {
       font-size: 1.4em;
       padding: 50px 60px;
@@ -207,13 +204,12 @@ $post-spacer: 1.5rem;
     }
   }
 
-  h2 {
+  a {
+    border-bottom: 1px dotted $primary-color-light;
   }
 
-  h3 {
-  }
-
-  h4 {
+  iframe {
+    margin: 30px auto;
   }
 
   figure {

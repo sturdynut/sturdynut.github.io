@@ -14,6 +14,9 @@ background: '46.jpg'
 I have been paralyzed with the swells of information and frameworks.  It is constant and never ending.
 I grew up a "front-end developer", which basically meant I wrote code and also knew css.
 
+<p data-height="268" data-theme-id="0" data-slug-hash="jWXazB" data-default-tab="result" data-user="sturdynut" class="codepen">See the Pen <a href="http://codepen.io/sturdynut/pen/jWXazB/">3JS - Cube</a> by Matti Salokangas (<a href="http://codepen.io/sturdynut">@sturdynut</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
 ## A little about me
 ![Young Matti](/images/01-young-matti.jpg){: .left-rounded-image }
 

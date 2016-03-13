@@ -119,10 +119,12 @@ blockquote {
 
 blockquote {
   color: $quote-color;
+  background: $tertiary-color;
+  border-left: 1em solid $secondary-color;
   padding: 1rem;
   font-size: 1.8em;
   font-style: italic;
-  quotes: "\201C""\201D""\2018""\2019";
+  quotes: "\201C""\201D";
 
   > :last-child {
       margin-bottom: 0;
