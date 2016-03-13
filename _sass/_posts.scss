@@ -34,7 +34,7 @@ $post-spacer: 1.5rem;
 .post-header {
   color: $white;
   padding: 60px 0 0;
-  text-align: left;
+  text-align: right;
 }
 
 .post-title-container {
@@ -57,6 +57,8 @@ $post-spacer: 1.5rem;
   }
 
   @include when-using($laptop) {
+    max-width: 1200px;
+    margin: 0 auto;
     font-size: 5em;
   }
 }
@@ -107,6 +109,10 @@ $post-spacer: 1.5rem;
   text-align: right;
   padding: $post-spacer 0 $post-spacer;
   margin: 0 auto;
+
+  @include when-using($laptop) {
+    max-width: 1200px;
+  }
 
   time {
     margin-right: 20px;
