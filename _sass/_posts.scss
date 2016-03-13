@@ -8,17 +8,15 @@ $post-spacer: 1.5rem;
 
 .post-container {
   background-size: cover;
+  padding-top: 80px;
 
   @include when-using($laptop) {
     padding-top: 120px;
-    padding-bottom: 60px;
   }
 }
 
 .post {
-  background-color: $white;
   margin: 0 auto;
-  max-width: 1200px;
 }
 
 .post-list {
@@ -34,19 +32,25 @@ $post-spacer: 1.5rem;
 }
 
 .post-header {
-  color: $black;
-  padding: 60px $post-spacer 30px;
+  color: $white;
+  padding: 60px 0 0;
   text-align: left;
 }
 
+.post-title-container {
+  padding: 0 $post-spacer;
+  margin-bottom: 45px;
+}
+
 .post-title {
-  color: $black;
+  color: $white;
   font-size: 2.5em;
   letter-spacing: -1px;
   line-height: 1;
-  text-align: center;
+  text-align: right;
   margin: 0;
   padding: 0;
+  font-weight: 700;
 
   @include when-using($tablet) {
     font-size: 3.5em;
@@ -57,64 +61,102 @@ $post-spacer: 1.5rem;
   }
 }
 
+.post-author {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: $secondary-color;
+  background-color: $white;
+  font-weight: 700;
+  position: relative;
+
+  img {
+    width: 90px;
+    height: 90px;
+    margin: -45px 0 10px;
+    border: 4px solid $white;
+
+    @include when-using($tablet) {
+      font-size: 5em;
+      width: 120px;
+      height: 120px;
+      margin-top: -60px;
+    }
+  }
+
+  > span {
+    @include when-using($tablet) {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      left: 50%;
+      margin-left: 141px;
+      margin-top: -15px;
+    }
+  }
+
+  i {
+    padding-right: 2px;
+    font-weight: 100;
+  }
+}
+
 .post-meta {
   font-size: $small-font-size;
-  color: rgba(0, 0, 0, 0.2);
-  text-align: center;
+  color: $white;
+  text-align: right;
   padding: $post-spacer 0 $post-spacer;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  max-width: 900px;
   margin: 0 auto;
 
   time {
     margin-right: 20px;
-    color: $black;
+    color: $white;
   }
 
   [itemprop="author"] {
     margin-left: 20px;
-    color: $black;
+    color: $white;
   }
 }
 
 .post-content {
   background-color: $white;
-  color: $primary-color;
-  padding: 0 0 $post-spacer;
+  color: $black;
+  padding: $post-spacer 0;
   min-height: 100vh;
+  font-weight: 100;
 
   @include when-using($tablet) {
     text-align: left;
   }
+}
 
-  & > p {
-    margin-bottom: $post-spacer;
-  }
-
-  p {
-    padding: 0 $post-gutter;
-    line-height: 2;
-    text-align: justify;
-  }
-
-  a {
-    color: $primary-color;
-    border-bottom: 1px solid $secondary-color;
-  }
+.post-content-inner {
+  max-width: 1200px;
+  margin: 20px auto;
 
   blockquote {
-    margin: 2rem 0;
-    padding: 3rem 0;
-    background-color: lighten($quote-color, 35%);
-    color: darken($quote-color, 25%);
+    font-size: 1em;
+    font-family: 'Merriweather';
+    font-style: italic;
+    text-align: left;
+    border-top: 1px solid $tertiary-color;
+    border-bottom: 1px solid $tertiary-color;
+    margin-bottom: 40px;
+    padding: 30px;
 
     &:not(:first-child) {
-      margin-top: $post-gutter;
-      padding: 2rem 0;
+      margin-top: 40px;
+    }
+    
+    @include when-using($tablet) {
+      font-size: 1.4em;
+      padding: 50px 60px;
     }
 
     p {
-      text-align: left;
+      padding: 20px;
+      width: 90%;
 
       a {
         font-size: 0.8rem;
@@ -130,6 +172,13 @@ $post-spacer: 1.5rem;
     }
   }
 
+  p {
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    line-height: 2;
+    padding: 0 $spacing-unit;
+  }
+
   ol,
   ul {
     margin-left: 45px;
@@ -142,13 +191,12 @@ $post-spacer: 1.5rem;
   }
 
   h1, h2, h3, h4 {
-    padding: 0;
+    font-size: 2.0em;
     clear: both;
-    text-align: center;
-
-    @include when-using($laptop) {
-      text-align: left;
-    }
+    text-align: left;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding: 0 $spacing-unit;
   }
 
   h1 {
@@ -160,32 +208,12 @@ $post-spacer: 1.5rem;
   }
 
   h2 {
-      color: $grey-color-dark;
-      font-size: 2.0em;
-      margin-bottom: 1rem;
-      padding: 0 $post-gutter;
-
-      @include when-using($laptop) {
-        font-size: 2.8em;
-      }
   }
 
   h3 {
-    color: $black;
-    font-size: 1.6em;
-    padding: 0 $post-gutter;
-
-    @include when-using($laptop) {
-      font-size: 1.8em;
-    }
   }
 
   h4 {
-      font-size: 1.2em;
-
-      @include when-using($laptop) {
-        font-size: 1em;
-      }
   }
 
   figure {
@@ -218,6 +246,11 @@ $post-spacer: 1.5rem;
   }
 }
 
+.disqus-container {
+  background-color: $white;
+  padding: 20px 0;
+  margin: 0 auto;
+}
 
 /**
  * Featured post content
@@ -228,40 +261,44 @@ $post-spacer: 1.5rem;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  margin: -24px 0 0;
+  padding: 0;
 }
 
 .no-posts-container {
   height: 100vh;
-  font-size: 3em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-shadow: -2px -1px 1px rgba(0, 0, 0, 0.5);
+  font-size: 6em;
+  padding-top: 40px;
+  text-align: center;
+  font-family: 'Satisfy';
+  transform: rotate(-8deg) translateX(10%);
+
+  @include when-using($tablet) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: rotate(-8deg) translate(-50%, -50%);
+    padding-top: 0;
+    height: auto;
+  }
 }
 
 .featured-post {
-  height: 50vh;
-  background-color: $black;
+  height: 100vh;
+  background-color: #000;
   background-size: cover;
+  background-position: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   flex-direction: column;
-
-  @include when-using($tablet) {
-    height: 70vh;
-  }
-
-  @include when-using($laptop) {
-    height: 100vh;
-  }
 }
 
 .featured-post-heading {
-  font-size: 4em;
+  font-size: 3em;
+  font-weight: 700;
   text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.4);
-  transform: skew(2deg) rotate(-2deg);
   text-align: center;
   color: $white;
   line-height: 1;
@@ -292,29 +329,65 @@ $post-spacer: 1.5rem;
   }
 }
 
+.featured-post-url {
+  text-align: right;
+  margin-top: 24px;
+
+  @include when-using($laptop) {
+    margin: 0 30px;
+    padding: 30px;
+    transition: all 1s;
+  }
+}
+
 .featured-post-button {
   margin-top: 40px;
   padding: 10px 30px;
   font-size: 1em;
-  transition: all 300ms;
-  border: 1px solid transparent;
+  transition: all 100ms;
   color: $white;
   opacity: 0;
+  font-family: $button-font-family;
+  position: relative;
 
-  &.active {
+  .featured-post.active & {
     opacity: 1;
   }
 
-  &:hover {
-    border-color: $white;
+  span {
+    position: relative;
+    z-index: 2;
+  }
+
+  &:after {
+    content: ' ';
+    position: absolute;
+    top: 40px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $primary-color;
+    z-index: 1;
+    transition: all 500ms;
+  }
+
+  &:hover,
+  &:active {
+    animation: bob 2s infinite;
+    color: $white;
+
+    &:after {
+      top: 0;
+    }
   }
 }
 
 .featured-post-meta {
-  position: absolute;
-  bottom: 40px;
-  right: 40px;
-  text-shadow: -10px 10px 0px rgba(0, 0, 0, 0.2);
-  transform: skew(2deg) rotate(-2deg);
   color: $white;
+  opacity: 0;
+  transition: all 100ms;
+
+  .featured-post.active & {
+    opacity: 1;
+  }
 }

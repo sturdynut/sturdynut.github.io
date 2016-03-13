@@ -9,7 +9,8 @@ $base-font-weight: 300;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
 $logo-font-family: 'Satisfy';
-$header-font-family: 'Righteous';
+$header-font-family: 'Merriweather';
+$button-font-family: 'Merriweather';
 
 $content-width:    1200px;
 $spacing-unit:     15px;
@@ -24,12 +25,18 @@ $laptop:        1024px;
     }
 }
 
+@mixin max-width($width) {
+  @media screen and (max-width: $width) {
+      @content;
+  }
+}
 
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
     'color_palette',
     'typography',
+    'animations',
     'base',
     'syntax-highlighting',
     'layout',

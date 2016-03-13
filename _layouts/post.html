@@ -6,16 +6,28 @@ comments: true
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-      <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+      <div class="post-title-container">
+        <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+        <p class="post-meta">
+          <time class="post-date" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
+        </p>
+      </div>
+      {% if page.author %}
+        <div class="post-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img itemprop="image" src='/images/matti.jpg' class='avatar' alt='Matti Salokangas' />
+          <span itemprop="name"><i>by</i> {{ page.author }}</span>
+        </div>
+      {% endif %}
     </header>
 
-    <div class="post-content" itemprop="articleBody">
-      {{ content }}
-    </div>
+    <main class="post-content" itemprop="articleBody">
+      <div class="post-content-inner">
+        {{ content }}
+      </div>
+    </main>
 
     {% if page.comments %}
-      <div id="disqus_thread"></div>
+      <div class="disqus-container" id="disqus_thread"></div>
         <script>
         /**
         * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -23,7 +35,7 @@ comments: true
         */
 
         var disqus_shortname = 'sturdynut'; // required: replace example with your forum shortname
-        var disqus_developer = 1; // This turns developer mode on
+        // var disqus_developer = 1; // This turns developer mode on
 
         var disqus_config = function () {
           this.page.url = "{{ page.url }}"; // Replace PAGE_URL with your page's canonical URL variable
