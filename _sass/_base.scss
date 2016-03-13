@@ -22,8 +22,6 @@ header, footer, nav, article, main {
 body {
     font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
     color: $text-color;
-    background: url('/images/backgrounds/8.jpg') no-repeat;
-    background-size: cover;
     background-color: $background-color;
     -webkit-text-size-adjust: 100%;
     -webkit-font-feature-settings: "kern" 1;
@@ -90,7 +88,6 @@ li {
 h1, h2, h3 {
   color: $heading-color;
   font-family: $header-font-family;
-  text-transform: uppercase;
 }
 h1, h2, h3, h4, h5, h6 {
   font-weight: $base-font-weight;
@@ -106,7 +103,7 @@ a {
     text-decoration: none;
 
     &:hover {
-        color: $text-color;
+        color: $primary-color;
         text-decoration: none;
     }
 }
@@ -117,10 +114,17 @@ a {
  * Blockquotes
  */
 blockquote {
+  padding: 0 $spacing-unit;
+}
+
+blockquote {
   color: $quote-color;
+  background: $tertiary-color;
+  border-left: 1em solid $secondary-color;
   padding: 1rem;
   font-size: 1.8em;
   font-style: italic;
+  quotes: "\201C""\201D";
 
   > :last-child {
       margin-bottom: 0;
@@ -131,7 +135,18 @@ blockquote {
   }
 }
 
+blockquote:before {
+  color: $quote-color;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
 
+blockquote p {
+  display: inline;
+}
 
 /**
  * Code formatting

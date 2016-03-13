@@ -1,33 +1,40 @@
-$white: #F1F1F1;
-$black: #2f2f2f;
-$blue:  #52ABB8;
-$red:  #E56161;
+$white: #F8F6F6;
+$black: #111;
+$blue:  #2c3e50;
+$red:  #BA4545;
+$orange:  #d35400;
 $yellow:  #FDB24F;
 $purple:  #443A47;
 $brown:  #714E2F;
 $tan: #F5EDE2;
-$green:  #9FBF7E;
+$green:  #3E522A;
 $dark-grey: #3a3a3a;
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
-$primary-color: $purple;
+$primary-color: #c0392b;
+$primary-color-dark: darken($primary-color, 15%);
+$primary-color-light: lighten($primary-color, 15%);
 $secondary-color: $blue;
 $tertiary-color: $tan;
 
 $quote-color: $blue;
-$header-color: $dark-grey;
-$heading-color: $green;
-$footer-color: darken(#9FBF7E, 25%);
+$header-color: $black;
+$heading-color: $blue;
+$footer-color: $tan;
+$footer-text-color: $black;
 $title-color: $tan;
-$background-color: darken(#9FBF7E, 25%);
+$background-color: darken($green, 25%);
+$background-image: none;
 $text-color: $white;
 
 /** Site Menu **/
-$menu-background-color: darken($black, 50%);
+$menu-background-color: $black;
 $menu-item-color: $white;
 $menu-item-hover-color: $white;
-$menu-item-background-color: darken($black, 25%);
-$menu-item-background-hover-color: darken($black, 15%);
+$menu-item-background-color: $primary-color;
+$menu-item-background-hover-color: $primary-color-dark;
+
+$keyword-color: $secondary-color;

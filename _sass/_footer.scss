@@ -1,21 +1,12 @@
-$footer-bp: 775px;
-
 /**
  * Site footer
  */
 .site-footer {
   background-color: $footer-color;
-  box-shadow: inset 0px 11px 4px -10px rgba(0, 0, 0, 0.3);
-  color: $white;
-  padding: $spacing-unit 0 0;
-
-  @include when-using($laptop) {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
+  color: $footer-text-color;
 
   a {
-    color: $white;
+    color: $footer-text-color;
   }
 }
 
@@ -34,92 +25,103 @@ $footer-bp: 775px;
   margin-left: -$spacing-unit / 2;
   @extend %clearfix;
 
-  @include when-using($footer-bp) {
+  @include when-using(768px) {
     display: flex;
     align-items: center;
   }
 }
 
 .footer-col {
-  &:not(.personal-info) {
+  &:not(.about-information) {
     @include when-using($laptop) {
       margin-left: auto;
     }
   }
 
-  @include when-using($footer-bp) {
+  @include when-using(768px) {
     flex: 1;
-
-    &:last-child {
-      padding-right: 20px;
-      max-width: 200px;
-    }
-  }
-
-  @include when-using($laptop) {
-    &:last-child {
-      max-width: 278px;
-      padding-left: 40px;
-      border-left: 1px solid rgba(255, 255, 255, 0.1);
-    }
+    display: flex;
+    justify-content: flex-end;
   }
 
   span.keyword {
-    color: $yellow;
+    color: $keyword-color;
+    font-weight: 700;
   }
 }
 
-.personal-info {
-  padding: 20px 40px;
-  font-size: 1.5em;
+.about-information {
+  display: flex;
+  padding: 20px;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
   line-height: 2;
-  text-align: justify;
+  font-size: 1.8em;
+  text-align: center;
   transition: color 300ms;
-  color: $white;
-  max-width: 1200px;
-  margin-bottom: 40px;
+  color: $footer-text-color;
 
-  @include when-using($tablet) {
-    display: flex;
-    align-items: center;
+  @include when-using(950px) {
     font-size: 1.8em;
   }
 
-  @include when-using($laptop) {
-    display: flex;
-    align-items: center;
-    margin-bottom: 0;
-    text-align: left;
-    font-size: 1.8em;
-    line-height: 1.75;
+  @include when-using(920px) {
+    font-size: 1.6em;
+    min-width: 600px;
   }
 
-  @include when-using($footer-bp) {
-    flex: 3;
-    font-size: 2em;
-    padding-left: 25px;
+  @include when-using(820px) {
+    font-size: 1.4em;
+    min-width: 500px;
+    text-align: center;
+    display: block;
+  }
+
+  @include when-using(768px) {
+    margin-right: auto;
+    font-size: 1.4em;
+    padding-top: 0;
+    padding-bottom: 0;
+    min-width: 540px;
+    display: block;
   }
 }
 
 .social-media-list {
   display: flex;
+  background-color: $primary-color;
 
-  @include when-using($footer-bp) {
+  @include when-using(768px) {
     flex: 1;
+    max-width: 260px;
   }
 
-  li {
+  @include when-using($tablet) {
+    border-top-style: none;
+  }
+
+  > li {
     flex: 1;
 
-    a {
+    > a {
       color: $footer-color;
       display: block;
       text-align: center;
-      padding: 10px 0;
+      padding: 30px 0;
       transition: all 300ms;
+      border-left: 1px solid darken($primary-color, 15%);
+
+      @include when-using(768px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
 
       &:hover {
-        color: rgba(255, 255, 255, 0.6);
+        color: $white;
+        background-color: darken($primary-color, 15%);
 
         .icon svg {
           path {
@@ -130,14 +132,14 @@ $footer-bp: 775px;
 
       .icon svg {
         path {
-          fill: rgba(255, 255, 255, 0.6);
+          fill: $white;
         }
-        height: 45px;
-        width: 45px;
+        height: 30px;
+        width: 30px;
 
-        @include when-using($footer-bp) {
-          height: 35px;
-          width: 35px;
+        @include when-using(768px) {
+          height: 25px;
+          width: 25px;
           margin: 0 auto;
         }
       }
@@ -145,6 +147,12 @@ $footer-bp: 775px;
       .username {
         color: $white;
         display: block;
+        font-size: 1.2em;
+        padding-top: 4px;
+
+        @include when-using(768px) {
+          font-size: 1em;
+        }
 
         @include when-using($laptop) {
           padding-top: 5px;
@@ -169,7 +177,7 @@ $footer-bp: 775px;
     border: 1px solid $white;
   }
 
-  @include when-using($footer-bp) {
+  @include when-using(768px) {
     font-size: 0.9em;
     padding: 10px 0;
     margin: 15px auto;

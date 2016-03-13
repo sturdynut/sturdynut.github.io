@@ -2,70 +2,59 @@
  * Site header
  */
 .site-header {
-  position: relative;
-  height: 156px;
-  z-index: 3;
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8) 40%, transparent 100%);
+  height: 105px;
+
+  &.active {
+    z-index: 10002;
+  }
 
   @include when-using($laptop) {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 56px;
   }
 }
 
 .site-title-wrapper {
-  color: $title-color;
-  display: block;
+  color: $primary-color;
   padding-top: $spacing-unit;
+  padding-left: 10px;
   position: relative;
   font-family: $logo-font-family;
-  font-size: 40px;
-  text-align: center;
+  line-height: 40px;
+  display: inline-flex;
+  flex-direction: row;
+  font-size: 30px;
 
-  &:hover {
-    color: $title-color;
+  &:hover,
+  &:active {
+    color: $primary-color;
   }
 
-  @include when-using($laptop) {
-    line-height: 56px;
-    display: flex;
-    align-items: center;
-    padding-top: 0;
-  }
-
-  .site-title {
-    position: relative;
-    top: 5px;
-  }
-
-  .site-logo > svg {
-    height: 65px;
-    width: 65px;
+  .site-logo {
+    height: 35px;
+    width: 35px;
     display: block;
     margin: 0 auto;
 
-    @include when-using($laptop) {
-      display: flex;
-      height: 35px;
-      width: 35px;
-      margin: 0 7px 0 20px;
-    }
-
-    .logo-acorn {
-      fill: $title-color;
-    }
-
-    .logo-cap {
-      stroke: $title-color;
+    path {
+      &:first-child {
+        stroke: $primary-color;
+      }
+      &:last-child {
+        fill: $primary-color;
+      }
     }
   }
-}
 
-$menuWidth: 500px;
-$menuInitialRight: -235px;
+  .site-title {
+    margin-left: 5px;
+  }
+}
 
 .site-nav-trigger {
   cursor: pointer;
@@ -73,100 +62,81 @@ $menuInitialRight: -235px;
   position: absolute;
   top: 0;
   right: 0;
+  z-index: 10003;
   width: 70px;
   height: 50px;
   line-height: 0;
   text-align: center;
-  z-index: 2;
   color: $white;
+  transition: top 500ms ease;
+  transition-delay: 500ms;
+
+  @include when-using($laptop) {
+    position: fixed;
+  }
 
   &:hover,
   &:focus {
     outline: none;
   }
 
-  .site-nav-trigger-label {
-    display: none;
+  &.active {
+    top: 0;
   }
+}
 
-  @include when-using($laptop) {
-    width: 95px;
-    display: flex;
-    align-items: center;
+/*** Hamburger styles ***/
+.hamburger-menu {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  transition: all 200ms;
+  background-color: transparent;
+  outline: 4px solid transparent;
 
-    &.active .site-nav-trigger-label .menu {
-      display: none;
+  .site-nav-trigger.active & {
+    path:nth-child(1) {
+      transform: rotate(51deg);
+      transform-origin: 7px 2px;
+      transition-delay: 75ms;
     }
-
-    .site-nav-trigger-label {
-      display: block;
-      margin-top: 7px;
-
-      .menu {
-        display: block;
-      }
+    path:nth-child(2) {
+      transform: translateX(100px);
+      transition: all 200ms;
+    }
+    path:nth-child(3) {
+      transform: rotate(-51deg);
+      transform-origin: 7px 23px;
+      transition-delay: 75ms;
     }
   }
 
   path {
-    transition: all 100ms;
-    transform: rotate(0);
-  }
-
-  &.active path {
-    &:first-child {
-      transform: rotate(45deg) translate(1px, 0);
-      transform-origin: 0% 50%;
-    }
-    &:nth-child(2) {
-      display: none;
-    }
-    &:last-child {
-      transform: rotate(-45deg) translate(0, 1px);
-      transform-origin: 0% 50%;
-    }
-  }
-
-  > svg {
-    width: 25px;
-    height: 25px;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-
-    path {
-      fill: $title-color;
-    }
-  }
-}
-
-.site-nav-container {
-  overflow: hidden;
-  position: relative;
-
-  &.active {
-    position: static;
+    stroke: $primary-color;
+    stroke-width: 6px;
+    transition: all 300ms;
+    transform: none;
   }
 }
 
 .site-nav {
   position: absolute;
-  z-index: 1;
-  top: 156px;
-  right: $menuInitialRight;
-  width: 100%;
-  transition: all 300ms;
+  z-index: 1000;
+  top: 0;
+  right: -9999px;
+  bottom: 0;
+  transition: all 400ms;
+  background-color: $menu-background-color;
+  padding-top: 60px;
 
-  @include when-using($laptop) {
-    top: 60px;
-    width: $menuWidth;
+  &.active {
+    right: 0;
+    z-index: 10000;
   }
 
-  .site-nav-container.active & {
-    background-color: $menu-background-color;
-    right: 0;
-    bottom: 0;
-    z-index: 10;
+  @include when-using($laptop) {
+    position: fixed;
   }
 }
 
@@ -176,12 +146,7 @@ $menuInitialRight: -235px;
   transition: opacity 300ms;
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  background-color: darken($black, 50%);
-
-  @include when-using($laptop) {
-    height: 100%;
-  }
+  max-width: 600px;
 
   .active & {
     opacity: 1;
@@ -196,24 +161,24 @@ $menuInitialRight: -235px;
     list-style: none;
   }
 
-  .site-nav-group-about,
+  .site-nav-group-about {
+    margin-top: 30px;
+  }
+
   .site-nav-group {
-    background-color: darken($black, 50%);
-    padding: 10px 0;
     text-align: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    min-height: 45px;
+    line-height: 60px;
+    font-size: 1.3em;
+    vertical-align: middle;
   }
 
   .site-nav-info {
-    border-top: 1px solid rgba(0, 0, 0, 0.9);
     margin-top: auto;
-    padding-bottom: 10px;
 
     p {
-      padding: 0 20px 20px;
+      padding: 0 40px 20px;
       text-align: justify;
-      line-height: 1.75;
+      line-height: 2;
 
       &:nth-of-type(1) {
         padding-top: 20px;
@@ -222,14 +187,7 @@ $menuInitialRight: -235px;
     }
 
     span.keyword {
-      color: $yellow;
-      border-radius: 3px;
-      padding: 1px 2px;
-    }
-
-    a {
-      color: $yellow;
-      border-bottom: 1px solid $yellow;
+      border-bottom: 2px dotted $keyword-color;
     }
   }
 
@@ -250,8 +208,9 @@ $menuInitialRight: -235px;
       align-items: center;
       border-bottom: 1px solid rgba(255, 255, 255, 0.2);
       color: $menu-item-color;
-      line-height: 1.25;
-      padding: 15px;
+      line-height: 2;
+      padding: 15px 20px;
+      font-size: 1.2em;
 
       span:first-child {
         margin-right: auto;
