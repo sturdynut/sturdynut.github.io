@@ -85,7 +85,7 @@ $post-spacer: 1.5rem;
   }
 
   > span {
-    @include when-using($tablet) {
+    @include when-using(575px) {
       position: absolute;
       top: 50%;
       transform: translate(-50%, -50%);
@@ -124,7 +124,7 @@ $post-spacer: 1.5rem;
   color: $black;
   padding: $post-spacer 0;
   min-height: 100vh;
-  font-weight: 100;
+  font-weight: 300;
 
   @include when-using($tablet) {
     text-align: left;
