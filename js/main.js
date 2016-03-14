@@ -79,7 +79,7 @@
   // Private
 
   function updateLogo() {
-    if (!sturdy.hints.isLaptop()) {
+    if (!sturdy.hints.isLaptop() || !$('.post-header').is(':visible')) {
       return false;
     }
 

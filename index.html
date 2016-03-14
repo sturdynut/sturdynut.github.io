@@ -12,7 +12,7 @@ layout: default
   <ol class='featured-post-list'>
     <li>
       <article name='{{ post.title | replace:" ":"" }}' class='featured-post' style='background-image: linear-gradient( rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7) 100% ), url(/images/backgrounds/{{ post.background }})'>
-        <a class='featured-post-url' href='{{ post.url | prepend: site.baseurl }}'>
+        <a class='featured-post-url' href='{{ post.url | prepend: site.baseurl | append: "#disqus_thread" }}'>
           <h1 class='featured-post-heading'>{{ post.title }}</h1>
           <span class='featured-post-meta'>{{ post.date | date: '%b %-d, %Y' }}</span>
         </a>
