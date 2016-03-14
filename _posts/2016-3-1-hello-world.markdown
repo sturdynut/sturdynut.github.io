@@ -10,12 +10,8 @@ background: '46.jpg'
 
 > In the programming world it is tradition to output the message "Hello World" when writing your first program.  This is my "Hello World" post.
 
-# Not Easy
-I have been paralyzed with the swells of information and frameworks.  It is constant and never ending.
-I grew up a "front-end developer", which basically meant I wrote code and also knew css.
-
-<p data-height="268" data-theme-id="0" data-slug-hash="jWXazB" data-default-tab="result" data-user="sturdynut" class="codepen">See the Pen <a href="http://codepen.io/sturdynut/pen/jWXazB/">3JS - Cube</a> by Matti Salokangas (<a href="http://codepen.io/sturdynut">@sturdynut</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+Now a days, as a front-end developer in order to stay relevant, we have to keep up with a constantly changing and evolving
+ecosystem of technology and devices.
 
 ## A little about me
 ![Young Matti](/images/01-young-matti.jpg){: .left-rounded-image }
