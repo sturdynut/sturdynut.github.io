@@ -4,6 +4,11 @@
 .site-footer {
   background-color: $footer-color;
   color: $footer-text-color;
+  padding-bottom: 48px;
+
+  @include when-using(979px) {
+    padding-bottom: 0;
+  }
 
   a {
     color: $footer-text-color;

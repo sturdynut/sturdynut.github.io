@@ -7,8 +7,12 @@ $post-gutter: 2rem;
 $post-spacer: 1.5rem;
 
 .post-container {
-  background-size: cover;
+  background-repeat: no-repeat;
   padding-top: 80px;
+
+  @include when-using($tablet) {
+    background-size: contain;
+  }
 
   @include when-using($laptop) {
     padding-top: 120px;
