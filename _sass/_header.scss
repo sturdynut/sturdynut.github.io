@@ -7,7 +7,7 @@
   top: 0;
   left: 0;
   right: 0;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.8) 40%, transparent 100%);
+  transition: all 400ms;
   height: 105px;
 
   &.active {
@@ -20,7 +20,7 @@
 }
 
 .site-title-wrapper {
-  color: $primary-color;
+  color: $tertiary-color;
   padding-top: $spacing-unit;
   padding-left: 10px;
   position: relative;
@@ -32,7 +32,20 @@
 
   &:hover,
   &:active {
+    color: $tertiary-color;
+  }
+
+  &.dark {
     color: $primary-color;
+
+    .site-logo path {
+      &:first-child {
+        stroke: $primary-color;
+      }
+      &:last-child {
+        fill: $primary-color;
+      }
+    }
   }
 
   .site-logo {
@@ -43,10 +56,10 @@
 
     path {
       &:first-child {
-        stroke: $primary-color;
+        stroke: $tertiary-color;
       }
       &:last-child {
-        fill: $primary-color;
+        fill: $tertiary-color;
       }
     }
   }
@@ -68,8 +81,7 @@
   line-height: 0;
   text-align: center;
   color: $white;
-  transition: top 500ms ease;
-  transition-delay: 500ms;
+  transition: top 50ms;
 
   @include when-using($laptop) {
     position: fixed;
@@ -126,9 +138,11 @@
   top: 0;
   right: -9999px;
   bottom: 0;
-  transition: all 400ms;
+  transition: all 50ms;
   background-color: $menu-background-color;
   padding-top: 60px;
+  max-width: 600px;
+  height: 100%;
 
   &.active {
     right: 0;
@@ -142,15 +156,8 @@
 
 .site-nav-pages {
   position: relative;
-  opacity: 0;
-  transition: opacity 300ms;
   display: flex;
   flex-direction: column;
-  max-width: 600px;
-
-  .active & {
-    opacity: 1;
-  }
 
   .site-nav-info,
   .site-nav-group-about,
