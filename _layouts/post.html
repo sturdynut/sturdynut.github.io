@@ -27,9 +27,9 @@ comments: true
     </main>
 
     {% if page.comments %}
-      <div id="disqus_thread"></div>
+      <section id="disqus_thread" class='comments-section'></section>
       <script>
-      var PAGE_URL = "{{ page.url }}";
+      var PAGE_URL = "{{ page.url | prepend: site.baseurl | prepend: site.url }}";
       var PAGE_IDENTIFIER = "{{ page.title }}";
 
       var disqus_config = function () {
