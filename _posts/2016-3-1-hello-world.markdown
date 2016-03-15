@@ -10,29 +10,20 @@ background: '46.jpg'
 
 > In the programming world it is tradition to output the message "Hello World" when writing your first program.  This is my "Hello World" post.
 
-# Not Easy
-I have been paralyzed with the swells of information and frameworks.  It is constant and never ending.
-I grew up a "front-end developer", which basically meant I wrote code and also knew css.
+## Welcome
+Now a days as a front-end developer, in order to stay relevant we must deal with a constantly changing and evolving ecosystem of technology and devices.
 
-<p data-height="268" data-theme-id="0" data-slug-hash="jWXazB" data-default-tab="result" data-user="sturdynut" class="codepen">See the Pen <a href="http://codepen.io/sturdynut/pen/jWXazB/">3JS - Cube</a> by Matti Salokangas (<a href="http://codepen.io/sturdynut">@sturdynut</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+I find myself constantly reading articles, pocketing articles to read, skimming my twitter feed and perusing source code on github to see how the legends are coding.
 
-## A little about me
-![Young Matti](/images/01-young-matti.jpg){: .left-rounded-image }
+### A little about Usability
 
-I started working at a [technology company](http://www.oeconnection.com) a couple weeks after I graduated high school.  I spent nearly 5 years learning many aspects of software development, from quality assurance, building and deployment strategies to writing automated tests and eventually software.
-Fast forward another 5 years and here I am.
-Throughout the past decade I have worked with a wide variety of software development cultures and paradigms.  I've also worked as a classic W2 employee, to an independent consultant to business owner.  I hope to draw on these experiences to provide more meaningful and applicable posts to your day-to-day.
-
-### I have found my place in the nebulous of UX.
-
-More and more companies are pushing for "UX" and yet, many companies still struggle with implementing a great user experience.
+I have found my place in the nebulous of UX.  Lucky for me, more and more companies are pushing for "UX" and yet, many companies still struggle with implementing a great user experience.
 
 > Although 73% of you plan to invest in better UX this year, most aren’t quite sure where to start. It all begins with how you approach the research.
 [Digital Telepathy](http://www.dtelepathy.com/blog/business/our-first-ever-ux-survey-results)
 
-#### What is coming?
+#### Learning and Sharing
 
-It is my hope to distill "UX", topic by topic.  You can expect future posts to be focused on UX, UI patterns and software development culture and methodologies.
+My hope is that I can capture what I am currently learning and share the knowledge.
 
 Thanks for stopping by and be sure to follow me on [twitter](twitter.com/sturdynut) to get the latest updates.
