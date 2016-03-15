@@ -2,7 +2,7 @@
  * Site header
  */
 .site-header {
-  position: absolute;
+  position: fixed;
   z-index: 1000;
   top: 0;
   left: 0;
@@ -12,10 +12,6 @@
 
   &.active {
     z-index: 10002;
-  }
-
-  @include when-using($laptop) {
-    position: fixed;
   }
 }
 
@@ -72,7 +68,7 @@
 .site-nav-trigger {
   cursor: pointer;
   display: block;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   z-index: 10003;
@@ -82,10 +78,6 @@
   text-align: center;
   color: $white;
   transition: top 50ms;
-
-  @include when-using($laptop) {
-    position: fixed;
-  }
 
   &:hover,
   &:focus {
@@ -133,7 +125,7 @@
 }
 
 .site-nav {
-  position: absolute;
+  position: fixed;
   z-index: 1000;
   top: 0;
   right: -9999px;
@@ -143,14 +135,11 @@
   padding-top: 60px;
   max-width: 600px;
   height: 100%;
+  min-height: 900px;
 
   &.active {
     right: 0;
     z-index: 10000;
-  }
-
-  @include when-using($laptop) {
-    position: fixed;
   }
 }
 

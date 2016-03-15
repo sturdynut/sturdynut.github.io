@@ -57,7 +57,6 @@
     $(window).on('resize', _.debounce(sturdy.onResize, 100));
 
     updateLogo();
-    positionNavigation();
   }
 
   function initTextAnimations() {
@@ -68,18 +67,16 @@
 
   function onScroll() {
     updateLogo();
-    positionNavigation();
   }
 
   function onResize() {
     updateLogo();
-    positionNavigation();
   }
 
   // Private
 
   function updateLogo() {
-    if (!sturdy.hints.isLaptop() || !$('.post-header').is(':visible')) {
+    if (!$('.post-header').is(':visible')) {
       return false;
     }
 
@@ -104,28 +101,6 @@
       offset: offset,
       top: window.scrollY + offset
     };
-  }
-
-  function positionNavigation() {
-    if (sturdy.hints.isLaptop()) {
-      return false;
-    }
-
-    var top = window.scrollY;
-
-    $('.js-site-nav').velocity('stop')
-      .velocity({
-        duration: 0,
-        easing: 'linear',
-        top: top
-      });
-
-    $('.js-site-nav-trigger').velocity('stop')
-      .velocity({
-        duration: 0,
-        easing: 'linear',
-        top: top
-      });
   }
 
   function animateElement($element, effect, inCallback) {
