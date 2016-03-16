@@ -10,7 +10,7 @@ title: Sturdy Nut
 email: matti.salokangas@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   A blog about <span class='keyword'>Usability</span> and <span class='keyword'>Software Development</span>.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/blog" # the subpath of your site, e.g. /blog
 url: "http://sturdynut.com" # the base hostname & protocol for your site
 twitter_username: sturdynut
 github_username:  sturdynut

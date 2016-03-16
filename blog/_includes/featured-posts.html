@@ -1,0 +1,22 @@
+{% assign featuredPostsLength = site.posts.size %}
+{% if featuredPostsLength == 0  %}
+  <div class='no-posts-container'>
+    No posts yet!
+  </div>
+{% endif %}
+{% for post in site.posts %}
+  <ol class='featured-post-list'>
+    <li>
+      <article name='{{ post.title | replace:" ":"" }}' class='featured-post' style='background-image: linear-gradient( rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7) 100% ), url(./images/backgrounds/{{ post.background }})'>
+        <a class='featured-post-url' href='{{ post.url | prepend: site.baseurl }}'>
+          <h1 class='featured-post-heading'>{{ post.title }}</h1>
+          <div class='featured-post-meta'>
+            <span class='featured-post-date'>{{ post.date | date: '%b %-d, %Y' }}</span>
+            <span class='featured-post-comments disqus-comment-count' data-disqus-url='{{ post.url | prepend: site.baseurl }}'>Comments</span>
+          </div>
+        </a>
+        <a href='{{ post.url | prepend: site.baseurl }}' class='featured-post-button'><span>Read Post</span></a>
+      </article>
+    </li>
+  </ol>
+{% endfor %}
