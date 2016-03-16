@@ -389,12 +389,35 @@ $post-spacer: 1.5rem;
 }
 
 .featured-post-meta {
-  color: $white;
+  display: flex;
+  flex-direction: row;
+  padding: 20px 0 0;
+  align-items: center;
+  justify-content: flex-end;
   opacity: 0;
-  transition: all 100ms;
+  transition: opacity 100ms;
 
   .featured-post.active & {
     opacity: 1;
+  }
+}
+
+.featured-post-date {
+  color: $white;
+
+  &:after {
+    content: '\00B7';
+    padding: 0 10px;
+    color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+.featured-post-comments {
+  color: $white;
+  border-bottom: 1px solid transparent;
+
+  &:hover {
+    border-bottom: 1px solid $white;
   }
 }
 
@@ -403,4 +426,5 @@ $post-spacer: 1.5rem;
   margin: 40px auto;
   min-height: 100px;
   padding: 0 40px;
+  color: $white;
 }

@@ -60,9 +60,8 @@
   }
 
   function initTextAnimations() {
-    animateElement($('.featured-post-heading'), 'fadeIn', function() {
-      $('.featured-post').addClass('active');
-    });
+    animateElement($('.featured-post-heading'), 'fadeIn');
+    $('.featured-post').addClass('active');
   }
 
   function onScroll() {

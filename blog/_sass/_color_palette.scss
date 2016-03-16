@@ -8,7 +8,7 @@ $purple:  #443A47;
 $brown:  #714E2F;
 $tan: #F5EDE2;
 $green:  #3E522A;
-$dark-grey: #3a3a3a;
+$dark-grey: #2a2a2a;
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
@@ -31,7 +31,7 @@ $background-image: none;
 $text-color: $white;
 
 /** Site Menu **/
-$menu-background-color: $black;
+$menu-background-color: $dark-grey;
 $menu-item-color: $white;
 $menu-item-hover-color: $white;
 $menu-item-background-color: $primary-color;
