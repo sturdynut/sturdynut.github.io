@@ -57,13 +57,12 @@
 
 .about-information {
   display: flex;
-  padding: 20px;
+  padding: 30px;
   align-items: center;
-  max-width: 400px;
   margin: 0 auto;
   line-height: 2;
   font-size: 1.8em;
-  text-align: center;
+  text-align: left;
   transition: color 300ms;
   color: $footer-text-color;
 
@@ -79,7 +78,6 @@
   @include when-using(820px) {
     font-size: 1.4em;
     min-width: 500px;
-    text-align: center;
     display: block;
   }
 
@@ -90,6 +88,7 @@
     padding-bottom: 0;
     min-width: 540px;
     display: block;
+    line-height: 1.5;
   }
 }
 

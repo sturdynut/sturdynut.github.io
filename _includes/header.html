@@ -26,19 +26,8 @@
 
 <nav class='site-nav js-site-nav'>
   <ul class='site-nav-pages'>
-    {% assign postsLength = site.posts.size %}
-    {% if postsLength > 0  %}
-      <li class='site-nav-group'>
-        Recent Posts
-      </li>
-      {% for post in site.posts %}
-        <li class='site-nav-page'>
-          <a href='{{ post.url | prepend: site.baseurl }}'>
-            <span>{{ post.title }}</span>
-            <span class='site-nav-post-meta'>{{ post.date | date: '%b %-d, %Y' }}</span>
-          </a>
-        </li>
-      {% endfor %}
-    {% endif %}
+    <li class='site-nav-group'>
+      Under construction...
+    </li>
   </ul>
 </nav>
