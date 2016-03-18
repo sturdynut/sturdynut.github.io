@@ -4,4 +4,18 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: $background-color;
+}
+
+.mountain-scene {
+  background: transparent url('/images/mountain-scene.svg') no-repeat;
+  background-size: 490px 738px;
+  width: 490px;
+  height: 738px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

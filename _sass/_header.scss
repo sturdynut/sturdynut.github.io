@@ -16,7 +16,7 @@
 }
 
 .site-title-wrapper {
-  color: $tertiary-color;
+  color: $white;
   padding-top: $spacing-unit;
   padding-left: 10px;
   position: relative;
@@ -28,7 +28,7 @@
 
   &:hover,
   &:active {
-    color: $tertiary-color;
+    color: $white;
   }
 
   &.dark {
@@ -52,10 +52,10 @@
 
     path {
       &:first-child {
-        stroke: $tertiary-color;
+        stroke: $white;
       }
       &:last-child {
-        fill: $tertiary-color;
+        fill: $white;
       }
     }
   }
@@ -134,9 +134,12 @@
   background-color: $menu-background-color;
   padding-top: 60px;
   max-width: 600px;
-  min-width: 600px;
   height: 100%;
   min-height: 900px;
+
+  @include when-using($tablet) {
+    min-width: 600px;
+  }
 
   &.active {
     right: 0;
