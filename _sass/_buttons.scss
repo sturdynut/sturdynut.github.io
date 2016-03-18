@@ -7,13 +7,18 @@
 }
 
 .featured-button {
-  margin-top: 40px;
-  padding: 10px 30px;
+  margin-top: 50px;
   font-size: 1em;
   transition: all 100ms;
   color: $white;
   font-family: $button-font-family;
+  line-height: 67px;
+  width: 120px;
+  background: $background-color;
   position: relative;
+  width: 170px;
+  text-align: center;
+  border-radius: 2px;
 
   span {
     position: relative;
@@ -23,11 +28,11 @@
   &:after {
     content: ' ';
     position: absolute;
-    top: 40px;
+    top: 60px;
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: $primary-color;
+    background-color: $white;
     z-index: 1;
     transition: all 500ms;
   }
@@ -35,7 +40,7 @@
   &:hover,
   &:active {
     animation: bob 2s infinite;
-    color: $white;
+    color: $background-color;
 
     &:after {
       top: 0;
