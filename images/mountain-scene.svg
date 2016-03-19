@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="490px" height="574px" viewBox="0 0 490 574" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="490px" height="742px" viewBox="0 0 490 742" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 3.6.1 (26313) - http://www.bohemiancoding.com/sketch -->
     <title>mountain-scene</title>
     <desc>Created with Sketch.</desc>
@@ -14,38 +14,51 @@
             <stop stop-color="#F59965" offset="100%"></stop>
             <stop stop-color="#B43B3A" offset="100%"></stop>
         </linearGradient>
-        <path id="path-3" d="M127.481094,77.065457 L155.923464,50.096142 L168.459392,68.4269831 L162.959442,66.641051 L158.970619,72.9852092 L151.311187,65.4112637 L127.481094,77.065457 Z"></path>
-        <path id="path-4" d="M250.921319,72.1426668 L218.161022,97.2728392 L280.963501,28.0595214 L315.707844,64.9393317 L294.887821,49.641051 L290.483371,56.5136496 L276.963501,45.257836 L262.713318,50.6320009 L250.921319,72.1426668 Z"></path>
-        <path id="path-5" d="M366.131696,132.639943 L386.963501,110.042184 L402.642953,133.013459 L393.491794,125.257836 L388.916213,129.65181 L380.698847,123.862301 L366.131696,132.639943 Z"></path>
-        <path id="path-6" d="M82.2544056,102.54395 L103.348991,79.8130481 L118.727827,103.316989 L109.697288,95.252455 L105.121708,99.6464293 L96.9043414,93.8569195 L82.2544056,102.54395 Z"></path>
-        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-7">
+        <linearGradient x1="129.819105%" y1="138.129496%" x2="-82.8418388%" y2="-56.4748201%" id="linearGradient-3">
+            <stop stop-color="#B63C2F" offset="0%"></stop>
+            <stop stop-color="#B8402E" offset="41.3245376%"></stop>
+            <stop stop-color="#6F1B0E" offset="100%"></stop>
+        </linearGradient>
+        <path id="path-4" d="M250.921319,74.1426668 L218.161022,99.2728392 L280.963501,30.0595214 L315.707844,66.9393317 L294.887821,51.641051 L290.483371,58.5136496 L276.963501,47.257836 L262.713318,52.6320009 L250.921319,74.1426668 Z"></path>
+        <path id="path-5" d="M366.131696,134.639943 L386.963501,112.042184 L402.642953,135.013459 L393.491794,127.257836 L388.916213,131.65181 L380.698847,125.862301 L366.131696,134.639943 Z"></path>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-6">
             <stop stop-color="#CB5251" offset="0%"></stop>
             <stop stop-color="#FF8A48" offset="100%"></stop>
         </linearGradient>
-        <path id="path-8" d="M192.921319,44.1426668 L160.161022,69.2728392 L222.963501,0.0595213771 L304.405666,77.752278 L264.275982,53.9053316 L259.441319,64.9560022 L221.907986,35.4013338 L204.713318,52.6320009 L192.921319,44.1426668 Z"></path>
-        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-9">
-            <stop stop-color="#A52423" offset="0%"></stop>
-            <stop stop-color="#B14C12" offset="100%"></stop>
+        <path id="path-7" d="M192.921319,46.1426668 L160.167014,71.517369 C160.167014,71.517369 184.609316,45.370186 204.254916,23.6880705 C205.577737,22.2281229 222.920607,0.465547808 222.920607,0.465547808 L304.405666,79.752278 L264.275982,55.9053316 L259.441319,66.9560022 L221.907986,37.4013338 L204.713318,54.6320009 L192.921319,46.1426668 Z"></path>
+        <linearGradient x1="100%" y1="36.8188875%" x2="-6.60987233%" y2="-6.29770775%" id="linearGradient-8">
+            <stop stop-color="#B63C2F" offset="0%"></stop>
+            <stop stop-color="#B8402E" offset="41.3245376%"></stop>
+            <stop stop-color="#7F2415" offset="86.8835173%"></stop>
+            <stop stop-color="#6F1B0E" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="129.819105%" y1="138.129496%" x2="-82.8418388%" y2="-56.4748201%" id="linearGradient-9">
+            <stop stop-color="#B63C2F" offset="0%"></stop>
+            <stop stop-color="#B8402E" offset="41.3245376%"></stop>
+            <stop stop-color="#AD3A29" offset="50.0504541%"></stop>
+            <stop stop-color="#6F1B0E" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="79.0800261%" y1="262.921348%" x2="4.93553951%" y2="-50.5617978%" id="linearGradient-10">
+            <stop stop-color="#B63C2F" offset="0%"></stop>
+            <stop stop-color="#B8402E" offset="41.3245376%"></stop>
+            <stop stop-color="#6F1B0E" offset="100%"></stop>
         </linearGradient>
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="mountain-scene">
-            <g id="mtn" transform="translate(-472.000000, -485.000000)">
+            <g id="mtn" transform="translate(-471.000000, -483.000000)">
                 <path d="M715.499994,1061.99609 C956.957025,1061.99609 956.957031,794.996094 956.957031,794.996094 C956.957031,794.996094 816.291967,754 715.5,754 C614.708033,754 478.957031,798.996094 478.957031,798.996094 C478.957031,798.996094 474.042963,1061.99609 715.499994,1061.99609 Z" id="Oval-49"></path>
-                <g id="sun" transform="translate(630.000000, 497.000000)">
+                <g id="sun" transform="translate(548.000000, 490.000000)">
                     <circle id="sun-copy-2" fill="url(#linearGradient-1)" opacity="0.141732743" cx="87.5" cy="87.5" r="87.5"></circle>
                     <circle id="sun-copy" fill="#BE4A3A" opacity="0.290986474" cx="88" cy="86" r="71"></circle>
                     <circle fill="#BF4A39" cx="88" cy="86" r="54"></circle>
                 </g>
-                <g transform="translate(479.000000, 552.000000)">
-                    <path d="M76,261 L280.996094,27.9960938 L457.996094,215.996094 L76,261 Z" id="Path-188-Copy-2" fill="#E46D56"></path>
-                    <path d="M0.58203125,247.498047 L140,50 L378,281 L0.58203125,247.498047 Z" id="Path-188-Copy" fill="#E06851"></path>
-                    <path d="M220.996094,477.996094 L0.0905539989,246.726913 L97,80 L335,311 L220.996094,477.996094 Z" id="Path-188-Copy-3" fill="#E7745E"></path>
-                    <g id="Path-214-Copy-2">
-                        <use fill="none" transform="translate(147.970243, 63.580800) scale(-1, 1) translate(-147.970243, -63.580800) " xlink:href="#path-3"></use>
-                        <use fill="url(#linearGradient-2)" fill-rule="evenodd" xlink:href="#path-3"></use>
-                    </g>
-                    <path d="M176,341 L387,110 L477.908722,242.999649 L266.996094,433.996094 L176,341 Z" id="Path-188-Copy-4" fill="#E26A53"></path>
+                <g transform="translate(479.000000, 550.000000)">
+                    <path d="M76,263 L280.996094,29.9960938 L457.996094,217.996094 L76,263 Z" id="Path-188-Copy-2" fill="#E46D56"></path>
+                    <path d="M0.58203125,249.498047 L140,52 L378,283 L0.58203125,249.498047 Z" id="Path-188-Copy" fill="#E06851"></path>
+                    <path d="M220.90554,480.996094 L0,249.726913 L84.5320473,104.294575 L96.909446,83 L334.909446,314 L220.90554,480.996094 Z" id="Path-188-Copy-3" fill="#E7745E"></path>
+                    <path d="M127.138415,70.1697694 L139.984314,51.999939 C139.984314,51.999939 140.162781,52.1716875 140.252015,52.2575618 C150.909501,62.5138214 172.224473,83.0263405 172.224473,83.0263405 L144.662098,67.4399495 L138.233812,71.49065 L131.981644,68.3205366 L127.138415,70.1697694 Z" id="Path-381" fill="url(#linearGradient-2)"></path>
+                    <path d="M176,343 L387,112 L477.908722,244.999649 L266.996094,435.996094 L176,343 Z" id="Path-188-Copy-4" fill="url(#linearGradient-3)"></path>
                     <g id="Path-214-Copy">
                         <use fill="none" xlink:href="#path-4"></use>
                         <use fill="url(#linearGradient-2)" fill-rule="evenodd" xlink:href="#path-4"></use>
@@ -54,22 +67,26 @@
                         <use fill="none" xlink:href="#path-5"></use>
                         <use fill="url(#linearGradient-2)" fill-rule="evenodd" xlink:href="#path-5"></use>
                     </g>
-                    <g id="Path-214-Copy-4">
-                        <use fill="none" transform="translate(100.491116, 91.565018) scale(-1, 1) rotate(3.000000) translate(-100.491116, -91.565018) " xlink:href="#path-6"></use>
-                        <use fill="url(#linearGradient-2)" fill-rule="evenodd" xlink:href="#path-6"></use>
-                    </g>
-                    <path d="M440.758459,409.326447 L223.000006,501.065399 L38.9960955,406.996094 L4.99609363,308.996094 L0.181463122,246.545105 L223,0 L477.908722,243.181458 L440.758459,409.326447 Z" id="Path-188" fill="url(#linearGradient-7)"></path>
+                    <path d="M83.906189,105.374938 L97.2723722,81.8178267 L117.545099,102.999645 L102.090554,97.3632812 L96.3632812,102.090554 L91.9996449,97.9996449 L83.906189,105.374938 Z" id="Path-382" fill="url(#linearGradient-2)"></path>
+                    <path d="M440.758459,411.326447 L223.000006,503.065399 L38.9960955,408.996094 L4.99609363,310.996094 L0.181463122,248.545105 C0.181463122,248.545105 136.055235,99.299214 203.718084,24.431366 C210.32808,17.1175124 223,2 223,2 L477.908722,245.181458 L440.758459,411.326447 Z" id="Path-188" fill="url(#linearGradient-6)"></path>
                     <g id="Path-214">
-                        <use fill="none" xlink:href="#path-8"></use>
-                        <use fill="url(#linearGradient-2)" fill-rule="evenodd" xlink:href="#path-8"></use>
+                        <use fill="none" xlink:href="#path-7"></use>
+                        <use fill="url(#linearGradient-2)" fill-rule="evenodd" xlink:href="#path-7"></use>
                     </g>
-                    <path d="M441.154461,408.534454 L223,500.996094 L236,173 L217.996094,152 L258.996094,103 L221.913019,36.3563309 L223,0 L477.908722,243.181458 L441.154461,408.534454 Z" id="Path-188-Copy-5" fill="url(#linearGradient-9)" opacity="0.679046175"></path>
+                    <path d="M441.154461,410.534454 L223,502.996094 L236,175 L232.267481,148.568042 L258.996094,105 L221.913019,38.3563309 L223,0.189079881 L477.908722,245.181458 L441.154461,410.534454 Z" id="Path-188-Copy-5" fill="url(#linearGradient-8)" opacity="0.679046175"></path>
+                    <path d="M252.903944,94.1183013 L434.845932,233.799249 L232.183013,148.591508 L252.903944,94.1183013 Z" id="Path-381" fill="url(#linearGradient-9)"></path>
+                    <path d="M236.240872,175.103134 L358.749387,217.162171 L234.332981,204.286518 L236.240872,175.103134 Z" id="Path-382" fill="url(#linearGradient-10)"></path>
                 </g>
                 <path d="M483.478516,861.998047 L956.957031,794.996094 C956.957031,794.996094 816.291967,754 715.5,754 C614.708033,754 479.011091,799.256824 479.011091,799.256824 L483.478516,861.998047 Z" id="Oval-49-Copy" fill="#415E80"></path>
                 <path d="M496.837824,914.20872 C680.005918,769.120986 962.229294,844.257281 962.229294,844.257281 C962.229294,844.257281 681.140317,720.289763 486.285428,809.735666 L496.837824,914.20872 Z" id="Oval-49-Copy-2" fill="#52739A" transform="translate(724.257361, 845.758614) rotate(-12.000000) translate(-724.257361, -845.758614) "></path>
                 <path d="M654.924821,1022.32985 C770.021587,816.436136 989.507778,883.824171 989.507778,883.824171 C989.507778,883.824171 716.231161,747.352561 519.146445,863.589616 L654.924821,1022.32985 Z" id="Oval-49-Copy-3" fill="#5E82AC" transform="translate(754.327111, 919.514434) rotate(-23.000000) translate(-754.327111, -919.514434) "></path>
+                <path d="M703,1052.9961 L703,1218.69385 L505.996094,1088 L515.449674,956.654575 L703,1052.9961 Z" id="Path-376" fill="#4D6D8E"></path>
+                <path d="M919.996094,959.996094 L919.996094,1090.99609 L703,1218.80579 L703,1052.32761 L919.996094,959.996094 Z" id="Path-376-Copy-3" fill="#B14E31"></path>
+                <path d="M956.99453,795.082497 L956.498047,856.498047 L944.743809,932.337035 C936.495222,985.557372 919.998047,1091.99805 919.998047,1091.99805 L919.998047,960.498047 L956.99453,795.082497 Z" id="Path-376-Copy-4" fill="#AA4426"></path>
+                <path d="M515.447175,956.827283 L506.032342,1088.08229 L484.216887,1038.96803 L484.101952,859.929387 L515.447175,956.827283 Z" id="Path-376-Copy" fill="#3A5B7F"></path>
+                <path d="M483.999608,858.250128 L484.127889,859.981261 L484.131151,865.376551 L484.236235,1039.1485 L479.648773,1015.71088 L479.648773,978.756852 L479.648773,799.535895 L483.999608,858.250128 Z" id="Path-376-Copy-2" fill="#304C6A"></path>
             </g>
-            <g id="trees" transform="translate(44.000000, 168.000000)">
+            <g id="trees" transform="translate(45.000000, 170.000000)">
                 <g id="trees_white" transform="translate(0.000000, 54.000000)">
                     <g id="tree" transform="translate(69.000000, 13.000000)">
                         <path d="M25.7673024,24.4148936 C23.9061473,21.3213831 19.4153927,22.3221884 19.4153927,22.3221884 L14.8320083,23.174772 C14.8320083,23.174772 7.34117648,33.870821 0.0731847533,41.3890578 C0.0731847533,41.3890578 12.0790671,49.2173252 18.5603461,51 C26.6849494,48.8297872 38.9202436,43.4817633 38.9202436,43.4817633 C35.0796557,39.1877874 28.8028543,29.4604224 25.7673024,24.4148936 Z" id="tree_middle" fill="#B5ACAC"></path>

@@ -1,0 +1,21 @@
+section {
+  padding: 0 40px 40px;
+
+  > p {
+    line-height: 2;
+    font-size: 1.5rem;
+    max-width: 576px;
+    margin: 0 auto;
+    text-align: justify;
+  }
+
+  a {
+    border-bottom: 3px solid $primary-color;
+    color: $white;
+  }
+
+  svg {
+    min-height: 300px;
+    margin-top: 200px;
+  }
+}
