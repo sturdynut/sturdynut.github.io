@@ -1,21 +1,152 @@
 .site-content {
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-position: 2px calc(100% + 281px);
   background-color: $background-color;
+  background-image: url('/images/mountain-scene.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .mountain-scene {
   background: transparent url('/images/mountain-scene.svg') no-repeat;
-  background-size: 490px 738px;
-  width: 490px;
-  height: 738px;
+  background-size: contain;
+  background-position: center;
+  width: 100%;
+  height: 742px;
+  margin: 0 auto;
+}
+
+.featured-button {
+  margin-top: 50px;
+  font-size: 1em;
+  transition: all 100ms;
+  color: $white;
+  font-family: $button-font-family;
+  line-height: 67px;
+  width: 120px;
+  background: $background-color;
   position: relative;
+  width: 170px;
+  text-align: center;
+  border-radius: 2px;
+
+  span {
+    position: relative;
+    z-index: 2;
+  }
+
+  &:after {
+    content: ' ';
+    position: absolute;
+    top: 60px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $white;
+    z-index: 1;
+    transition: all 500ms;
+  }
+
+  &:hover,
+  &:active {
+    animation: bob 2s infinite;
+    color: $background-color;
+
+    &:after {
+      top: 0;
+    }
+  }
+}
+
+.social-media-list {
+  height: 75px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
+
+// .social-media-list {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//
+//   @include when-using(768px) {
+//     flex: 1;
+//   }
+//
+//   @include when-using($tablet) {
+//     border-top-style: none;
+//   }
+//
+//   > li {
+//     flex: 1;
+//     margin-right: 24px;
+//
+//     &:last-child {
+//       margin-right: 0;
+//     }
+//
+//     > a {
+//       color: $footer-color;
+//       display: block;
+//       text-align: center;
+//       padding: 30px 60px;
+//       transition: all 300ms;
+//
+//       @include when-using(768px) {
+//         display: flex;
+//         flex-direction: column;
+//         align-items: center;
+//         justify-content: center;
+//       }
+//
+//       &:hover {
+//         color: $white;
+//         background-color: darken($primary-color, 15%);
+//
+//         .icon svg {
+//           path {
+//             fill: $white;
+//           }
+//         }
+//       }
+//
+//       .icon svg {
+//         path {
+//           fill: $white;
+//         }
+//         height: 30px;
+//         width: 30px;
+//
+//         @include when-using(768px) {
+//           height: 25px;
+//           width: 25px;
+//           margin: 0 auto;
+//         }
+//       }
+//
+//       .username {
+//         color: $white;
+//         display: block;
+//         font-size: 1.2em;
+//         padding-top: 4px;
+//
+//         @include when-using(768px) {
+//           font-size: 1em;
+//         }
+//
+//         @include when-using($laptop) {
+//           padding-top: 5px;
+//         }
+//       }
+//     }
+//   }
+// }
