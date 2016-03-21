@@ -8,7 +8,6 @@
   left: 0;
   right: 0;
   transition: all 400ms;
-  height: 105px;
 
   &.active {
     z-index: 10002;
@@ -131,9 +130,10 @@
   right: -9999px;
   bottom: 0;
   transition: all 50ms;
-  background-color: $menu-background-color;
+  background-color: $background-color;
   padding-top: 60px;
   max-width: 600px;
+  width: 100%;
   height: 100%;
   min-height: 900px;
 
@@ -166,10 +166,8 @@
   }
 
   .site-nav-group {
-    text-align: center;
-    line-height: 60px;
-    font-size: 1.3em;
-    vertical-align: middle;
+    font-size: 1.1em;
+    padding: 15px 20px 10px;
   }
 
   .site-nav-info {

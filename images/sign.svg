@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="324px" height="324px" viewBox="0 0 324 324" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.6.1 (26313) - http://www.bohemiancoding.com/sketch -->
+    <title>sign</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="-13.7769539%" y1="65.0541235%" x2="72.9956908%" y2="1.2855328%" id="linearGradient-1">
+            <stop stop-color="#B0DCF3" offset="0%"></stop>
+            <stop stop-color="#78B6E2" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-2" x="57" y="59" width="209.020815" height="209.020815"></rect>
+        <linearGradient x1="50%" y1="4.07963967%" x2="50%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#F5E0E0" offset="0%"></stop>
+            <stop stop-color="#F3D7C7" offset="100%"></stop>
+            <stop stop-color="#B43B3A" offset="100%"></stop>
+        </linearGradient>
+        <path id="path-4" d="M137.480923,48.126595 L109.453447,72.8567243 L113.221847,55.1923451 L162.083336,5.29931307 L214.497606,59.7998052 L212.377886,70.2659497 L193.189697,59.7998052 L174.149467,38.1393514 L155.807953,50.1923451 L139.562613,57.832684 L137.480923,48.126595 Z"></path>
+        <linearGradient x1="85.4990584%" y1="91.820147%" x2="6.40301318%" y2="23.0472304%" id="linearGradient-5">
+            <stop stop-color="#000000" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#350A07" stop-opacity="0.173884737" offset="100%"></stop>
+        </linearGradient>
+        <path id="path-6" d="M162.083336,5.29931307 L215.439709,61.0804715 L210.964733,69.5593686 L193.189697,59.7998052 L174.149467,38.1393514 L155.807953,50.1923451 L162.083336,5.29931307 Z"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="sign">
+            <g id="Rectangle-95">
+                <use stroke="url(#linearGradient-1)" stroke-width="7" fill="#350A07" fill-rule="evenodd" transform="translate(161.510408, 163.510408) rotate(-315.000000) translate(-161.510408, -163.510408) " xlink:href="#path-2"></use>
+                <use stroke="none" fill="none" xlink:href="#path-2"></use>
+            </g>
+            <path d="M38.5,163.5 L284.5,163.5" id="Line" stroke="#F5DFD7" stroke-width="3" stroke-linecap="square" opacity="0.201434235"></path>
+            <text id="est.-1986" font-family="Merriweather-LightItalic, Merriweather" font-size="10" font-style="italic" font-weight="300" fill="#825246">
+                <tspan x="141.036133" y="263">est. 1986</tspan>
+            </text>
+            <g id="top-copy-2">
+                <use fill="none" xlink:href="#path-4"></use>
+                <use fill="url(#linearGradient-3)" fill-rule="evenodd" xlink:href="#path-4"></use>
+            </g>
+            <g id="top-copy-3">
+                <use fill="none" xlink:href="#path-6"></use>
+                <use fill="url(#linearGradient-5)" fill-rule="evenodd" xlink:href="#path-6"></use>
+            </g>
+            <text id="Matti" font-family="Merriweather-Heavy, Merriweather" font-size="29" font-weight="600" fill="#F9BDA8">
+                <tspan x="121.35498" y="120">Matti</tspan>
+            </text>
+            <text id="Salokangas" font-family="Merriweather-Heavy, Merriweather" font-size="24" font-weight="600" fill="#F9BDA8">
+                <tspan x="91.1699219" y="149">Salokangas</tspan>
+            </text>
+            <text id="UX-DEVELOPER" font-family="Merriweather-Heavy, Merriweather" font-size="16" font-weight="600" fill="#79B7E2">
+                <tspan x="97.4960938" y="195">UX DEVELOPER</tspan>
+            </text>
+            <text id="DESIGNER" font-family="Merriweather-Heavy, Merriweather" font-size="16" font-weight="600" fill="#79B7E2">
+                <tspan x="119.28125" y="215">DESIGNER</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
