@@ -23,8 +23,23 @@
 .about-section {
   padding: 30px;
 
-  @include when-using($laptop) {
+  > img {
+    display: block;
+    margin: 30px auto;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 3px;
+
+    @include when-using($tablet) {
+      margin-bottom: 60px;
+    }
+  }
+
+  @include when-using($tablet) {
     padding: 80px 30px;
-    background: rgba(0, 0, 0, 0.2);
+  }
+
+  @include when-using($laptop) {
+    padding: 30px;
   }
 }
