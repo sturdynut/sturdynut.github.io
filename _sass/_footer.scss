@@ -6,6 +6,18 @@
   font-size: 12px;
   height: 94px;
   margin-top: 200px;
+
+  @include when-using($tablet) {
+    text-align: right;
+    padding: 0 30px;
+  }
+
+  @include when-using($laptop) {
+    margin-top: 0;
+    height: auto;
+    padding: 30px;
+    text-align: center;
+  }
 }
 
 .btn.subscribe-link {
