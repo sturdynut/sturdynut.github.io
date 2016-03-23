@@ -36,11 +36,11 @@ body {
 body {
     font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
     color: $text-color;
-    background-position: 0 calc(100% + 50px);
+    background-position: 50% calc(100% - 50px);
     background-color: $background-color;
     background-image: url('/images/mountain-scene-2.svg');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 350px;
     -webkit-text-size-adjust: 100%;
     -webkit-font-feature-settings: "kern" 1;
     -moz-font-feature-settings: "kern" 1;
@@ -51,18 +51,11 @@ body {
     -moz-osx-font-smoothing: grayscale;
 
     @include when-using(557px) {
-      background-position: 0 calc(100% + 100px);
-    }
-
-    @include when-using(622px) {
-      background-position: 0 calc(100% + 200px);
-    }
-
-    @include when-using(788px) {
-      background-position: 0 calc(100% + 250px);
+      background-size: 550px;
     }
 
     @include when-using($laptop) {
+      background-size: contain;
       background-position: 50% 50px;
       background-size: 864px 580px;
     }
@@ -79,8 +72,6 @@ ul, ol, dl, figure,
 %vertical-rhythm {
     margin-bottom: $spacing-unit / 2;
 }
-
-
 
 /**
  * Images
@@ -124,9 +115,19 @@ h1, h2, h3 {
   color: $heading-color;
   font-family: $header-font-family;
 }
-h1, h2, h3, h4, h5, h6 {
+h2, h3, h4, h5, h6 {
   font-weight: $base-font-weight;
 }
+
+h1 {
+  text-align: right;
+  font-size: 5em;
+  margin-bottom: 40px;
+  font-weight: 700;
+  padding-right: 20px;
+  color: $white;
+}
+
 
 
 
