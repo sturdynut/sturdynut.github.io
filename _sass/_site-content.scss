@@ -5,8 +5,7 @@
 
 .name-occupation {
   width: 324px;
-  height: 324px;
-  background-position: center;
+  height: 100vh;
   background-image: url('/images/sign.svg');
   background-repeat: no-repeat;
   background-size: contain;
@@ -17,6 +16,27 @@
     height: 100vh;
     margin: 0 auto;
     background-position: center;
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 0 20px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
   }
 }
 
@@ -29,6 +49,7 @@
     width: 100%;
     max-width: 400px;
     border-radius: 3px;
+    box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.9);
 
     @include when-using($tablet) {
       margin-bottom: 60px;
@@ -41,5 +62,8 @@
 
   @include when-using($laptop) {
     padding: 30px;
+    box-shadow: 0 1px 12px 5px rgba(0, 0, 0, 0.9);
+    height: 100%;
+    background-image: linear-gradient(-180deg, #CB5251 0%, #FF8A48 100%);
   }
 }
