@@ -145,7 +145,7 @@
 
   @include when-using($tablet) {
     min-width: 600px;
-    border-radius: 35px 0 0 0;
+    border-radius: 4px 0 0 0;
     box-shadow: -1px 0 3px 1px rgba(0, 0, 0, 0.1);
   }
 
@@ -173,6 +173,10 @@
   &.site-nav-pages-work,
   &.site-nav-pages-channels {
     flex-direction: row;
+  }
+
+  &.site-nav-pages-info {
+    padding-top: 30px;
   }
 
   .site-nav-info,
@@ -232,6 +236,15 @@
 
     &:last-child {
       margin-right: 0;
+    }
+  }
+
+  .site-nav-pages-info & {
+    margin-top: 12px;
+    border-radius: 4px;
+
+    &:first-child {
+      margin-top: 0;
     }
   }
 
