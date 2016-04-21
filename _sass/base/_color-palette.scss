@@ -1,11 +1,11 @@
 $white: #F8F6F6;
 $black: #111;
-$blue:  #78B6E2;
+$blue:  #78B7E2;
 $dark-red:  #2F0C07;
-$red: #c0392b;
-$orange:  #d35400;
+$red: #9F3636;
+$orange:  #E8673D;
 $yellow:  #FDB24F;
-$purple:  #443A47;
+$purple:  #946B9E;
 $brown:  #714E2F;
 $tan: #F8AA87;
 $green:  #3E522A;
@@ -16,11 +16,11 @@ $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
-$primary-color: $red;
+$primary-color: $green;
 $primary-color-dark: darken($primary-color, 15%);
 $primary-color-light: lighten($primary-color, 15%);
-$secondary-color: $blue;
-$tertiary-color: $tan;
+$secondary-color: $yellow;
+$tertiary-color: $red;
 
 $quote-color: $blue;
 $header-color: $black;
@@ -28,7 +28,7 @@ $heading-color: $white;
 $footer-color: $white;
 $footer-text-color: $black;
 $title-color: $tan;
-$background-color: $dark-red;
+$background-color: $green;
 $background-image: none;
 $text-color: $white;
 
@@ -36,7 +36,14 @@ $text-color: $white;
 $menu-background-color: $dark-grey;
 $menu-item-color: $white;
 $menu-item-hover-color: $white;
-$menu-item-background-color: $primary-color;
-$menu-item-background-hover-color: darken($menu-item-background-color, 15%);
+$menu-item-background-color: darken($menu-background-color, 5%);
+$menu-item-background-hover-color: darken($menu-item-background-color, 5%);
+$menu-trigger-color: darken($secondary-color, 5%);
+$menu-trigger-active-color: darken($secondary-color, 5%);
 
-$keyword-color: $secondary-color;
+/** Home Page **/
+$intro-navigation-background-color: $secondary-color;
+$intro-navigation-background-active-color: darken($secondary-color, 5%);
+
+/** Posts **/
+$keyword-color: $tertiary-color;

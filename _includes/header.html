@@ -11,7 +11,7 @@
             </g>
         </g>
     </svg>
-    <span class='site-title'>{{ site.title }}</span>
+    <span class='site-title'>SturdyNut</span>
   </a>
 
 </header>
@@ -25,56 +25,59 @@
 </a>
 
 <nav class='site-nav js-site-nav'>
-  <ul class='site-nav-pages'>
-    <li class='site-nav-group'>
-      I write about what I do.
-    </li>
+  <h3 class='site-nav-group'>
+    I write about what I do.
+  </h3>
+  <ul class='site-nav-pages  site-nav-pages-blog'>
     <li class='site-nav-page'>
       <a href='http://sturdynut.com/blog' target='_blank'>
-        <span>Blog</span>
-        <span class='site-nav-post-meta'>http://sturdynut.com/blog</span>
+        <span>Read my blog</span>
       </a>
     </li>
-    <li class='site-nav-group'>
-      Check out my work.
-    </li>
+  </ul>
+  <h3 class='site-nav-group'>
+    Check out my work.
+  </h3>
+  <ul class='site-nav-pages site-nav-pages-work'>
     <li class='site-nav-page'>
       <a href='https://github.com/sturdynut' target='_blank'>
         <span>GitHub</span>
-        <span class='site-nav-post-meta'>https://github.com/sturdynut</span>
+        <span class='site-nav-post-meta'>{% include icon-github.svg %}</span>
       </a>
     </li>
     <li class='site-nav-page'>
       <a href='http://codepen.io/sturdynut/' target='_blank'>
         <span>CodePen</span>
-        <span class='site-nav-post-meta'>http://codepen.io/sturdynut/</span>
+        <span class='site-nav-post-meta'>{% include icon-codepen.svg %}</span>
       </a>
     </li>
     <li class='site-nav-page'>
       <a href='https://dribbble.com/sturdynut' target='_blank'>
         <span>Dribbble</span>
-        <span class='site-nav-post-meta'>https://dribbble.com/sturdynut</span>
+        <span class='site-nav-post-meta'>{% include icon-dribbble.svg %}</span>
       </a>
     </li>
-    <li class='site-nav-group'>
-      Connect to me on one of these channels.
-    </li>
+  </ul>
+  <h3 class='site-nav-group'>
+    Connect to me on one of these channels.
+  </h3>
+  <ul class='site-nav-pages site-nav-pages-channels'>
     <li class='site-nav-page'>
       <a href='https://twitter.com/sturdynut' target='_blank'>
         <span>Twitter</span>
-        <span class='site-nav-post-meta'>@sturdynut</span>
+        <span class='site-nav-post-meta'>{% include icon-twitter.svg %}</span>
       </a>
     </li>
     <li class='site-nav-page'>
       <a href='https://www.linkedin.com/in/mattisalokangas' target='_blank'>
         <span>LinkedIn</span>
-        <span class='site-nav-post-meta'>So old school</span>
+        <span class='site-nav-post-meta'>{% include icon-linkedin.svg %}</span>
       </a>
     </li>
     <li class='site-nav-page'>
-      <a href='mailto:matti@sturdynut.com' target='_blank'>
+      <a href='mailto:matti@sturdynut.com' title='matti@sturdynut.com' target='_blank'>
         <span>Email</span>
-        <span class='site-nav-post-meta'>matti [at] sturdynut.com (even more old school)</span>
+        <span class='site-nav-post-meta'>{% include icon-telegram.svg %}</span>
       </a>
     </li>
   </ul>
