@@ -1,0 +1,141 @@
+/*
+  Home Page Styles
+*/
+.intro {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 90vh;
+
+  @include when-using($tablet) {
+    min-height: 600px;
+  }
+
+  // @include when-using($laptop) {
+  //   &:before {
+  //     content: ' ';
+  //     position: absolute;
+  //     top: 0;
+  //     right: 0;
+  //     bottom: 0;
+  //     left: 0;
+  //     background-color: $background-color;
+  //     border: 8px solid $blue;
+  //     transform: rotate(405deg);
+  //     transition: all 1s ease-in-out;
+  //   }
+  // }
+
+  .site-logo {
+    display: none;
+
+    @include when-using($tablet) {
+      position: relative;
+      height: 105px;
+      width: 91px;
+      display: block;
+    }
+  }
+
+  h1 {
+    position: relative;
+    margin: 0 0 20px;
+    padding: 0;
+    text-align: center;
+    line-height: 1;
+    font-family: 'Satisfy';
+    font-weight: 100;
+
+    .first-name {
+      display: block;
+      font-size: 7rem;
+      font-weight: bold;
+    }
+    .last-name {
+      font-size: 4rem;
+    }
+
+    @include when-using($tablet) {
+      margin: 5px 0 15px;
+    }
+  }
+
+  h2 {
+    position: relative;
+    margin: 0;
+    padding: 40px 0;
+    font-size: 3.3rem;
+    line-height: 1.2;
+    text-align: center;
+
+    @include when-using($tablet) {
+      padding: 40px;
+    }
+  }
+}
+
+.intro-navigation {
+  margin: 0;
+  padding: 0 20px;
+  position: absolute;
+  bottom: 125px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
+  @include when-using($laptop) {
+    max-width: 600px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 230px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0;
+
+    li {
+      margin: 0 24px 0 0;
+      padding: 0;
+      flex: 1;
+      list-style: none;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+// .about-section {
+//   padding: 30px;
+
+//   > img {
+//     display: block;
+//     margin: 30px auto;
+//     width: 100%;
+//     max-width: 400px;
+//     border-radius: 3px;
+//     box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.9);
+
+//     @include when-using($tablet) {
+//       margin-bottom: 60px;
+//     }
+//   }
+
+//   @include when-using($tablet) {
+//     padding: 80px 30px;
+//   }
+
+//   @include when-using($laptop) {
+//     padding: 30px;
+//     box-shadow: 0 1px 12px 5px rgba(0, 0, 0, 0.9);
+//     height: 100%;
+//     background-image: linear-gradient(-180deg, #CB5251 0%, #FF8A48 100%);
+//   }
+// }

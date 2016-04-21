@@ -4,18 +4,14 @@
 .site-footer {
   text-align: center;
   font-size: 12px;
-  height: 94px;
-  margin-top: 200px;
-
-  @include when-using($tablet) {
-    padding: 0 30px;
-  }
+  line-height: 50px;
+  position: fixed;
+  bottom: 48px;
+  left: 0;
+  right: 0;
 
   @include when-using($laptop) {
-    margin-top: 0;
-    height: auto;
-    padding: 30px;
-    text-align: center;
+    bottom: 0;
   }
 }
 

@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: All Posts
 permalink: /blog/posts/
 ---

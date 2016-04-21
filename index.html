@@ -2,25 +2,21 @@
 layout: default
 ---
 
-<section class='name-occupation'>
-  <div class='first-name'>Matti</div>
-  <div class='last-name'>Salokangas</div>
-  <div class='occupation-name'>UX Developer & Desiger</div>
-  <ul class='actions'>
+<section class='intro'>
+  <h1 class='full-name'><span class='first-name'>Matti</span> <span class='last-name'>Salokangas</span></h1>
+  <h2>Front-End Developer</h2>
+</section>
+
+<nav class='intro-navigation' role='navigation'>
+  <ul>
     <li>
-      <a href='http://sturdynut.com/blog' target='_blank' class='featured-button'><span>Blog</span></a>
+      <a href='/blog' target='_blank' class='featured-button'><span>Blog</span></a>
     </li>
     <li>
       <a href='http://github.com/sturdynut' target='_blank' class='featured-button'><span>Projects</span></a>
     </li>
     <li>
-      <a href='#about' class='featured-button'><span>About</span></a>
+      <a href='/about' class='featured-button'><span>About</span></a>
     </li>
   </ul>
-</section>
-
-<section class='about-section'>
-  <h1 id='about'>About</h1>
-  <img src='images/matti2.jpg' alt='Matti Salokangas' title='UX Developer & Desiger' />
-  <p>{{ site.description }}</p>
-</section>
+</nav>

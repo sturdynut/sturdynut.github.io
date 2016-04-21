@@ -1,0 +1,11 @@
+@mixin when-using($device) {
+    @media screen and (min-width: $device) {
+        @content;
+    }
+}
+
+@mixin max-width($width) {
+  @media screen and (max-width: $width) {
+      @content;
+  }
+}
