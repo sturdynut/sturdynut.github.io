@@ -5,14 +5,6 @@
   text-align: center;
   font-size: 12px;
   line-height: 50px;
-  position: fixed;
-  bottom: 48px;
-  left: 0;
-  right: 0;
-
-  @include when-using($laptop) {
-    bottom: 0;
-  }
 }
 
 .btn.subscribe-link {

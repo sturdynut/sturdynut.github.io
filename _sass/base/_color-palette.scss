@@ -34,8 +34,8 @@ $text-color: $white;
 
 /** Site Menu **/
 $menu-background-color: $dark-grey;
-$menu-item-color: $white;
-$menu-item-hover-color: $white;
+$menu-item-color: $secondary-color;
+$menu-item-hover-color: $secondary-color;
 $menu-item-background-color: darken($menu-background-color, 5%);
 $menu-item-background-hover-color: darken($menu-item-background-color, 5%);
 $menu-trigger-color: darken($secondary-color, 5%);

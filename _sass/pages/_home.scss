@@ -8,11 +8,15 @@
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  padding: 0 20px;
-  height: 90vh;
+  padding: 100px 20px 0;
 
   @include when-using($tablet) {
-    min-height: 600px;
+    // margin: 0 auto;
+    // height: 90vh;
+    // min-height: 600px;
+    // margin-top: 180px;
+    // margin-bottom: 40px;
+    padding-bottom: 40px;
   }
 
   // @include when-using($laptop) {
@@ -43,70 +47,82 @@
 
   h1 {
     position: relative;
-    margin: 0 0 20px;
+    margin: 0 0 10px;
     padding: 0;
     text-align: center;
     line-height: 1;
     font-family: 'Satisfy';
     font-weight: 100;
-
-    .first-name {
-      display: block;
-      font-size: 7rem;
-      font-weight: bold;
-    }
-    .last-name {
-      font-size: 4rem;
-    }
+    font-size: 2rem;
 
     @include when-using($tablet) {
       margin: 5px 0 15px;
+    }
+
+    .first-name {
+      font-size: 3rem;
+
+      @include when-using($tablet) {
+        font-weight: bold;
+        display: block;
+        font-size: 7rem;
+      }
+    }
+
+    .last-name {
+      font-size: 3rem;
+
+      @include when-using($tablet) {
+        font-size: 4rem;
+      }
     }
   }
 
   h2 {
     position: relative;
     margin: 0;
-    padding: 40px 0;
-    font-size: 3.3rem;
+    padding: 10px 0 40px;
+    font-size: 1.6rem;
     line-height: 1.2;
     text-align: center;
 
     @include when-using($tablet) {
       padding: 40px;
+      font-size: 3.3rem;
     }
   }
 }
 
 .intro-navigation {
-  margin: 0;
+  margin: 0 auto;
   padding: 0 20px;
-  position: absolute;
-  bottom: 125px;
-  left: 0;
-  right: 0;
-  z-index: 1;
 
-  @include when-using($laptop) {
+  @include when-using($tablet) {
+    margin-bottom: 80px;
     max-width: 600px;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 230px;
   }
 
   ul {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin-bottom: 0;
 
+    @include when-using($tablet) {
+      flex-direction: row;
+    }
+
     li {
-      margin: 0 24px 0 0;
+      margin: 0 0 12px 0;
       padding: 0;
       flex: 1;
       list-style: none;
 
-      &:last-child {
-        margin-right: 0;
+      @include when-using($tablet) {
+        margin: 0 24px 0 0;
+
+        &:last-child {
+          margin-right: 0;
+        }
       }
     }
   }
