@@ -22,13 +22,14 @@
   }
 
   .social-information {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     background: rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: left;
     line-height: 1.75;
 
     @include when-using($tablet) {
+      font-size: 1.5rem;
       padding: 30px;
       border-radius: 20px;
       margin: 0 30px;

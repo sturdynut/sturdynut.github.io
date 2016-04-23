@@ -2,7 +2,7 @@
   border: 1px solid $text-color;
   color: $text-color;
   padding: 10px 25px;
-  border-radius: 2px;
+  border-radius: $border-radius;
   font-family: $button-font-family;
 }
 
@@ -18,15 +18,6 @@
   font-size: 3rem;
   width: 100px;
 
-  // @include when-using($laptop) {
-  //   position: static;
-  //   padding: 0 30px;
-  //   max-width: 220px;
-  //   margin: 40px auto;
-  //   font-size: 1.5rem;
-  //   line-height: 3;
-  // }
-
   &:hover {
     border-color: $secondary-color;
     left: -10px;
@@ -40,10 +31,6 @@
 
   .text {
     display: none;
-
-    // @include when-using($laptop) {
-    //   display: inline-block;
-    // }
   }
 }
 
@@ -54,39 +41,46 @@
   font-family: $button-font-family;
   line-height: 60px;
   background: transparent;
+  border: 1px solid $intro-navigation-background-active-color;
+  border-radius: $border-radius;
   position: relative;
   text-align: center;
   display: block;
   text-indent: 0;
-  font-weight: 700;
-  transition: color 300ms;
+  transition: all 300ms;
+  font-weight: 100;
 
   span {
     position: relative;
     z-index: 2;
   }
 
-  &::after {
-    content: ' ';
-    position: absolute;
-    top: 56px;
-    right: 0;
-    bottom: 0;
-    background-color: $intro-navigation-background-active-color;
-    z-index: 1;
-    transition: all 300ms;
-    width: 100%;
-    border-radius: 2px;
-  }
-
-  &:hover,
-  &:active {
-    animation: bob 4s infinite;
-    color: $background-color;
-
+  @include when-using($tablet) {
     &::after {
-      top: 0;
-      // width: 100%;
+      content: ' ';
+      position: absolute;
+      top: 60px;
+      right: 0;
+      bottom: 0;
+      background-color: $intro-navigation-background-active-color;
+      z-index: 1;
+      transition: all 500ms;
+      width: 100%;
+    }
+
+    &:hover,
+    &:active {
+      animation: bob 4s infinite;
+      color: $background-color;
+
+      .site-nav & {
+        animation: none;
+        color: $menu-background-color;
+      }
+
+      &::after {
+        top: 0;
+      }
     }
   }
 }

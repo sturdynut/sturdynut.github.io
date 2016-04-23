@@ -3,15 +3,10 @@
  */
 .site-header {
   position: fixed;
-  z-index: 1000;
+  z-index: 10002;
   top: 0;
   left: 0;
   right: 0;
-  transition: all 400ms;
-
-  &.active {
-    z-index: 10002;
-  }
 }
 
 .site-title-wrapper {
@@ -132,18 +127,18 @@
 .site-nav {
   position: fixed;
   z-index: 1000;
-  top: 66px;
+  top: 0;
   right: -9999px;
   bottom: 0;
   transition: all 250ms;
   background-color: $menu-background-color;
   max-width: 600px;
   width: 100%;
-  height: 100%;
-  min-height: 900px;
-  padding: 0 20px;
+  padding: 50px 20px 0;
+  overflow-y: auto;
 
   @include when-using($tablet) {
+    height: 100%;
     min-width: 600px;
     border-radius: 4px 0 0 0;
     box-shadow: -1px 0 3px 1px rgba(0, 0, 0, 0.1);
@@ -177,6 +172,18 @@
 
   &.site-nav-pages-info {
     padding-top: 30px;
+
+    .site-nav-page {
+      margin-bottom: 12px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      a {
+        font-size: 1.4rem;
+      }
+    }
   }
 
   .site-nav-info,
@@ -196,7 +203,7 @@
     width: 55px;
 
     path {
-      fill: $white;
+      fill: $menu-item-color;
     }
   }
 
@@ -221,67 +228,47 @@
 }
 
 .site-nav-page {
-  background-color: $menu-item-background-color;
   transition: all 300ms;
-  border-radius: 10px;
-
-  @include when-using($tablet) {
-    border-radius: 35px;
-  }
 
   .site-nav-pages-work &,
   .site-nav-pages-channels & {
     flex: 1;
     margin-right: 12px;
+    background-color: $menu-item-background-color;
+    border-style: none;
+    border-radius: $border-radius;
+
+    &:hover {
+      background-color: $menu-item-background-hover-color;
+
+      a {
+        color: $menu-item-hover-color;
+      }
+    }
 
     &:last-child {
       margin-right: 0;
     }
-  }
-
-  .site-nav-pages-info & {
-    margin-top: 12px;
-    border-radius: 4px;
-
-    &:first-child {
-      margin-top: 0;
-    }
-  }
-
-  &:hover {
-    background-color: $menu-item-background-hover-color;
 
     a {
-      color: $menu-item-hover-color;
-    }
-  }
-
-  a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: $menu-item-color;
-    line-height: 2;
-    padding: 10px 0;
-    font-size: 1rem;
-
-    @include when-using($tablet) {
-      font-size: 1.2rem;
-      padding: 15px 20px 20px;
-    }
-
-    span:first-child {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: $menu-item-color;
+      line-height: 2;
+      padding: 10px 0;
+      font-size: 1rem;
       text-transform: uppercase;
 
-      .site-nav-pages-work &,
-      .site-nav-pages-channels & {
-        margin-bottom: 5px;
+      @include when-using($tablet) {
+        font-size: 1.2rem;
+        padding: 15px 20px 20px;
       }
-    }
 
-    span:last-child:not(:first-child) {
-      font-size: 0.7em;
+      span:last-child:not(:first-child) {
+        font-size: 0.7em;
+      }
     }
   }
 }
