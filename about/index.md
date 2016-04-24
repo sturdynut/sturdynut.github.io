@@ -9,15 +9,22 @@ tags:
 
 <section class='about-section'>
   <h1>About</h1>
-  <p class='summary'>
+  <div class='summary'>
     {{ site.description }}
+  </div>
+  <h2>I Write...</h2>
+  <p>
+    about what I learn on <a href='http://sturdynut.com/blog' target='_blank'>My Blog</a>.
   </p>
-  <p class='social-information'>
-    I write about what I learn on <a href='http://sturdynut.com/blog' target='_blank'>My Blog</a>.<br />
-    You can find me coding on <a href='http://github.com/sturdynut' target='_blank'>Github</a>,
+  <h2>You can find me...</h2>
+  <p>
+    coding on <a href='http://github.com/sturdynut' target='_blank'>Github</a>,
     designing on <a href='http://dribbble.com/sturdynut' target='_blank'>Dribbble</a>
     and tweeting on <a href='http://twitter.com/sturdynut' target='_blank'>Twitter</a>.
   </p>
+  <div class='thank-you'>
+    Thank you for stopping by!
+  </div>
   <a class='btn-home' href='/'>
     <span class='icon'>&#8629;</span>
     <span class='text'>Home</span>

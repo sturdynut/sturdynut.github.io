@@ -9,6 +9,23 @@
   justify-content: center;
   margin: 0 auto;
   padding: 100px 20px 0;
+  max-width: 1440px;
+  margin-top: 50px;
+
+  // @include when-using(557px) {
+  //   background-size: 550px;
+  // }
+
+  background-image: url('/images/mountain.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  // @include when-using($laptop) {
+  //   background-size: contain;
+  //   background-position: 50% 50px;
+  //   background-size: 864px 580px;
+  // }
 
   @include when-using($tablet) {
     // margin: 0 auto;
@@ -17,9 +34,13 @@
     // margin-top: 180px;
     // margin-bottom: 40px;
     padding-bottom: 40px;
+    padding-top: 305px;
   }
 
-  // @include when-using($laptop) {
+  @include when-using($laptop) {
+    background-size: 1440px;
+    background-position: bottom;
+    padding-top: 160px;
   //   &:before {
   //     content: ' ';
   //     position: absolute;
@@ -32,7 +53,7 @@
   //     transform: rotate(405deg);
   //     transition: all 1s ease-in-out;
   //   }
-  // }
+  }
 
   .site-logo {
     display: none;
@@ -45,36 +66,33 @@
     }
   }
 
+  img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    object-position: -35px 0;
+    margin-bottom: 50px;
+    border-radius: 50%;
+
+    @include when-using($tablet) {
+      width: 220px;
+      height: 220px;
+    }
+  }
+
   h1 {
     position: relative;
     margin: 0 0 10px;
     padding: 0;
     text-align: center;
     line-height: 1;
-    font-family: 'Satisfy';
     font-weight: 100;
     font-size: 2rem;
+    color: $background-color;
 
     @include when-using($tablet) {
       margin: 5px 0 15px;
-    }
-
-    .first-name {
       font-size: 3rem;
-
-      @include when-using($tablet) {
-        font-weight: bold;
-        display: block;
-        font-size: 7rem;
-      }
-    }
-
-    .last-name {
-      font-size: 3rem;
-
-      @include when-using($tablet) {
-        font-size: 4rem;
-      }
     }
   }
 
@@ -82,23 +100,25 @@
     position: relative;
     margin: 0;
     padding: 10px 0 40px;
-    font-size: 1.6rem;
+    font-size: 2.4rem;
+    font-family: 'Satisfy';
     line-height: 1.2;
     text-align: center;
+    color: $background-color;
+    visibility: hidden;
 
     @include when-using($tablet) {
       padding: 40px;
-      font-size: 3.3rem;
+      font-size: 5rem;
     }
   }
 }
 
 .intro-navigation {
   margin: 0 auto;
-  padding: 0 20px;
+  width: 100%;
 
   @include when-using($tablet) {
-    margin-bottom: 80px;
     max-width: 600px;
   }
 
@@ -119,6 +139,7 @@
 
       @include when-using($tablet) {
         margin: 0 24px 0 0;
+        width: 120px;
 
         &:last-child {
           margin-right: 0;

@@ -5,6 +5,25 @@
   text-align: center;
   font-size: 12px;
   line-height: 50px;
+  margin: 0 auto;
+  min-height: 100px;
+  position: relative;
+  top: -1px;
+  background-image: linear-gradient(-1deg, #CB5251 0%, #FF8A48 100%);
+  background-image: linear-gradient(13deg, rgba(15,124,194,0.50) 0%, #6AADE0 94%);
+
+  @include when-using($tablet) {
+    top: -3px;
+  }
+
+  @include when-using($laptop) {
+    background-image: url('/images/lake.svg');
+    background-repeat: no-repeat;
+    background-size: 1665px;
+    background-position: 10px -2px;
+    min-height: 450px;
+    max-width: 1665px;
+  }
 }
 
 .btn.subscribe-link {
