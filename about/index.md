@@ -25,7 +25,7 @@ tags:
   <h2>Connect to me...</h2>
   <p>
     on <a href='https://www.linkedin.com/in/mattisalokangas' target='_blank'>LinkedIn</a>,
-    or shoot me an email to <a href='mailto:matti@sturdynut.com?subject=Hello Matti!'>matti [at] sturdynut [dot] com</a>.
+    or email me at <a href='mailto:matti@sturdynut.com?subject=Hello Matti!'>matti [at] sturdynut [dot] com</a>.
   </p>
   <div class='thank-you'>
     Thank you for stopping by!
