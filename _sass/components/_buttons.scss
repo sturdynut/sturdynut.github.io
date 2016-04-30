@@ -37,10 +37,10 @@
 .featured-button {
   font-size: 1.4rem;
   transition: all 100ms;
-  color: $intro-navigation-background-active-color;
+  color: $background-color;
   font-family: $button-font-family;
   line-height: 60px;
-  background: $background-color;
+  background: $intro-navigation-background-active-color;
   border-radius: $border-radius;
   position: relative;
   text-align: center;
@@ -50,8 +50,9 @@
   font-weight: 100;
 
   .site-nav & {
-    background: transparent;
+    background: $red;
     border: 1px solid $intro-navigation-background-active-color;
+    color: $intro-navigation-background-active-color;
   }
 
   span {
@@ -66,20 +67,25 @@
       top: 60px;
       right: 0;
       bottom: 0;
-      background-color: $intro-navigation-background-active-color;
+      background-color: $red;
+      border-radius: $border-radius;
       z-index: 1;
       transition: all 500ms;
       width: 100%;
+
+      .site-nav & {
+        background-color: $intro-navigation-background-active-color;
+      }
     }
 
     &:hover,
     &:active {
       animation: bob 4s infinite;
-      color: $background-color;
+      color: $intro-navigation-background-active-color;
 
       .site-nav & {
         animation: none;
-        color: $menu-background-color;
+        color: $red;
       }
 
       &::after {

@@ -2,8 +2,7 @@
 title: Matti Salokangas, front-end developer in Oregon, USA
 email: matti.salokangas@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Hi, I'm Matti Salokangas.  I WFH as a front-end developer and love it.  I live with my amazing girlfriend in beautiful, southern Oregon where
-  we are building a tiny-ish home.  In between writing code and playing in Sketch I can be found at my local surf spot chasing waves.
+  Hi, I'm Matti Salokangas.  I work from home as a front-end developer and love it.  In between writing code and playing in Sketch I can be found at my local surf spot chasing waves.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://sturdynut.com" # the base hostname & protocol for your site
 twitter_username: sturdynut
