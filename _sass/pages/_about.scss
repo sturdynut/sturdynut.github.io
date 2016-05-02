@@ -1,6 +1,8 @@
-.about-section {
-  font-size: 2rem;
+/**
+ * About section
+ */
 
+.about-section {
   h1 {
     text-align: right;
     border-bottom: 4px solid $tertiary-color;
@@ -33,10 +35,19 @@
 
   p {
     padding-bottom: 20px;
+    font-size: 1.4rem;
+
+    @include when-using($tablet) {
+      font-size: 2rem;
+    }
+
+    @include when-using($laptop) {
+      font-size: 2.4rem;
+    }
   }
 
   .summary {
-    font-size: 2rem;
+    font-size: 1.8rem;
 
     @include when-using($laptop) {
       font-size: 3rem;
