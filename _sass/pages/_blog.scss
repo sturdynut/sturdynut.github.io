@@ -1,11 +1,14 @@
-/**
- * Posts
- */
-
 $post-max-width: 1200px;
 $post-gutter: 2rem;
 $post-spacer: 1.5rem;
 
+.blog-section {
+  height: 100vh;
+}
+
+/**
+ * Posts
+ */
 .post-container {
   background-repeat: no-repeat;
   padding-top: 80px;
