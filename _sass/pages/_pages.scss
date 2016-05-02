@@ -1,20 +1,6 @@
-section {
-  > p {
-    line-height: 1.6;
-    font-size: 1.4rem;
-    max-width: 910px;
-    margin: 0 auto;
-    text-align: left;
-    padding: 20px;
-  }
-
-  a {
-    border-bottom: 3px solid $primary-color;
-    color: $white;
-  }
-
-  svg {
-    min-height: 300px;
-    margin-top: 200px;
-  }
+.page {
+  height: 100vh;
+  margin: 55px auto 0;
+  padding: 30px;
+  max-width: 1200px;
 }
