@@ -13,7 +13,7 @@
   background-image: url('/images/mountain.svg');
   background-repeat: no-repeat;
   background-size: 1024px;
-  background-position: top center;
+  background-position: 50% 0;
 
   @include when-using($tablet) {
     padding-bottom: 0;
@@ -43,7 +43,7 @@
     width: 500px;
     background-size: 500px;
     height: 500px;
-    margin: 0 6px 0 40px;
+    margin: 0 6px 80px 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -63,6 +63,8 @@
 
     @include when-using($tablet) {
       margin-top: 40px;
+      width: 200px;
+      height: 200px;
     }
 
     @include when-using($laptop) {
