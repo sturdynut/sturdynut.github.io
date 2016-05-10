@@ -5,7 +5,7 @@ $dark-red:  #2F0C07;
 $red: #9F3636;
 $orange:  #E8673D;
 $yellow:  #FDB24F;
-$purple:  #946B9E;
+$purple:  darken(#946B9E, 10%);
 $brown:  #714E2F;
 $tan: #F8AA87;
 $green:  #3E522A;
@@ -20,7 +20,7 @@ $primary-color: $green;
 $primary-color-dark: darken($primary-color, 15%);
 $primary-color-light: lighten($primary-color, 15%);
 $secondary-color: $yellow;
-$tertiary-color: $red;
+$tertiary-color: $purple;
 
 $quote-color: $blue;
 $header-color: $black;
@@ -28,12 +28,12 @@ $heading-color: $white;
 $footer-color: $white;
 $footer-text-color: $black;
 $title-color: $tan;
-$background-color: #0C3253;
+$background-color: $dark-red;
 $background-image: none;
 $text-color: $white;
 
 /** Site Menu **/
-$menu-background-color: $red;
+$menu-background-color: darken($tertiary-color, 10%);
 $menu-item-color: $secondary-color;
 $menu-item-hover-color: $secondary-color;
 $menu-item-background-color: darken($menu-background-color, 5%);

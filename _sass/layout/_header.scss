@@ -112,6 +112,10 @@
     transform: rotate(180deg);
   }
 
+  &:hover path {
+    stroke: $tertiary-color;;
+  }
+
   path {
     stroke: $menu-trigger-color;
     stroke-width: 6px;
