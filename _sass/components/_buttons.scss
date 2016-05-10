@@ -50,8 +50,7 @@
   font-weight: 100;
 
   .site-nav & {
-    background: $red;
-    border: 1px solid $intro-navigation-background-active-color;
+    background: $tertiary-color;
     color: $intro-navigation-background-active-color;
   }
 
@@ -67,25 +66,27 @@
       top: 60px;
       right: 0;
       bottom: 0;
-      background-color: $red;
+      background-color: $tertiary-color;
       border-radius: $border-radius;
       z-index: 1;
       transition: all 500ms;
       width: 100%;
 
       .site-nav & {
-        background-color: $intro-navigation-background-active-color;
+        background: $intro-navigation-background-active-color;
       }
     }
 
     &:hover,
     &:active {
+      border-radius: 5px;
       animation: bob 4s infinite;
       color: $intro-navigation-background-active-color;
 
       .site-nav & {
         animation: none;
-        color: $red;
+        // background-color: $menu-item-background-hover-color;
+        color: $tertiary-color;
       }
 
       &::after {

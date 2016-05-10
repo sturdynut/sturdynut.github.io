@@ -13,8 +13,8 @@
   margin-top: 50px;
   background-image: url('/images/mountain.svg');
   background-repeat: no-repeat;
-  background-size: contain;
-  background-position: top;
+  background-size: 1024px;
+  background-position: top center;
 
   @include when-using($tablet) {
     padding-bottom: 0;
@@ -23,12 +23,9 @@
   }
 
   @include when-using($laptop) {
-    background-size: 640px;
-    background-position: top;
-    padding-top: 5px;
+    padding-top: 97px;
     padding-bottom: 140px;
     height: 100%;
-    min-height: 1100px;
   }
 
   .site-logo {
@@ -42,52 +39,96 @@
     }
   }
 
+  .intro-highlight {
+    width: 500px;
+    background-size: 500px;
+    height: 500px;
+    margin: 0 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+  }
+
   img {
     width: 160px;
     height: 160px;
     object-fit: cover;
     object-position: -35px 0;
-    margin: 22px 0 20px;
-    border-radius: 50%;
-    padding: 4px;
+    margin: 150px 0 15px;
+    border-radius: 17%;
+    padding: 13px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
 
     @include when-using($tablet) {
-      margin-top: 0;
-      width: 220px;
-      height: 220px;
+      margin-top: 40px;
+    }
+
+    @include when-using($laptop) {
+      margin-top: 150px;
     }
   }
 
   h1 {
     position: relative;
-    margin: 0 0 10px;
-    padding: 0 0 22px;
+    font-family: 'Satisfy';
+    margin: 0 0 15px;
+    padding: 5px 0 15px;
     text-align: center;
     line-height: 1;
     font-weight: 100;
-    font-size: 2rem;
-    color: $background-color;
-    border-bottom: 1px solid rgba(0,0,0,0.2);
-
-    @include when-using($tablet) {
-      margin: 5px 0 15px;
-      font-size: 3rem;
-    }
+    font-size: 2.6rem;
+    color: $white;
   }
 
   h2 {
+    width: 290px;
     position: relative;
-    margin: 0;
-    padding: 10px 0 40px;
-    font-size: 2rem;
-    font-family: 'Satisfy';
-    line-height: 1.2;
+    bottom: 28px;
+    border-radius: 23px;
+    border: 1px solid $yellow;
+    color: $intro-navigation-background-active-color;
+    margin: 25px 0 0;
+    padding: 0;
+    font-size: 1.3rem;
+    font-family: $button-font-family;
+    line-height: 1;
     text-align: center;
-    color: $background-color;
-    visibility: hidden;
+    transition: all 500ms;
 
     @include when-using($tablet) {
-      font-size: 3rem;
+      &:hover,
+      &:active {
+        border-color: transparent;
+        color: $intro-navigation-background-active-color;
+
+        &::after {
+          top: 0;
+          width: 100%;
+        }
+      }
+
+      &::after {
+        content: ' ';
+        position: absolute;
+        top: 40px;
+        bottom: 0;
+        background-color: $tertiary-color;
+        border-radius: 23px;
+        z-index: 1;
+        transition: all 500ms;
+        transform: translateX(-50%);
+        width: 0;
+      }
+    }
+
+    a {
+      color: inherit;
+      padding: 10px 15px;
+      display: block;
+      position: relative;
+      z-index: 10;
     }
   }
 }

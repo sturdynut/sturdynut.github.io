@@ -9,16 +9,12 @@
     font-size: 3rem;
     background-image: url("/images/mountain.svg");
     background-repeat: no-repeat;
-    background-size: 165px;
-    background-position: 23px 7px;
-
-    @include when-using($tablet) {
-      background-size: 230px;
-      background-position: 2px 5px;
-      font-size: 4rem;
-    }
+    background-size: 168px;
+    background-position: 35px 19px;
 
     @include when-using($laptop) {
+      background-size: 320px;
+      background-position: -28px 19px;
       font-size: 5rem;
     }
   }
@@ -27,10 +23,6 @@
     margin-top: 30px;
     margin-bottom: 0;
     font-size: 2rem;
-
-    @include when-using($tablet) {
-      font-size: 3rem;
-    }
   }
 
   p {
