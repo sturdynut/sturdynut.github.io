@@ -3,6 +3,13 @@
  */
 
 .about-section {
+  max-width: 1200px;
+  padding: 60px 0;
+
+  .page-content {
+    padding: 0 20px;
+  }
+
   h1 {
     text-align: right;
     border-bottom: 4px solid $tertiary-color;
@@ -10,11 +17,15 @@
     background-image: url("/images/mountain.svg");
     background-repeat: no-repeat;
     background-size: 168px;
-    background-position: 35px 19px;
+    background-position: 50px 19px;
+
+    @include when-using($tablet) {
+      background-position: 60px 19px;
+    }
 
     @include when-using($laptop) {
       background-size: 320px;
-      background-position: -28px 19px;
+      background-position: 40px 19px;
       font-size: 5rem;
     }
   }
@@ -23,6 +34,10 @@
     margin-top: 30px;
     margin-bottom: 0;
     font-size: 2rem;
+
+    @include when-using($tablet) {
+      font-size: 2.4rem;
+    }
   }
 
   p {
@@ -34,15 +49,31 @@
     }
 
     @include when-using($laptop) {
-      font-size: 2.4rem;
+      font-size: 2rem;
     }
   }
 
   .summary {
-    font-size: 1.8rem;
+    text-align: justify;
 
     @include when-using($laptop) {
-      font-size: 3rem;
+      display: flex;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    img {
+      width: 100%;
+      max-width: 450px;
+      box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.2);
+      margin: 0 auto 20px;
+      display: block;
+
+      @include when-using($laptop) {
+        order: 2;
+        margin-left: 20px;
+        margin-bottom: 0;
+      }
     }
   }
 
