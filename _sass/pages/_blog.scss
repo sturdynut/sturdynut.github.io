@@ -3,7 +3,7 @@ $post-gutter: 2rem;
 $post-spacer: 1.5rem;
 
 .blog-section {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 /**
@@ -51,9 +51,9 @@ $post-spacer: 1.5rem;
 
 .post-title {
   color: $white;
-  font-size: 2.5em;
+  font-size: 3em;
   letter-spacing: -1px;
-  line-height: 1;
+  line-height: 1.25;
   text-align: right;
   margin: 0;
   padding: 0;
@@ -133,11 +133,12 @@ $post-spacer: 1.5rem;
 }
 
 .post-content {
-  background-color: $white;
-  color: $black;
-  padding: $post-spacer 0;
+  background-color: $black;
+  color: $white;
+  padding: 40px 0;
   min-height: 100vh;
   font-weight: 300;
+  font-size: 1.2rem;
 
   @include when-using($tablet) {
     text-align: left;
@@ -148,19 +149,24 @@ $post-spacer: 1.5rem;
   max-width: 1200px;
   margin: 20px auto;
 
+  @include when-using($tablet) {
+    padding: 0 80px;
+  }
+
   blockquote {
-    font-size: 1em;
+    font-size: 1rem;
     font-family: 'Merriweather';
     text-align: left;
     margin-bottom: 40px;
     padding: 30px;
+    border-left-width: 0;
 
     &:not(:first-child) {
       margin-top: 40px;
     }
 
     @include when-using($tablet) {
-      font-size: 1.4em;
+      font-size: 1.4rem;
       padding: 50px 60px;
     }
 
@@ -185,23 +191,22 @@ $post-spacer: 1.5rem;
   p {
     font-size: 1.3em;
     margin-bottom: 20px;
-    line-height: 2;
+    line-height: 1.5;
     padding: 0 $spacing-unit;
   }
 
   ol,
   ul {
     margin-left: 45px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 
     li {
-      list-style-type: upper-roman;
       line-height: 2;
     }
   }
 
-  h1, h2, h3, h4 {
-    font-size: 2.0em;
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 1.8em;
     clear: both;
     text-align: left;
     font-weight: 700;
@@ -217,8 +222,44 @@ $post-spacer: 1.5rem;
     }
   }
 
+  h2 {
+    font-size: 2.4em;
+    border-bottom: 1px solid $tertiary-color;
+    text-align: center;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+
+    &:not(:nth-child(1)) {
+      margin-top: 40px;
+    }
+
+    @include when-using($laptop) {
+      font-size: 3.6em;
+    }
+  }
+
+  h3 {
+    color: $red;
+    margin-top: 50px;
+    font-size: 2em;
+
+    @include when-using($laptop) {
+      font-size: 2.8em;
+    }
+  }
+
+  h4 {
+    margin-top: 30px;
+    color: $orange;
+  }
+
+  h5 {
+    margin-top: 30px;
+    color: $yellow;
+  }
+
   a {
-    border-bottom: 1px dotted $primary-color-light;
+    border-bottom: 3px dotted $primary-color-light;
   }
 
   iframe {
@@ -234,8 +275,21 @@ $post-spacer: 1.5rem;
   }
 
   pre, code {
-    border-color: darken($tan, 5%);
-    background-color: lighten($tan, 5%);
+    border-style: none;
+    background-color: $yellow;
+  }
+
+  .highlighter-rouge {
+    margin: 40px 0;
+  }
+
+  .highlight {
+    border-radius: 0;
+
+    pre, code {
+      border-color: transparent;
+      background-color: transparent;
+    }
   }
 
   .left-rounded-image {
@@ -272,6 +326,12 @@ $post-spacer: 1.5rem;
   min-height: 100vh;
   margin: -24px 0 0;
   padding: 0;
+
+  li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 }
 
 .no-posts-container {
@@ -280,13 +340,16 @@ $post-spacer: 1.5rem;
   padding-top: 40px;
   text-align: center;
   font-family: 'Satisfy';
-  transform: rotate(-8deg) translateX(10%);
+
+  span {
+    visibility: hidden;
+  }
 
   @include when-using($tablet) {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: rotate(-8deg) translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     padding-top: 0;
     height: auto;
   }
@@ -396,9 +459,13 @@ $post-spacer: 1.5rem;
   flex-direction: row;
   padding: 20px 0 0;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   opacity: 0;
   transition: opacity 100ms;
+
+  @include when-using($tablet) {
+    justify-content: flex-end;
+  }
 
   .featured-post.active & {
     opacity: 1;
@@ -426,8 +493,13 @@ $post-spacer: 1.5rem;
 
 .comments-section {
   max-width: 1200px;
-  margin: 40px auto;
+  margin: 0 auto;
+  padding: 40px;
   min-height: 100px;
-  padding: 0 40px;
   color: $white;
+
+  @include when-using($laptop) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }

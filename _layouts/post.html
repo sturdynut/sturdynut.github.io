@@ -1,52 +1,75 @@
----
-layout: default
-comments: true
----
+<!DOCTYPE html>
+<html lang="{% if page.lang %}{{ page.lang|downcase }}{% else %}en{% endif %}">
 
-<div class='post-container' style='background-image: linear-gradient( rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.3) 100% ), url(/blog/images/backgrounds/{{ page.background }})'>
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  {% include head.html %}
 
-    <header class="post-header">
-      <div class="post-title-container">
-        <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-        <p class="post-meta">
-          <time class="post-date" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
-        </p>
+  <body {% if page.classes %}class="{{ page.classes }}"{% endif %}>
+
+    {% include header.html %}
+
+    <main class="site-content js-site-content" role="main">
+      <div class='post-container' style='background-image: linear-gradient( rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.3) 100% ), url(/images/backgrounds/{{ page.background }})'>
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+          <header class="post-header" id="top">
+            <div class="post-title-container">
+              <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+              <p class="post-meta">
+                <time class="post-date" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
+              </p>
+            </div>
+            {% if page.author %}
+              <div class="post-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <img itemprop="image" src='{{ "/images/matti.jpg" | prepend: site.baseurl }}' class='avatar' alt='Matti Salokangas' />
+                <span itemprop="name"><i>by</i> {{ page.author }}</span>
+              </div>
+            {% endif %}
+          </header>
+
+          <main class="post-content" itemprop="articleBody">
+            <div class="post-content-inner">
+              {{ content }}
+            </div>
+          </main>
+
+          {% if page.comments %}
+            <section id="disqus_thread" class='comments-section'></section>
+            <script>
+            var PAGE_URL = "{{ page.url | prepend: site.baseurl | prepend: site.url }}";
+            var PAGE_IDENTIFIER = "{{ page.title }}";
+
+            var disqus_config = function () {
+              this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+              this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+            (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+
+            s.src = '//sturdynut.disqus.com/embed.js';
+
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+          {% endif %}
+        </article>
+        <a class='btn-home' href='javascript:;' onclick='window.history.back();'>
+          <span class='icon'>&#65513;</span>
+          <span class='text'>Home</span>
+        </a>
+        <a class='btn-top' href='#top'>
+          <span class='icon'>&#65514;</span>
+          <span class='text'>Top</span>
+        </a>
       </div>
-      {% if page.author %}
-        <div class="post-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img itemprop="image" src='{{ "/images/matti.jpg" | prepend: site.baseurl }}' class='avatar' alt='Matti Salokangas' />
-          <span itemprop="name"><i>by</i> {{ page.author }}</span>
-        </div>
-      {% endif %}
-    </header>
 
-    <main class="post-content" itemprop="articleBody">
-      <div class="post-content-inner">
-        {{ content }}
-      </div>
     </main>
 
-    {% if page.comments %}
-      <section id="disqus_thread" class='comments-section'></section>
-      <script>
-      var PAGE_URL = "{{ page.url | prepend: site.baseurl | prepend: site.url }}";
-      var PAGE_IDENTIFIER = "{{ page.title }}";
+    {% include footer.html %}
 
-      var disqus_config = function () {
-        this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-      };
-      (function() { // DON'T EDIT BELOW THIS LINE
-      var d = document, s = d.createElement('script');
+    {% include scripts.html %}
+    {% include blog-scripts.html %}
+  </body>
 
-      s.src = '//sturdynut.disqus.com/embed.js';
-
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-      })();
-      </script>
-      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-    {% endif %}
-  </article>
-</div>
+</html>

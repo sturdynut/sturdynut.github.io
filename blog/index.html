@@ -1,9 +1,9 @@
 ---
 layout: default
 title: "Blog"
-excerpt: "This is mah blog, omgz!"
 tags:
   - Matti Salokangas
+  - SturdyNut blog
   - blog
 ---
 
@@ -11,13 +11,13 @@ tags:
   {% assign featuredPostsLength = site.posts.size %}
   {% if featuredPostsLength == 0  %}
     <div class='no-posts-container'>
-      No posts yet!
+      <span data-in-effect='fadeInDown'>No posts yet!</span>
     </div>
   {% endif %}
   {% for post in site.posts %}
     <ol class='featured-post-list'>
       <li>
-        <article name='{{ post.title | replace:" ":"" }}' class='featured-post' style='background-image: linear-gradient( rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7) 100% ), url(./images/backgrounds/{{ post.background }})'>
+        <article name='{{ post.title | replace:" ":"" }}' class='featured-post' style='background-image: linear-gradient( rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7) 100% ), url(../images/backgrounds/{{ post.background }})'>
           <a class='featured-post-url' href='{{ post.url | prepend: site.baseurl }}'>
             <h1 class='featured-post-heading'>{{ post.title }}</h1>
             <div class='featured-post-meta'>
@@ -31,7 +31,9 @@ tags:
     </ol>
   {% endfor %}
   <a class='btn-home' href='/'>
-    <span class='icon'>&#8629;</span>
+    <span class='icon'>&#65513;</span>
     <span class='text'>Home</span>
   </a>
 </section>
+
+{% include blog-scripts.html %}

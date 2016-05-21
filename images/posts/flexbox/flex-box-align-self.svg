@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1030px" height="636px" viewBox="0 0 1030 636" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background: #FFFFFF;">
+    <!-- Generator: Sketch 3.7.2 (28276) - http://www.bohemiancoding.com/sketch -->
+    <title>flex-box-align-self</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="flex-box-align-self">
+            <rect id="Rectangle-1" fill="#78B7E2" x="147.152344" y="94" width="815.847656" height="102.613281"></rect>
+            <rect id="Rectangle-1-Copy" fill="#FDB24F" x="153.152344" y="158" width="264.187895" height="35.2400017" rx="2"></rect>
+            <rect id="Rectangle-1-Copy-2" fill="#FDB24F" x="423.634568" y="98" width="264.187895" height="35.2400017" rx="2"></rect>
+            <rect id="Rectangle-1-Copy-3" fill="#FDB24F" x="694.116793" y="158" width="264.187895" height="35.2400017" rx="2"></rect>
+            <rect id="Rectangle-1-Copy-7" fill="#78B7E2" x="147.152344" y="200" width="815.847656" height="102.613281"></rect>
+            <rect id="Rectangle-1-Copy-11" fill="#78B7E2" x="147.152344" y="307" width="815.847656" height="102.613281"></rect>
+            <rect id="Rectangle-1-Copy-15" fill="#78B7E2" x="147.152344" y="414" width="815.847656" height="102.613281"></rect>
+            <rect id="Rectangle-1-Copy-19" fill="#78B7E2" x="147.152344" y="520" width="815.847656" height="102.613281"></rect>
+            <rect id="Rectangle-1-Copy-6" fill="#FDB24F" x="153.152344" y="203" width="264.187895" height="35.2400017" rx="2"></rect>
+            <rect id="Rectangle-1-Copy-5" fill="#FDB24F" x="423.634568" y="263" width="264.187895" height="35.2400017" rx="2"></rect>
+            <rect id="Rectangle-1-Copy-4" fill="#FDB24F" x="694.116793" y="202" width="264.187895" height="35.2400017" rx="2"></rect>
+            <rect id="Rectangle-1-Copy-10" fill="#FDB24F" x="153.152344" y="311" width="264.187895" height="29.918378" rx="2"></rect>
+            <rect id="Rectangle-1-Copy-9" fill="#FDB24F" x="423.634568" y="344.620684" width="264.187895" height="29.918378" rx="2"></rect>
+            <rect id="Rectangle-1-Copy-8" fill="#FDB24F" x="694.116793" y="311" width="264.187895" height="29.918378" rx="2"></rect>
+            <rect id="Rectangle-1-Copy-10" fill="#FDB24F" x="153.152344" y="418" width="264.187895" height="29.918378" rx="2"></rect>
+            <rect id="Rectangle-1-Copy-8" fill="#FDB24F" x="694.116793" y="418" width="264.187895" height="29.918378" rx="2"></rect>
+            <rect id="Rectangle-1-Copy-10" fill="#FDB24F" x="153.152344" y="586" width="264.187895" height="29.918378" rx="2"></rect>
+            <rect id="Rectangle-1-Copy-8" fill="#FDB24F" x="694.116793" y="586" width="264.187895" height="29.918378" rx="2"></rect>
+            <rect id="Rectangle-1-Copy-17" fill="#FDB24F" x="423.634568" y="537.240002" width="264.187895" height="38" rx="2"></rect>
+            <rect id="Rectangle-1-Copy-13" fill="#FDB24F" x="423.634568" y="418" width="264.187895" height="94.6100006" rx="2"></rect>
+            <path d="M953.5,566 L157.5,566" id="Line" stroke="#E8673D" stroke-width="2" stroke-linecap="square" stroke-dasharray="5"></path>
+            <text id="Lorem-ipsum-dolor-si" font-family="ArialMT, Arial" font-size="19.5" font-weight="normal" fill="#292929">
+                <tspan x="158" y="558.700939">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean semper vestibulum tempus.</tspan>
+            </text>
+            <path d="M995.5,96.5 L995.5,609.5" id="Line-Copy" stroke="#E8673D" stroke-width="7" stroke-linecap="round"></path>
+            <path id="Line-Copy-decoration-1" d="M998.5,96.5 L992.5,96.5" stroke="#E8673D" stroke-width="7" stroke-linecap="round"></path>
+            <path id="Line-Copy-decoration-2" d="M992.5,598.7 L995.5,609.5 L998.5,598.7" stroke="#E8673D" stroke-width="7" stroke-linecap="round"></path>
+            <rect id="Rectangle-5-Copy" fill="#E8673D" transform="translate(997.546875, 228.700000) rotate(-270.000000) translate(-997.546875, -228.700000) " x="919.546875" y="208.2" width="156" height="41" rx="3"></rect>
+            <text id="flex-start" font-family="Avenir-Heavy, Avenir" font-size="28" font-weight="600" fill="#3F3F3F">
+                <tspan x="509.169812" y="123.240002">flex-start</tspan>
+            </text>
+            <text id="flex-start" font-family="Avenir-Heavy, Avenir" font-size="28" font-weight="600" fill="#F6A623">
+                <tspan x="18.162" y="260">flex-start</tspan>
+            </text>
+            <text id="flex-start-copy" font-family="Avenir-Heavy, Avenir" font-size="28" font-weight="600" fill="#F6A623">
+                <tspan x="18.162" y="366">flex-start</tspan>
+            </text>
+            <text id="flex-start-copy-2" font-family="Avenir-Heavy, Avenir" font-size="28" font-weight="600" fill="#F6A623">
+                <tspan x="18.162" y="476">flex-start</tspan>
+            </text>
+            <text id="flex-start" font-family="Avenir-Heavy, Avenir" font-size="28" font-weight="600" fill="#3F3F3F">
+                <tspan x="509.169812" y="123.240002">flex-start</tspan>
+            </text>
+            <text id="flex-start" font-family="Avenir-Heavy, Avenir" font-size="28" font-weight="600" fill="#3F3F3F">
+                <tspan x="509.169812" y="123.240002">flex-start</tspan>
+            </text>
+            <text id="flex-end" font-family="Avenir-Heavy, Avenir" font-size="28" font-weight="600" fill="#3F3F3F">
+                <tspan x="514.342" y="288.240002">flex-end</tspan>
+            </text>
+            <text id="flex-end" font-family="Avenir-Heavy, Avenir" font-size="28" font-weight="600" fill="#F6A623">
+                <tspan x="28.342" y="161">flex-end</tspan>
+            </text>
+            <text id="Align-content-in-ora" font-family="Avenir-Heavy, Avenir" font-size="28" font-weight="600" fill="#F6A623">
+                <tspan x="234.807906" y="54">Align-content in orange.</tspan>
+            </text>
+            <text id="(set-on-flex-contain" font-family="Avenir-Heavy, Avenir" font-size="16" font-weight="600" fill="#F6A623">
+                <tspan x="234.441906" y="76">(set on flex container)</tspan>
+            </text>
+            <text id="(set-on-flex-item)" font-family="Avenir-Heavy, Avenir" font-size="16" font-weight="600" fill="#3F3F3F">
+                <tspan x="571.809906" y="76">(set on flex item)</tspan>
+            </text>
+            <text id="Align-self-in-black." font-family="Avenir-Heavy, Avenir" font-size="28" font-weight="600" fill="#3F3F3F">
+                <tspan x="576.435719" y="54">Align-self in black.</tspan>
+            </text>
+            <text id="flex-end-copy" font-family="Avenir-Heavy, Avenir" font-size="28" font-weight="600" fill="#F6A623">
+                <tspan x="28.342" y="582">flex-end</tspan>
+            </text>
+            <text id="center" font-family="Avenir-Heavy, Avenir" font-size="28" font-weight="600" fill="#3F3F3F">
+                <tspan x="525.759812" y="366.299873">center</tspan>
+            </text>
+            <text id="stretch" font-family="Avenir-Heavy, Avenir" font-size="28" font-weight="600" fill="#3F3F3F">
+                <tspan x="514.126" y="460.959189">stretch</tspan>
+            </text>
+            <text id="baseline" font-family="Avenir-Heavy, Avenir" font-size="28" font-weight="600" fill="#3F3F3F">
+                <tspan x="500.058" y="603.240002">baseline</tspan>
+            </text>
+            <text id="Cross-Axis" transform="translate(999.500000, 228.200000) rotate(-270.000000) translate(-999.500000, -228.200000) " font-family="Avenir-Heavy, Avenir" font-size="28" font-weight="600" fill="#3F3F3F">
+                <tspan x="931.866" y="237.2">Cross Axis</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

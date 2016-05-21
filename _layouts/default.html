@@ -1,7 +1,19 @@
----
-layout: wrapper
----
+<!DOCTYPE html>
+<html lang="{% if page.lang %}{{ page.lang|downcase }}{% else %}en{% endif %}">
 
-<main class="site-content js-site-content" role="main">
-  {{ content }}
-</main>
+  {% include head.html %}
+
+  <body {% if page.classes %}class="{{ page.classes }}"{% endif %}>
+
+    {% include header.html %}
+
+    <main class="site-content js-site-content" role="main">
+      {{ content }}
+    </main>
+
+    {% include footer.html %}
+
+    {% include scripts.html %}
+  </body>
+
+</html>
