@@ -7,7 +7,7 @@
 }
 
 .btn-top,
-.btn-home {
+.btn-back {
   display: block;
   text-align: center;
   color: $secondary-color;
@@ -29,6 +29,10 @@
     position: relative;
     top: 4px;
     font-weight: bold;
+    background-repeat: no-repeat;
+    height: 90px;
+    width: 90px;
+    display: block;
   }
 
   .text {
@@ -36,10 +40,14 @@
   }
 }
 
-.btn-home {
+.btn-back {
   position: fixed;
   top: 38px;
   left: -5px;
+
+  .icon {
+    background-image: url("/images/btn-back.svg");
+  }
 
   @include when-using($tablet) {
     top: 50px;
@@ -55,6 +63,10 @@
   bottom: 60px;
   right: -15px;
   display: none;
+
+  .icon {
+    background-image: url("/images/btn-top.svg");
+  }
 
   @include when-using($tablet) {
     bottom: 40px;
