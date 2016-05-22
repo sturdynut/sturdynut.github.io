@@ -180,6 +180,7 @@ $post-spacer: 1.5rem;
         text-align: right;
         border-bottom-style: none;
         cursor: pointer;
+        margin: 30px 0 0;
 
         &:before {
           content: ' -- ';
@@ -201,7 +202,8 @@ $post-spacer: 1.5rem;
     margin-bottom: 30px;
 
     li {
-      line-height: 2;
+      line-height: 2.5;
+      font-size: 1.2em;
     }
   }
 

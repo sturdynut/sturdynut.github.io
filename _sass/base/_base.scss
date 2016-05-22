@@ -87,10 +87,11 @@ figcaption {
  * Lists
  */
 li {
+  list-style: circle;
+
   > ul,
   > ol {
     margin-bottom: 0;
-    list-style: square;
   }
 }
 
