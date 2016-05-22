@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="{% if page.lang %}{{ page.lang|downcase }}{% else %}en{% endif %}">
-
+<html lang="{% if page.lang %}{{ page.lang|downcase }}{% else %}en{% endif %}" xmlns="https://www.w3.org/1999/xhtml" xmlns:og="https://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml">
   {% include head.html %}
 
   <body {% if page.classes %}class="{{ page.classes }}"{% endif %}>
@@ -54,7 +53,7 @@
             <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
           {% endif %}
         </article>
-        <a class='btn-home' href='javascript:;' onclick='window.history.back();'>
+        <a class='btn-home' href='/blog'>
           <span class='icon'>&#65513;</span>
           <span class='text'>Home</span>
         </a>
