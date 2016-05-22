@@ -91,13 +91,13 @@
     if ($(window).scrollTop() > 300) {
       $('.btn-top').fadeIn();
       if (!sturdy.hints.isLaptop()) {
-        $('.btn-home').fadeOut();
+        $('.btn-back').fadeOut();
       }
       $('.site-header').addClass('site-header--condensed');
     } else {
       $('.btn-top').fadeOut();
       if (!sturdy.hints.isLaptop()) {
-        $('.btn-home').fadeIn();
+        $('.btn-back').fadeIn();
       }
       $('.site-header').removeClass('site-header--condensed');
     }
