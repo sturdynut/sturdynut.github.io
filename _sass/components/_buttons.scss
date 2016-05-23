@@ -80,10 +80,10 @@
 .featured-button {
   font-size: 1.4rem;
   transition: all 100ms;
-  color: $background-color;
+  color: $secondary-color;
   font-family: $button-font-family;
   line-height: 60px;
-  background: $intro-navigation-background-active-color;
+  background: transparent;
   border-radius: $border-radius;
   position: relative;
   text-align: center;
@@ -94,7 +94,7 @@
 
   .site-nav & {
     background: $tertiary-color;
-    color: $intro-navigation-background-active-color;
+    color: $secondary-color;
   }
 
   span {
@@ -106,17 +106,18 @@
     &::after {
       content: ' ';
       position: absolute;
-      top: 60px;
+      top: 56px;
       right: 0;
       bottom: 0;
-      background-color: $tertiary-color;
+      background-color: $secondary-color;
       border-radius: $border-radius;
       z-index: 1;
       transition: all 500ms;
       width: 100%;
 
       .site-nav & {
-        background: $intro-navigation-background-active-color;
+        top: 60px;
+        background: $secondary-color;
       }
     }
 
@@ -124,7 +125,7 @@
     &:active {
       border-radius: 5px;
       animation: bob 4s infinite;
-      color: $intro-navigation-background-active-color;
+      color: $tertiary-color;
 
       .site-nav & {
         animation: none;

@@ -424,6 +424,7 @@ $post-spacer: 1.5rem;
   opacity: 0;
   font-family: $button-font-family;
   position: relative;
+  border-radius: 3px;
 
   .featured-post.active & {
     opacity: 1;
@@ -444,6 +445,7 @@ $post-spacer: 1.5rem;
     background-color: $primary-color;
     z-index: 1;
     transition: all 500ms;
+    border-radius: 3px;
   }
 
   &:hover,

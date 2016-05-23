@@ -119,7 +119,7 @@
   }
 
   &:hover path {
-    stroke: $tertiary-color;;
+    stroke: $menu-trigger-active-color;
   }
 
   path {
@@ -252,7 +252,11 @@
       background-color: $menu-item-background-hover-color;
 
       a {
-        color: $menu-item-hover-color;
+        color: $menu-item-background-color;
+      }
+
+      path {
+        fill: $menu-item-background-color;
       }
     }
 
