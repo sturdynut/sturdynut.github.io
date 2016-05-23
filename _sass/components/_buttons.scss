@@ -83,7 +83,7 @@
   color: $secondary-color;
   font-family: $button-font-family;
   line-height: 60px;
-  background: transparent;
+  background: $tertiary-color;
   border-radius: $border-radius;
   position: relative;
   text-align: center;
@@ -103,6 +103,8 @@
   }
 
   @include when-using($tablet) {
+    background: transparent;
+
     &::after {
       content: ' ';
       position: absolute;
