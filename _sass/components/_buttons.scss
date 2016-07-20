@@ -83,36 +83,44 @@
   color: $secondary-color;
   font-family: $button-font-family;
   line-height: 60px;
-  background: $tertiary-color;
-  border-radius: $border-radius;
+  background: $blue;
+  border-radius: 50px;
   position: relative;
   text-align: center;
   display: block;
   text-indent: 0;
   transition: all 300ms;
-  font-weight: 100;
 
   .site-nav & {
-    background: $tertiary-color;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     color: $secondary-color;
   }
 
-  span {
-    position: relative;
-    z-index: 2;
-  }
-
   @include when-using($tablet) {
-    background: transparent;
+    &:hover,
+    &:active {
+      animation: bob 4s infinite;
+      color: $secondary-color;
+
+      .site-nav & {
+        animation: none;
+        border-color: $secondary-color;
+      }
+
+      &::after {
+        top: 0;
+      }
+    }
 
     &::after {
       content: ' ';
       position: absolute;
-      top: 56px;
+      top: 60px;
       right: 0;
       bottom: 0;
-      background-color: $secondary-color;
-      border-radius: $border-radius;
+      background-color: $primary-color;
+      border-radius: 50px;
       z-index: 1;
       transition: all 500ms;
       width: 100%;
@@ -122,21 +130,10 @@
         background: $secondary-color;
       }
     }
+  }
 
-    &:hover,
-    &:active {
-      border-radius: 5px;
-      animation: bob 4s infinite;
-      color: $tertiary-color;
-
-      .site-nav & {
-        animation: none;
-        color: $tertiary-color;
-      }
-
-      &::after {
-        top: 0;
-      }
-    }
+  span {
+    position: relative;
+    z-index: 2;
   }
 }

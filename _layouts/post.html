@@ -29,29 +29,29 @@
             <div class="post-content-inner">
               {{ content }}
             </div>
-          </main>
 
-          {% if page.comments %}
-            <section id="disqus_thread" class='comments-section'></section>
-            <script>
-            var PAGE_URL = "{{ page.url | prepend: site.baseurl | prepend: site.url }}";
-            var PAGE_IDENTIFIER = "{{ page.title }}";
+            {% if page.comments %}
+              <section id="disqus_thread" class='comments-section'></section>
+              <script>
+              var PAGE_URL = "{{ page.url | prepend: site.baseurl | prepend: site.url }}";
+              var PAGE_IDENTIFIER = "{{ page.title }}";
 
-            var disqus_config = function () {
-              this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-              this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-            };
-            (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
+              var disqus_config = function () {
+                this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+              };
+              (function() { // DON'T EDIT BELOW THIS LINE
+              var d = document, s = d.createElement('script');
 
-            s.src = '//sturdynut.disqus.com/embed.js';
+              s.src = '//sturdynut.disqus.com/embed.js';
 
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-            })();
-            </script>
-            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-          {% endif %}
+              s.setAttribute('data-timestamp', +new Date());
+              (d.head || d.body).appendChild(s);
+              })();
+              </script>
+              <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+            {% endif %}
+            </main>
         </article>
         <a class='btn-back' href='/blog'>
           <span class='icon'></span>

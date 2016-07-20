@@ -1,6 +1,7 @@
 /*
   Home Page Styles
 */
+
 .intro {
   position: relative;
   display: flex;
@@ -10,15 +11,15 @@
   margin: 0 auto;
   padding: 100px 20px 0;
   max-width: 1440px;
-  background-image: url('/images/mountain.svg');
   background-repeat: no-repeat;
   background-size: 1024px;
   background-position: 50% 0;
 
   @include when-using($tablet) {
+    background-image: url('/images/mountain.svg');
     padding-bottom: 0;
     padding-top: 0;
-    margin-top: 50px;
+    margin-top: 100px;
     height: 100vh;
     max-height: 885px;
   }
@@ -99,31 +100,11 @@
       font-family: $button-font-family;
       line-height: 1;
       text-align: center;
-      transition: all 500ms;
+      transition: all 600ms;
 
-      @include when-using($tablet) {
-        &:hover,
-        &:active {
-          border-color: $tertiary-color;
-
-          &::after {
-            top: 0;
-            width: 100%;
-          }
-        }
-
-        &::after {
-          content: ' ';
-          position: absolute;
-          top: 40px;
-          bottom: 0;
-          background-color: $tertiary-color;
-          border-radius: 23px;
-          z-index: 1;
-          transition: all 500ms;
-          transform: translateX(-50%);
-          width: 0;
-        }
+      &:hover,
+      &:active {
+        border-color: rgba(255, 255, 255, 0.4);
       }
 
       a {

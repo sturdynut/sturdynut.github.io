@@ -27,6 +27,7 @@ header, footer, nav, article, main {
 html {
   overflow-x: hidden;
   box-sizing: border-box;
+  height: 100%;
 }
 
 body {
@@ -37,7 +38,9 @@ body {
 body {
   font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
   color: $text-color;
-  background: $background-color;
+  background: $background;
+  background-color: $background-color;
+  background-size: cover;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
   -moz-font-feature-settings: "kern" 1;
@@ -122,12 +125,13 @@ h1 {
   * Thank you: https://github.com/HugoGiraudel/hugogiraudel.github.com/blob/master/_sass/base/_base.scss
   */
  a {
-   color: $secondary-color;
+   color: $primary-color;
    transition: 0.15s;
    text-decoration: none;
    position: relative; /* 1 */
    display: inline-block;
 
+   // Placeholder
    &.fancy {
      /**
      * Underline
@@ -171,8 +175,6 @@ blockquote {
 
 blockquote {
   color: $quote-color;
-  background: $tertiary-color;
-  border-left: 1em solid $secondary-color;
   padding: 1rem;
   font-size: 1.8em;
   font-style: italic;

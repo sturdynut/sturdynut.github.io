@@ -5,6 +5,8 @@
   padding: 15px 0;
   text-align: center;
   font-size: 0.8em;
+  color: $footer-text-color;
+  background-color: $footer-background-color;
 }
 
 .btn.subscribe-link {
@@ -18,8 +20,8 @@
   font-size: 1.2em;
 
   &:hover {
-    color: $white;
-    border: 1px solid $white;
+    color: $footer-text-color;
+    border: 1px solid $footer-text-color;
   }
 
   @include when-using(768px) {
