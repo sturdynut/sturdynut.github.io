@@ -2,30 +2,42 @@
  * About section
  */
 
+ $text-long-shadow-color: $blue;
+
 .about-section {
   max-width: 1200px;
   padding: 60px 0;
+  margin-top: 60px;
 
   .page-content {
-    padding: 0 20px;
+    padding: 30px 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+
+    @include when-using($laptop) {
+      border-radius: 20px;
+      padding: 40px 60px;
+    }
   }
 
   h1 {
     text-align: right;
-    border-bottom: 4px solid $tertiary-color;
     font-size: 3rem;
     background-image: url("/images/mountain.svg");
     background-repeat: no-repeat;
     background-size: 168px;
-    background-position: 50px 19px;
+    background-position: 10px 19px;
+    margin: 0;
+    color: $black;
 
     @include when-using($tablet) {
-      background-position: 60px 19px;
+      background-size: 270px;
+      background-position: 40px 5px;
+      font-size: 4rem;
     }
 
     @include when-using($laptop) {
-      background-size: 320px;
-      background-position: 40px 19px;
+      background-size: 360px;
+      background-position: 10px 0;
       font-size: 5rem;
     }
   }
@@ -64,15 +76,18 @@
 
     img {
       width: 100%;
-      max-width: 450px;
-      box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.2);
       margin: 0 auto 20px;
       display: block;
+      border-radius: 0 40px 0 40px;
 
       @include when-using($laptop) {
+        border-radius: 0 20px 0 20px;
         order: 2;
-        margin-left: 20px;
         margin-bottom: 0;
+        max-width: 500px;
+        position: relative;
+        top: -41px;
+        right: -61px;
       }
     }
   }
@@ -97,12 +112,14 @@
   }
 
   .thank-you {
-    margin-top: 30px;
     padding: 20px 0;
     text-align: center;
     font-family: 'Satisfy';
     font-size: 1.8rem;
-    border-top: 4px solid $tertiary-color;
+    color: #CB5251;
+    background: -webkit-linear-gradient(-148deg, #CB5251 0%, #FF8A48 94%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
     @include when-using($tablet) {
       padding: 30px;

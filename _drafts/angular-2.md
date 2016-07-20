@@ -10,7 +10,7 @@ tags:
 
 ## Angular 2
 
-Having just got back from ng-conf in Salt Lake City I wanted to attempt to capture all of the information I jammed into my brain for 4 days.  I cannot cover everything, but I'll start small and see where it goes.
+Having recently attended ng-conf in Salt Lake City I wanted to capture all of the information I jammed into my brain for 4 days.  I cannot cover everything, but I'll start small and see where it goes.
 
 First things first, here's some major changes introduced with Angular 2.
 
@@ -219,22 +219,167 @@ The team at Rangle.io built out a nice set of [examples](https://github.com/rang
 10. Click back to the `Augury` tab and select `Router Tree`.
 
 
-#### Angular CLI - YASSS!
+#### Angular CLI
 
-As many of you have felt, it is a pain setting up the build process and folder structure for a new app.  [Angular CLI](https://github.com/angular/angular-cli) solves this for us.  Yassss!
-
+[Angular CLI](https://cli.angular.io/) is a command-line-interface to create new apps, generate the things and serve your app up.
 
 ##### Install
 
-* `npm install -g angular-cli`
+```
+npm install -g angular-cli
+```
 
-##### Create an App with 1 Line
+##### Single Liner - Create, Build and Serve
 
-From your favorite place to write code...this will take a few minutes.
-
-* `ng new my-dream-app && cd my-dream-app && ng serve`
+* `ng new angular-2-todo-app && cd angular-2-todo-app && ng serve`
 * [http://localhost:4200](http://localhost:4200)
 
-##### Documentation
+### Let's build an app!
 
-Read more at [https://cli.angular.io/](https://cli.angular.io/)
+#### 1. Create a Model
+
+1. In `app/flex-item`, create a new file, let's name it `flex-item.model.ts`
+2. Paste this into your new model:
+
+```
+export class FlexItem {
+  name: string;
+}
+```
+
+#### 2. Create a Service
+
+`ng g service flex-item`
+
+```
+import { Injectable } from '@angular/core';
+import { FlexItem } from './flex-item/flex-item.model';
+
+@Injectable()
+export class FlexItemService {
+  getFlexItems() {
+    const MOCK_FLEX_ITEMS: FlexItem[] = [
+      { name: 'Flex Item 1' },
+      { name: 'Flex Item 2' },
+      { name: 'Flex Item 3' },
+      { name: 'Flex Item 4' },
+      { name: 'Flex Item 5' },
+    ]
+
+    return Promise.resolve(MOCK_FLEX_ITEMS);
+  }
+}
+```
+
+#### 3. Generate some components
+
+* `ng g component flex-container`
+* `ng g component flex-item`
+
+#### 4. Update components to use Model and Service
+
+##### how-to-flexbox.component.ts
+
+```
+import { Component } from '@angular/core';
+// Import the flex-container component.
+import { FlexContainerComponent } from './flex-container/flex-container.component'
+
+@Component({
+  moduleId: module.id,
+  selector: 'how-to-flexbox-app',
+  templateUrl: 'how-to-flexbox.component.html',
+  styleUrls: ['how-to-flexbox.component.css'],
+  // Allow the UI to use this component.
+  directives: [FlexContainerComponent]
+})
+export class HowToFlexboxAppComponent { }
+```
+
+##### How to Flexbox Component
+
+
+```
+<app-flex-container></app-flex-container>
+```
+
+
+##### Flex Container Component
+
+File: `flex-container.component.ts`
+
+```
+import { Component, OnInit } from '@angular/core';
+import { FlexItemComponent } from '../flex-item/flex-item.component';
+import { FlexItem } from '../flex-item/flex-item.model';
+import { FlexItemService } from '../flex-item.service';
+
+@Component({
+  moduleId: module.id,
+  selector: 'app-flex-container',
+  templateUrl: 'flex-container.component.html',
+  styleUrls: ['flex-container.component.css'],
+  directives: [FlexItemComponent],
+  providers: [FlexItemService]
+})
+export class FlexContainerComponent implements OnInit {
+  flexItems: FlexItem[];
+
+  constructor(private _flexItemService: FlexItemService) { }
+
+  ngOnInit() {
+    this._flexItemService.getFlexItems()
+      .then(flexItems => this.flexItems = flexItems);
+  }
+
+}
+```
+
+File: `flex-container.component.html`
+
+
+```
+<ol class='flex-container'>
+  <li *ngFor='let flexItem of flexItems'>
+    <app-flex-item [flexItem]='flexItem'></app-flex-item>
+  </li>
+</ol>
+
+```
+
+##### Flex Item Component
+
+File: `flex-item.component.ts`
+
+
+```
+import { Component, OnInit, Input } from '@angular/core';
+import { FlexItem } from './flex-item.model';
+
+@Component({
+  moduleId: module.id,
+  selector: 'app-flex-item',
+  templateUrl: 'flex-item.component.html',
+  styleUrls: ['flex-item.component.css']
+})
+export class FlexItemComponent implements OnInit {
+  @Input() flexItem: FlexItem;
+
+  constructor() {}
+
+  ngOnInit() {
+  }
+
+}
+```
+
+File: `flex-item.component.html`
+
+```
+<div class='flex-item'>{{ flexItem.name }}</div>
+```
+
+### Add Styles
+
+1. `npm install node-sass`
+2. Rename .css files in your project to .scss or .sass. They will be compiled automatically.

@@ -1,6 +1,6 @@
 $white: #F8F6F6;
-$black: #111;
-$blue:  #78B7E2;
+$black: #333;
+$blue:  #71A0C7;
 $dark-red:  #2F0C07;
 $red: #9F3636;
 $orange:  #E8673D;
@@ -22,18 +22,18 @@ $primary-color-light: lighten($primary-color, 15%);
 $secondary-color: $yellow;
 $tertiary-color: $dark-red;
 
-$quote-color: $white;
+$quote-color: $black;
 $header-color: $black;
-$heading-color: $white;
-$footer-color: $white;
-$footer-text-color: $black;
+$heading-color: $black;
+$footer-background-color: $blue;
+$footer-text-color: $white;
 $title-color: $tan;
-$background-color: darken($dark-red, 5%);
-$background-image: none;
-$text-color: $white;
+$background-color: $blue;
+$background: url('/images/backgrounds/bg-main.jpeg') no-repeat;
+$text-color: $black;
 
 /** Site Menu **/
-$menu-background-color: darken($tertiary-color, 5%);
+$menu-background-color: $tertiary-color;
 $menu-item-color: $secondary-color;
 $menu-item-hover-color: $secondary-color;
 $menu-item-background-color: $menu-background-color;
