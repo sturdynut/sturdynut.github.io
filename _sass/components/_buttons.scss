@@ -91,18 +91,32 @@
   text-indent: 0;
   transition: all 300ms;
 
+  .intro-navigation &,
+  .site-nav & {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+  }
+
+  .intro-navigation & {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: $yellow;
+  }
+
   .site-nav & {
     background-color: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.2);
     color: $secondary-color;
   }
 
   @include when-using($tablet) {
+    .intro-navigation & {
+      border-style: none;
+    }
+
     &:hover,
     &:active {
       animation: bob 4s infinite;
       color: $secondary-color;
 
+      .intro-navigation &,
       .site-nav & {
         animation: none;
         border-color: $secondary-color;

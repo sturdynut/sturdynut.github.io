@@ -20,15 +20,14 @@
   }
 
   h1 {
-    text-align: right;
+    text-align: center;
     font-size: 3rem;
-    margin: 0;
+    padding: 0;
+    margin: 0 0 20px 0;
     color: $white;
-    position: relative;
-    top: 28px;
 
     @include when-using($tablet) {
-      font-size: 4rem;
+      font-size: 5rem;
     }
 
     @include when-using($laptop) {
@@ -74,10 +73,15 @@
       display: block;
       border-radius: 0 40px 0 40px;
 
+      @include when-using($tablet) {
+        width: 80%;
+        margin: 40px auto 60px;
+      }
+
       @include when-using($laptop) {
+        margin-top: 0;
         border-radius: 0 20px 0 20px;
         order: 2;
-        margin-bottom: 0;
         max-width: 500px;
         position: relative;
         top: -41px;
