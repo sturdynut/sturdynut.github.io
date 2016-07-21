@@ -90,7 +90,8 @@ figcaption {
  * Lists
  */
 li {
-  list-style: circle;
+  list-style: square;
+  color: $tertiary-color;
 
   > ul,
   > ol {

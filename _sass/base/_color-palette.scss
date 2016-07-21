@@ -38,8 +38,8 @@ $menu-item-color: $secondary-color;
 $menu-item-hover-color: $secondary-color;
 $menu-item-background-color: $menu-background-color;
 $menu-item-background-hover-color: $secondary-color;
-$menu-trigger-color: darken($secondary-color, 5%);
-$menu-trigger-active-color: darken($secondary-color, 5%);
+$menu-trigger-color: $primary-color;
+$menu-trigger-active-color: darken($primary-color, 5%);
 
 /** Posts **/
 $keyword-color: $tertiary-color;
