@@ -88,6 +88,7 @@
   // Private
 
   function checkTopPosition() {
+    console.log('checkTopPosition', $(window).scrollTop());
     if ($(window).scrollTop() > 300) {
       $('.btn-top').fadeIn();
       if (!sturdy.hints.isLaptop()) {
