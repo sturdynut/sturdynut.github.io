@@ -47,9 +47,17 @@
     path {
       &:first-child {
         stroke: $white;
+
+        .site-header--condensed & {
+          stroke: $primary-color;
+        }
       }
       &:last-child {
         fill: $white;
+
+        .site-header--condensed & {
+          fill: $primary-color;
+        }
       }
     }
   }
