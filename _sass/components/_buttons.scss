@@ -97,8 +97,7 @@
   }
 
   .intro-navigation & {
-    background-color: rgba(0, 0, 0, 0.6);
-    color: $yellow;
+    color: $secondary-color;
   }
 
   .site-nav & {
@@ -108,15 +107,15 @@
 
   @include when-using($tablet) {
     .intro-navigation & {
+      background-color: rgba(88, 48, 55, 0.9);
       border-style: none;
     }
 
     &:hover,
     &:active {
-      animation: bob 4s infinite;
+      animation: bob 2s infinite;
       color: $secondary-color;
 
-      .intro-navigation &,
       .site-nav & {
         animation: none;
         border-color: $secondary-color;
@@ -142,6 +141,10 @@
       .site-nav & {
         top: 60px;
         background: $secondary-color;
+      }
+
+      .intro-navigation & {
+        background-color: rgba(88, 48, 55, 1);
       }
     }
   }
