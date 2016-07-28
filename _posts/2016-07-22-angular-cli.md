@@ -19,11 +19,7 @@ This is a guide to build the Angular 2 [Todo MVC](https://github.com/tastejs/tod
 
 `npm install -g angular-cli`
 
-### Already got it?
-
-`npm update -g angular-cli`
-
-At the time of this writing, I am running 1.0.0-beta.5.  To check, just run `ng -v`.
+At the time of this writing, I am running 1.0.0-beta.10.  To check, just run `ng -v`.
 
 ### Creating an App
 
@@ -47,28 +43,27 @@ Bootstrapping requires a root component, which has already been created for you 
 
 You can find the root component here
 
-`/src/app/angular-2-todo-app.component.*`.
+`/src/app/app.component.*`.
 
 You can see how the root application is passed to the `bootstrap()` function in `/src/main.ts`.
 
 ```html
 import { bootstrap } from '@angular/platform-browser-dynamic';
 import { enableProdMode } from '@angular/core';
-// Load up root component
-import { Angular2TodoAppAppComponent, environment } from './app/';
+import { AppComponent, environment } from './app/';
 
 if (environment.production) {
   enableProdMode();
 }
 
-bootstrap(Angular2TodoAppAppComponent); // Zing!
+bootstrap(AppComponent); // Zing!
 ```
 
 ### Todo Model
 
 First we need a model to represent an item in our todo list.
 
-1. In `/app`, create a new file, let's name it `todo.model.ts`
+1. In `/src/app`, create a new file, let's name it `todo.model.ts`
 2. Paste this into your new model:
 
 ```javascript
@@ -175,7 +170,7 @@ Since we have our model and store, we can now tie things together with a compone
 
 Let's make some adjustments to each file:
 
-File: `/app/todo-list/todo-list.component.html`
+File: `/src/app/todo-list/todo-list.component.html`
 
 ```html
 <section class="todoapp">
@@ -203,7 +198,7 @@ File: `/app/todo-list/todo-list.component.html`
 </section>
 ```
 
-* File: `/app/todo-list/todo-list.component.ts`
+* File: `/src/app/todo-list/todo-list.component.ts`
 
 ```javascript
 import { Component, OnInit } from '@angular/core';
@@ -273,7 +268,6 @@ export class TodoListComponent implements OnInit {
       this.newTodoText = '';
     }
   }
-
 }
 ```
 
@@ -283,7 +277,7 @@ Let's add the Todo component to our root component and see where we are.
 
 Update each file accordingly:
 
-File: `/src/app/angular-2-todo-app.component.html`
+File: `/src/app/app.component.html`
 
 ```html
 <section class="todoapp">
@@ -291,7 +285,7 @@ File: `/src/app/angular-2-todo-app.component.html`
 </section>
 ```
 
-File: `/src/app/angular-2-todo-app.component.ts`
+File: `/src/app/app.component.ts`
 
 ```javascript
 import { Component, ViewEncapsulation } from '@angular/core';
@@ -300,21 +294,69 @@ import { TodoListComponent } from './todo-list/todo-list.component'
 
 @Component({
   moduleId: module.id,
-  selector: 'angular-2-todo-app-app',
-  templateUrl: 'angular-2-todo-app.component.html',
-  styleUrls: ['angular-2-todo-app.component.css'],
+  selector: 'app-root',
+  templateUrl: 'app.component.html',
+  styleUrls: ['app.component.css'],
   encapsulation: ViewEncapsulation.None, // We'll get to this later...
   directives: [TodoListComponent] // Inject component here
 })
-export class Angular2TodoAppAppComponent {
+export class AppComponent {
 }
 ```
 
-### Kill the Tests
+### Fix the Tests
 
-To keep things simple, go ahead and comment out the code in all of the `.spec.ts` files.
+We broke some tests.  Let's fix them.
+
+File: `/src/app/app.component.spec.ts`
+
+We removed the `title` field, so we can just remove the test.
+
+```javascript
+/* tslint:disable:no-unused-variable */
+
+import { addProviders, async, inject } from '@angular/core/testing';
+import { AppComponent } from './app.component';
+
+describe('App: Angular2TodoApp', () => {
+  beforeEach(() => {
+    addProviders([AppComponent]);
+  });
+
+  it('should create the app',
+    inject([AppComponent], (app: AppComponent) => {
+      expect(app).toBeTruthy();
+    }));
+});
+```
+
+File: `/src/app/todo-list/todo-list.component.spec.ts`
+
+We updated the constructor for the TodoListComponent class and it now expects a service.
+For the sake of simplicity, let's just pass null.
+
+```javascript
+/* tslint:disable:no-unused-variable */
+
+import { By }           from '@angular/platform-browser';
+import { DebugElement } from '@angular/core';
+import { addProviders, async, inject } from '@angular/core/testing';
+import { TodoListComponent } from './todo-list.component';
+
+describe('Component: TodoList', () => {
+  it('should create an instance', () => {
+    let component = new TodoListComponent(null);
+    expect(component).toBeTruthy();
+  });
+});
+```
 
 ### Done!
+
+If you don't have your server running:
+
+* `ng serve`
+* [http://localhost:4200](http://localhost:4200)
 
 Go take a peak at your todo list app and you should see something like this.
 
@@ -348,7 +390,7 @@ For simplicity, we are going to copy in the styles from node_modules.
 
 Next, we need to rename our root application's css file and import the todo mvc libraries.
 
-Rename `/src/app/angular-2-todo-app.component.css` to `/src/app/angular-2-todo-app.component.scss`
+Rename `/src/app/app.component.css` to `/src/app/app.component.scss`
 
 Update the file as follows:
 
