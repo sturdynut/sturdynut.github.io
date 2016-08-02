@@ -29,7 +29,7 @@ $footer-background-color: $blue;
 $footer-text-color: $white;
 $title-color: $tan;
 $background-color: $blue;
-$background: url('/images/backgrounds/bg-main.jpeg') no-repeat;
+$background: url('/images/backgrounds/bg-main-2.jpg') no-repeat;
 $text-color: $black;
 
 /** Site Menu **/
@@ -39,7 +39,7 @@ $menu-item-hover-color: $secondary-color;
 $menu-item-background-color: $menu-background-color;
 $menu-item-background-hover-color: $secondary-color;
 $menu-trigger-color: $primary-color;
-$menu-trigger-active-color: darken($primary-color, 5%);
+$menu-trigger-active-color: $white;
 
 /** Posts **/
 $keyword-color: $tertiary-color;
