@@ -131,15 +131,14 @@ h1, h2, h3 {
   color: $heading-color;
   font-family: $header-font-family;
 }
-h2, h3, h4, h5, h6 {
-  font-weight: bold;
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
 }
 
 h1 {
   text-align: left;
   font-size: 5em;
   margin-bottom: 40px;
-  font-weight: 700;
   padding-right: 20px;
   color: $white;
 }
