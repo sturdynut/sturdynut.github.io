@@ -2,11 +2,13 @@
  * Site footer
  */
 .site-footer {
-  padding: 15px 0;
+  padding: 15px;
   text-align: center;
   font-size: 0.8em;
   color: $footer-text-color;
-  background-color: $footer-background-color;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 .btn.subscribe-link {

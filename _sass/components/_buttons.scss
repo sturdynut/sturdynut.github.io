@@ -27,12 +27,16 @@
 
   .icon {
     position: relative;
-    top: 4px;
     font-weight: bold;
     background-repeat: no-repeat;
-    height: 90px;
-    width: 90px;
+    height: 70px;
+    width: 70px;
     display: block;
+
+    @include when-using($tablet) {
+      height: 90px;
+      width: 90px;
+    }
   }
 
   .text {
@@ -42,15 +46,19 @@
 
 .btn-back {
   position: fixed;
-  top: 38px;
+  top: 0;
   left: -5px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 
   .icon {
-    background-image: url("/images/btn-back.svg");
+    background-image: url('/images/btn-back.svg');
+    background-position: center;
   }
 
   @include when-using($tablet) {
-    top: 50px;
+    // top: 50px;
   }
 
   &:hover {
@@ -84,7 +92,6 @@
   font-family: $button-font-family;
   line-height: 60px;
   background: $blue;
-  border-radius: 50px;
   position: relative;
   text-align: center;
   display: block;
@@ -102,7 +109,7 @@
 
   .site-nav & {
     background-color: transparent;
-    color: $secondary-color;
+    color: $white;
   }
 
   @include when-using($tablet) {
@@ -113,11 +120,9 @@
 
     &:hover,
     &:active {
-      animation: bob 2s infinite;
       color: $secondary-color;
 
       .site-nav & {
-        animation: none;
         border-color: $secondary-color;
       }
 

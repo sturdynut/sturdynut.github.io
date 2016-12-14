@@ -2,35 +2,14 @@
   Home Page Styles
 */
 
-.intro {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  padding: 100px 20px 0;
-  max-width: 1440px;
+.page-home {
+  background-image: url('/images/matti2.jpg');
+  padding-bottom: 0;
+  padding-top: 0;
+  height: 100vh;
+  background-size: cover;
   background-repeat: no-repeat;
-  background-size: 1024px;
-  background-position: 50% 0;
-
-  @include when-using($tablet) {
-    background-image: url('/images/mountain.svg');
-    padding-bottom: 0;
-    padding-top: 0;
-    margin-top: 100px;
-    height: 100vh;
-    max-height: 885px;
-  }
-
-  @include when-using($laptop) {
-    padding-top: 97px;
-    padding-bottom: 140px;
-    height: 100%;
-    position: relative;
-    top: -60px;
-  }
+  background-position: top center;
 
   .site-logo {
     display: none;
@@ -42,112 +21,106 @@
       display: block;
     }
   }
+}
 
-  .intro-highlight {
-    width: 500px;
-    background-size: 500px;
-    background-image: url('/images/intro-highlight.svg');
-    height: 500px;
-    margin: 0 6px 80px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+.name-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  padding: 2em 0 60px 0;
+
+  @include when-using($tablet) {
+    align-items: flex-start;
+    padding: 1em 0 0 1em;
+  }
+
+  .name-container__name {
     position: relative;
+    font-family: 'Pattaya';
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-size: 2.8rem;
+    color: $white;
+  }
 
-    @include when-using($laptop) {
-      margin-top: 5px;
-      margin-bottom: 0;
-    }
-
-    img {
-      width: 253px;
-      margin: 0 0 15px;
-      display: none;
-
-      @include when-using($tablet) {
-        margin-top: 40px;
-        width: 200px;
-        height: 200px;
-      }
-
-      @include when-using($laptop) {
-        margin-top: 150px;
-      }
-    }
-
-    h1 {
-      position: relative;
-      font-family: 'Pattaya';
-      margin: 20px 0 15px;
-      padding: 5px 0 15px;
-      text-align: center;
-      line-height: 1;
-      font-size: 2.8rem;
-      color: $white;
-    }
-
-    h2 {
-      width: 290px;
-      position: relative;
-      bottom: 20px;
-      border-radius: 23px;
-      color: $secondary-color;
-      margin: 25px 0 0;
-      padding: 0;
+  .name-container__title {
+    position: relative;
+    color: $white;
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+    font-family: $button-font-family;
+    font-weight: 100;
+    line-height: 1;
+    
+    @include when-using($tablet) {
       font-size: 1.5rem;
-      font-family: $button-font-family;
-      line-height: 1;
-      text-align: center;
+    }
 
-      a {
-        color: inherit;
-        padding: 10px 15px;
-        position: relative;
-        z-index: 10;
-        transition: 300ms;
-        text-decoration: none;
-        display: inline-block;
+    a {
+      color: inherit;
+      padding: 20px 0 0;
+      position: relative;
+      z-index: 10;
+      transition: 300ms;
+      text-decoration: none;
+      display: inline-block;
 
-        &::before {
-           content: '';
-           transition: inherit; /* 1 */
-           position: absolute; /* 2 */
-           top: 100%; /* 2 */
-           left: 0; /* 2 */
-           right: 0; /* 2 */
-           height: 1px;
-           background: currentcolor; /* 3 */
-           -webkit-transform: scaleX(0); /* 4 */
-           -ms-transform: scaleX(0); /* 4 */
-           transform: scaleX(0); /* 4 */
-         }
+      &::before {
+        content: '';
+        transition: inherit; /* 1 */
+        position: absolute; /* 2 */
+        top: 100%; /* 2 */
+        left: 0; /* 2 */
+        right: 0; /* 2 */
+        height: 1px;
+        background: currentcolor; /* 3 */
+        -webkit-transform: scaleX(0); /* 4 */
+        -ms-transform: scaleX(0); /* 4 */
+        transform: scaleX(0); /* 4 */
+      }
 
-         /**
-         * Display underline on hover
-         */
-         &:active::before,
-         &:hover::before {
-           -webkit-transform: scaleX(1);
-           -moz-transform: scaleX(1);
-           transform: scaleX(1);
-         }
+      /**
+      * Display underline on hover
+      */
+      &:active::before,
+      &:hover::before {
+        -webkit-transform: scaleX(1);
+        -moz-transform: scaleX(1);
+        transform: scaleX(1);
       }
     }
   }
 }
 
 .intro-navigation {
-  margin: 20px auto 40px;
-  width: 100%;
+  margin: 0;
+  width: 150px;
+  position: absolute;
+  top: 20px;
 
-  @include when-using($tablet) {
-    max-width: 600px;
-  }
-
-  @include when-using($laptop) {
+  .intro-navigation__link {
+    padding: 1em;
+    text-align: left;
+    display: block;
+    line-height: 1;
+    font-size: 1.5rem;
+    font-family: $button-font-family;
+    font-weight: 100;
+    background-image: -webkit-linear-gradient(-110deg, #E8673D 14%, #FDB24F 94%);
+    background-image: -o-linear-gradient(-110deg, #E8673D 14%, #FDB24F 94%);
+    background-image: linear-gradient(-110deg, #E8673D 14%, #FDB24F 94%);
+    color: $white;
     position: relative;
-    top: 60px;
+    left: -5px;
+    transition: left 300ms;
+
+    &:hover {
+      left: 0;
+    }
   }
 
   ul {
@@ -155,23 +128,18 @@
     flex-direction: column;
     margin-bottom: 0;
 
-    @include when-using($tablet) {
-      flex-direction: row;
-    }
-
     li {
-      margin: 0 0 12px 0;
+      margin: 0;
       padding: 0;
       flex: 1;
       list-style: none;
 
-      @include when-using($tablet) {
-        margin: 0 24px 0 0;
-        width: 120px;
+      &:last-child .intro-navigation__link {
+        border-radius: 0 0 $border-radius 0;
+      }
 
-        &:last-child {
-          margin-right: 0;
-        }
+      @include when-using($tablet) {
+        margin: 0;
       }
     }
   }

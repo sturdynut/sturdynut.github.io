@@ -1,4 +1,31 @@
 .page {
   margin: 0 auto;
   padding: 0;
+  height: 100vh;
+  position: relative;
+}
+
+.page__meta {
+  width: 100%;
+  transition: transform 300ms ease-in-out;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-image: -webkit-linear-gradient(transparent -120%, #000 82%);
+  background-image: -o-linear-gradient(transparent -120%, #000 82%);
+  background-image: linear-gradient(transparent -120%, #000 82%);
+  
+  @include when-using($tablet) {
+    right: 0;
+    bottom: 200px;
+    left: auto;
+    width: 70%;
+    min-width: 440px;
+    padding: 20px 30px 30px;
+  }
+
+  @include when-using($laptop) {
+    bottom: 60px;
+    width: 40%;
+  }
 }

@@ -5,3 +5,21 @@
   75% { transform: translateY(-6px); }
   100% { transform: translateY(0); }
 }
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-9000px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInTop {
+  0% {
+    transform: translateY(-9000px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

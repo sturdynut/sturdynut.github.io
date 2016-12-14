@@ -6,32 +6,31 @@
 
 .about-section {
   max-width: 1200px;
-  padding: 60px 0;
-  margin-top: 60px;
+  padding: 0;
 
   .page-content {
-    padding: 30px 20px;
+    padding: 0;
     background-color: rgba(255, 255, 255, 0.9);
 
-    @include when-using($laptop) {
-      border-radius: 20px;
-      padding: 40px 60px;
-    }
+    // @include when-using($laptop) {
+    //   border-radius: 20px;
+    //   padding: 40px 60px;
+    // }
   }
 
   h1 {
     text-align: center;
     font-size: 3rem;
     padding: 0;
-    margin: 0 0 20px 0;
+    margin: 0;
     color: $white;
 
     @include when-using($tablet) {
-      font-size: 5rem;
+      font-size: 4rem;
     }
 
     @include when-using($laptop) {
-      font-size: 5rem;
+      color: $white;
     }
   }
 
@@ -40,8 +39,16 @@
     margin-bottom: 0;
     font-size: 2rem;
 
+    &:first-child {
+      margin-top: 0;
+    }
+
     @include when-using($tablet) {
       font-size: 2.4rem;
+    }
+
+    @include when-using($laptop) {
+      color: $white;
     }
   }
 
@@ -59,33 +66,52 @@
   }
 
   .summary {
-    text-align: justify;
+    position: relative;
+    margin-bottom: -200px;
+
+    > div {
+      position: relative;
+      top: -210px;
+      background: $white;
+      padding: 30px;
+      line-height: 2;
+      
+      @include when-using($laptop) {
+        top: -670px;
+      }
+    }
 
     @include when-using($laptop) {
-      display: flex;
-      align-items: flex-start;
-      text-align: left;
+      margin-bottom: -670px;
     }
+    // @include when-using($laptop) {
+    //   display: flex;
+    //   align-items: flex-start;
+    //   text-align: left;
+    // }
+
+    // @include when-using($laptop) {
+    //   margin-bottom: 0;
+    // }
 
     img {
       width: 100%;
       margin: 0 auto 20px;
       display: block;
-      border-radius: 0 40px 0 40px;
 
       @include when-using($tablet) {
-        width: 80%;
-        margin: 40px auto 60px;
+        // width: 80%;
+        // margin: 40px auto 60px;
       }
 
       @include when-using($laptop) {
-        margin-top: 0;
-        border-radius: 0 20px 0 20px;
-        order: 2;
-        max-width: 500px;
-        position: relative;
-        top: -41px;
-        right: -61px;
+        // margin-top: 0;
+        // border-radius: 0 20px 0 20px;
+        // order: 2;
+        // max-width: 500px;
+        // position: relative;
+        // top: -41px;
+        // right: -61px;
       }
     }
   }
@@ -109,13 +135,27 @@
     }
   }
 
+  .details {
+    padding: 20px;
+
+    @include when-using($laptop) {
+      padding: 40px;
+      position: relative;
+      z-index: 1;
+      background-color: $dark-grey;
+      color: $white;
+    }
+  }
+
   .thank-you {
-    padding: 20px 0;
+    padding: 40px 0 20px;
     text-align: center;
     font-family: 'Pattaya';
     font-size: 1.8rem;
     color: #CB5251;
-    background: -webkit-linear-gradient(-148deg, #CB5251 0%, #FF8A48 94%);
+    background: -webkit-linear-gradient(58deg, #CB5251 0%, #FF8A48 94%);
+    background: -o-linear-gradient(58deg, #CB5251 0%, #FF8A48 94%);
+    background: linear-gradient(148deg, #CB5251 0%, #FF8A48 94%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
