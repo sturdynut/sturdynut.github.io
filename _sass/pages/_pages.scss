@@ -10,9 +10,11 @@
   position: absolute;
   left: 0;
   bottom: 0;
-  background-image: -webkit-linear-gradient(transparent -120%, #000 82%);
-  background-image: -o-linear-gradient(transparent -120%, #000 82%);
-  background-image: linear-gradient(transparent -120%, #000 82%);
+  background-image: -webkit-linear-gradient(transparent -120%, $black 82%);
+  background-image: -o-linear-gradient(transparent -120%, $black 82%);
+  background-image: linear-gradient(transparent -120%, $black 82%);
+  box-shadow: 0 -15px 25px 0 rgba(0, 0, 0, 0.9);
+  border-radius: 3px 0 0 3px;
   
   @include when-using($tablet) {
     right: 0;
@@ -21,10 +23,25 @@
     width: 70%;
     min-width: 440px;
     padding: 20px 30px 30px;
+    box-shadow: none;
   }
 
   @include when-using($laptop) {
     bottom: 60px;
     width: 40%;
   }
+}
+
+.page-content__section {
+  background: $white;
+}
+
+.page-banner-image {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: block;
+  position: fixed;
+  top: 0;
+  z-index: 1;
 }

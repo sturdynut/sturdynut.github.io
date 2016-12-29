@@ -38,9 +38,6 @@ body {
   font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
   color: $text-color;
   background-color: $background-color;
-  background-image: -webkit-linear-gradient(-110deg, #E8673D 14%, #FDB24F 94%);
-  background-image: -o-linear-gradient(-110deg, #E8673D 14%, #FDB24F 94%);
-  background-image: linear-gradient(-110deg, #E8673D 14%, #FDB24F 94%);
   background-size: cover;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;

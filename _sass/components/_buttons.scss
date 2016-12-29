@@ -16,7 +16,8 @@
   line-height: 85px;
   font-size: 6rem;
   width: 100px;
-
+  z-index: 20;
+  
   @include when-using($tablet) {
     display: block;
   }

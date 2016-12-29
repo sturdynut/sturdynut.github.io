@@ -3,7 +3,7 @@
 */
 
 .page-home {
-  background-image: url('/images/matti2.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)), url('/images/matti2.jpg');
   padding-bottom: 0;
   padding-top: 0;
   height: 100vh;
@@ -102,6 +102,24 @@
   position: absolute;
   top: 20px;
 
+  li {
+    &:first-child .intro-navigation__link {
+      border-radius: 0 3px 0 0;
+
+      &:hover {
+        border-radius: 3px;
+      }
+    }
+    
+    &:last-child .intro-navigation__link {
+      border-radius: 0 0 3px 0;
+
+      &:hover {
+        border-radius: 3px;
+      }
+    }
+  }
+  
   .intro-navigation__link {
     padding: 1em;
     text-align: left;
@@ -116,10 +134,11 @@
     color: $white;
     position: relative;
     left: -5px;
-    transition: left 300ms;
+    transition: left 300ms, border-radius 300ms;
 
     &:hover {
       left: 0;
+      border-radius: 3px;
     }
   }
 

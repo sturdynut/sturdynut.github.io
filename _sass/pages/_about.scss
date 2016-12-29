@@ -7,17 +7,44 @@
 .about-section {
   max-width: 1200px;
   padding: 0;
+  margin-bottom: 210px;
+
+  @include when-using($laptop) {
+    margin-bottom: 400px;
+  }
 
   .page-content {
     padding: 0;
+    position: relative;
+    z-index: 1;
+    top: 210px;
     background-color: rgba(255, 255, 255, 0.9);
 
-    // @include when-using($laptop) {
-    //   border-radius: 20px;
-    //   padding: 40px 60px;
-    // }
+    @include when-using($laptop) {
+      top: 400px;
+    }
   }
 
+  .page-content__section {
+    background: darken($primary-color, 3%);
+    color: $primary-color-compliment;
+  }
+
+  .page-content__section--alt {
+    background: darken($blue, 3%);
+    color: $primary-color-compliment;
+
+    h2, h3 {
+      background-color: $blue;
+    }
+  }
+
+  h1, h2, h3 {
+    padding: 0 20px;
+    text-align: center;
+    box-shadow: 0 40px 150px 0px rgba(0,0,0,0.2);
+  }
+  
   h1 {
     text-align: center;
     font-size: 3rem;
@@ -34,21 +61,14 @@
     }
   }
 
-  h2 {
-    margin-top: 30px;
-    margin-bottom: 0;
+  h2, h3 {
+    background-color: $primary-color;
+    color: $primary-color-compliment;
     font-size: 2rem;
-
-    &:first-child {
-      margin-top: 0;
-    }
+    padding: 25px 20px 20px;
 
     @include when-using($tablet) {
       font-size: 2.4rem;
-    }
-
-    @include when-using($laptop) {
-      color: $white;
     }
   }
 
@@ -57,62 +77,71 @@
     font-size: 1.4rem;
 
     @include when-using($tablet) {
-      font-size: 2rem;
+      font-size: 2.1rem;
     }
 
     @include when-using($laptop) {
-      font-size: 2rem;
+      font-size: 2.2rem;
+    }
+  }
+
+  ul, ol {
+    padding: 20px 20px 40px;
+    font-size: 1.4em;
+    margin: 0;
+
+    @include when-using($laptop) {
+      padding: 60px;
+    }
+
+    li {
+      list-style: disc;
+      margin-left: 20px;
+      color: $primary-color-compliment;
+
+      span {
+        color: rgba(255, 255, 255, 0.8);
+      }
+    }
+
+    li + li {
+      margin-top: 15px;
+
+      @include when-using($laptop) {
+        margin-top: 30px;
+      }
+    }
+
+    i {
+      color: rgba(255,255,255,0.8);
+      font-size: 0.8em;
+      text-align: center;
+      display: block;
+      padding: 20px 0;
     }
   }
 
   .summary {
     position: relative;
-    margin-bottom: -200px;
 
-    > div {
-      position: relative;
-      top: -210px;
-      background: $white;
-      padding: 30px;
-      line-height: 2;
+    @include when-using($tablet) {
       
-      @include when-using($laptop) {
-        top: -670px;
-      }
     }
-
+    
     @include when-using($laptop) {
-      margin-bottom: -670px;
+      
     }
-    // @include when-using($laptop) {
-    //   display: flex;
-    //   align-items: flex-start;
-    //   text-align: left;
-    // }
 
-    // @include when-using($laptop) {
-    //   margin-bottom: 0;
-    // }
-
-    img {
-      width: 100%;
-      margin: 0 auto 20px;
-      display: block;
-
-      @include when-using($tablet) {
-        // width: 80%;
-        // margin: 40px auto 60px;
-      }
-
-      @include when-using($laptop) {
-        // margin-top: 0;
-        // border-radius: 0 20px 0 20px;
-        // order: 2;
-        // max-width: 500px;
-        // position: relative;
-        // top: -41px;
-        // right: -61px;
-      }
+    ol li {
+      list-style: none;
+    }
+    
+    p:first-child {
+      padding: 40px 20px;
+      background: $black;
+      color: $white;
+      text-align: center;
+      line-height: 1.5;
     }
   }
 
@@ -137,27 +166,53 @@
 
   .details {
     padding: 20px;
+    background-color: $tan;
+    position: relative;
 
     @include when-using($laptop) {
       padding: 40px;
       position: relative;
       z-index: 1;
-      background-color: $dark-grey;
-      color: $white;
+    }
+
+    h2 {
+      margin-top: 20px;
+      margin-bottom: 0;
+      font-size: 2rem;
+      background-color: transparent;
+      box-shadow: none;
+      color: $black;
+      padding: 0;
+      text-align: left;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      @include when-using($tablet) {
+        font-size: 2.4rem;
+      }
     }
   }
 
   .thank-you {
-    padding: 40px 0 20px;
-    text-align: center;
-    font-family: 'Pattaya';
+    padding: 40px 0;
+    background-color: $black;
     font-size: 1.8rem;
-    color: #CB5251;
-    background: -webkit-linear-gradient(58deg, #CB5251 0%, #FF8A48 94%);
-    background: -o-linear-gradient(58deg, #CB5251 0%, #FF8A48 94%);
-    background: linear-gradient(148deg, #CB5251 0%, #FF8A48 94%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    position: relative;
+    z-index: 1;
+
+    a {
+      display: block;
+      text-align: center;
+      font-family: 'Pattaya';
+      color: #CB5251;
+      background: -webkit-linear-gradient(58deg, #CB5251 0%, #FF8A48 94%);
+      background: -o-linear-gradient(58deg, #CB5251 0%, #FF8A48 94%);
+      background: linear-gradient(148deg, #CB5251 0%, #FF8A48 94%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
     @include when-using($tablet) {
       padding: 30px;
