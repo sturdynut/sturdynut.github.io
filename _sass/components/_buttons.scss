@@ -15,11 +15,11 @@
   position: absolute;
   line-height: 85px;
   font-size: 6rem;
-  width: 100px;
   z-index: 20;
   
   @include when-using($tablet) {
     display: block;
+    transform: scale(1.5);
   }
 
   &:hover {
@@ -28,16 +28,7 @@
 
   .icon {
     position: relative;
-    font-weight: bold;
-    background-repeat: no-repeat;
-    height: 70px;
-    width: 70px;
     display: block;
-
-    @include when-using($tablet) {
-      height: 90px;
-      width: 90px;
-    }
   }
 
   .text {
@@ -47,24 +38,22 @@
 
 .btn-back {
   position: fixed;
-  top: 0;
-  left: -5px;
+  top: 15px;
+  left: 15px;
   display: flex;
   justify-content: center;
   align-content: center;
 
   .icon {
-    background-image: url('/images/btn-back.svg');
-    background-position: center;
+    font-size: 2rem;
+    color: $white;
   }
 
   @include when-using($tablet) {
-    // top: 50px;
+    top: 30px;
+    left: 30px;
   }
 
-  &:hover {
-    left: -10px;
-  }
 }
 
 .btn-top {
@@ -87,10 +76,9 @@
 }
 
 .featured-button {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   transition: all 100ms;
   color: $secondary-color;
-  font-family: $button-font-family;
   line-height: 60px;
   background: $blue;
   position: relative;
@@ -102,6 +90,8 @@
   .intro-navigation &,
   .site-nav & {
     border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 45px;
+    font-family: $logo-font-family;
   }
 
   .intro-navigation & {
@@ -131,7 +121,7 @@
         top: 0;
       }
     }
-
+    
     &::after {
       content: ' ';
       position: absolute;
@@ -145,8 +135,7 @@
       width: 100%;
 
       .site-nav & {
-        top: 60px;
-        background: $secondary-color;
+        display: none;
       }
 
       .intro-navigation & {

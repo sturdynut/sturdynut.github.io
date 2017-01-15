@@ -385,7 +385,6 @@ $post-spacer: 1.5rem;
   font-size: 6em;
   padding-top: 40px;
   text-align: center;
-  font-family: 'Pattaya';
 
   span {
     visibility: hidden;
@@ -448,6 +447,10 @@ $post-spacer: 1.5rem;
 .featured-post-url {
   text-align: right;
   margin-top: 24px;
+
+  @include when-using($tablet) {
+    font-size: 1.5em;
+  }
 
   @include when-using($laptop) {
     margin: 0 30px;

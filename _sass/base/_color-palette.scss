@@ -1,11 +1,11 @@
 $white: #F8F6F6;
-$black: #333;
+$black: #111;
 $blue:  #71A0C7;
 $dark-red:  #2F0C07;
-$red: #9F3636;
+$red: #E8673D;
 $red-2: #CB5251;
-$orange:  #E8673D;
-$yellow:  #FDB24F;
+$orange:  #FDB24F;
+$yellow:  #F9ED60;
 $purple:  darken(#946B9E, 10%);
 $brown:  #714E2F;
 $tan: #FFF7EB;
@@ -25,7 +25,7 @@ $tertiary-color: $dark-grey;
 $primary-color-compliment: $white;
 
 $quote-color: $black;
-$link-color: $orange;
+$link-color: darken($primary-color, 10%);
 $header-color: $black;
 $heading-color: $black;
 $footer-background-color: $blue;
@@ -35,12 +35,12 @@ $background-color: $black;
 $text-color: $black;
 
 /** Site Menu **/
-$menu-background-color: $dark-grey;
+$menu-background-color: $red;
 $menu-item-color: $white;
 $menu-item-hover-color: $white;
 $menu-item-background-color: $menu-background-color;
 $menu-item-background-hover-color: $white;
-$menu-trigger-color: $orange;
+$menu-trigger-color: $white;
 $menu-trigger-active-color: $white;
 
 /** Posts **/

@@ -12,6 +12,11 @@
   background: $black;
   position: relative;
   z-index: 20;
+
+  @include when-using($tablet) {
+    font-size: 1.2em;
+    height: 60px;
+  }
 }
 
 .btn.subscribe-link {

@@ -5,30 +5,28 @@
 }
 
 .page__meta {
-  width: 100%;
   transition: transform 300ms ease-in-out;
   position: absolute;
-  left: 0;
-  bottom: 0;
-  background-image: -webkit-linear-gradient(transparent -120%, $black 82%);
-  background-image: -o-linear-gradient(transparent -120%, $black 82%);
-  background-image: linear-gradient(transparent -120%, $black 82%);
-  box-shadow: 0 -15px 25px 0 rgba(0, 0, 0, 0.9);
-  border-radius: 3px 0 0 3px;
+  left: calc(-50% + 60px);
+  top: 150px;
+  transform: rotate(-90deg);
+  width: 100%;
+  // background-image: -webkit-linear-gradient(transparent -120%, $black 82%);
+  // background-image: -o-linear-gradient(transparent -120%, $black 82%);
+  // background-image: linear-gradient(transparent -120%, $black 82%);
+  // box-shadow: 0 -15px 25px 0 rgba(0, 0, 0, 0.9);
+  // border-radius: 3px 0 0 3px;
   
   @include when-using($tablet) {
-    right: 0;
-    bottom: 40px;
-    left: auto;
-    width: 70%;
-    min-width: 440px;
-    padding: 20px 30px 30px;
+    top: 0;
+    left: 40px;
     box-shadow: none;
+    transform: none;
   }
 
   @include when-using($laptop) {
-    bottom: 60px;
-    width: 40%;
+    // bottom: 60px;
+    // width: 40%;
   }
 }
 
