@@ -15,7 +15,7 @@ $about-offset: 130px;
   }
   
   @include when-using($laptop) {
-    margin-bottom: 400px;
+    margin-bottom: 500px;
   }
 
   .page-content {
@@ -72,7 +72,7 @@ $about-offset: 130px;
 
   .page-content__section--alt {
     background: darken($dark-grey, 6%);
-    color: $primary-color-compliment;
+    color: $white;
   }
 
   h1, h2, h3 {
@@ -138,7 +138,7 @@ $about-offset: 130px;
     }
 
     li {
-      color: $primary-color-compliment;
+      color: $white;
       line-height: 1.75;
 
       span {
@@ -212,6 +212,10 @@ $about-offset: 130px;
       padding: 40px;
       position: relative;
       z-index: 1;
+    }
+
+    a {
+      color: $red;
     }
 
     h2 {

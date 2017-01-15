@@ -495,7 +495,7 @@ $post-spacer: 1.5rem;
   &:hover,
   &:active {
     animation: bob 2s infinite;
-    color: $white;
+    color: $primary-color-compliment;
 
     &:after {
       top: 0;

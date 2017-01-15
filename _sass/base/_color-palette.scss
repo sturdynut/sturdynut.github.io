@@ -17,12 +17,12 @@ $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
-$primary-color: $orange;
+$primary-color: $red;
 $primary-color-dark: darken($primary-color, 15%);
 $primary-color-light: lighten($primary-color, 15%);
-$secondary-color: $yellow;
+$secondary-color: $orange;
 $tertiary-color: $dark-grey;
-$primary-color-compliment: $white;
+$primary-color-compliment: $dark-grey;
 
 $quote-color: $black;
 $link-color: darken($primary-color, 10%);

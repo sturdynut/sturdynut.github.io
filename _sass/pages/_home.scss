@@ -119,11 +119,40 @@
     position: relative;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
+    span {
+      position: relative;
+      z-index: 20;
+      transition: color 300ms;
+    }
+
     @include when-using($tablet) {
       padding: 30px;
       font-size: 4rem;
       border-bottom-style: none;
       border-right: 1px solid rgba(255, 255, 255, 0.1);
+
+      &:hover,
+      &:active {
+        span {
+          color: $primary-color-compliment;
+        }
+
+        &::after {
+          top: 0;
+        }
+      }
+      
+      &::after {
+        content: ' ';
+        position: absolute;
+        top: 100%;
+        right: 0;
+        bottom: 0;
+        background-color: $primary-color;
+        z-index: 10;
+        transition: top 300ms;
+        width: 100%;
+      }
     }
   }
 

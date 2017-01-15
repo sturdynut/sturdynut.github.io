@@ -59,19 +59,19 @@
 .btn-top {
   position: fixed;
   bottom: 60px;
-  right: -15px;
+  right: 40px;
   display: none;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  z-index: 50;
 
   .icon {
-    background-image: url("/images/btn-top.svg");
+    font-size: 2rem;
   }
 
   @include when-using($tablet) {
     bottom: 40px;
-  }
-
-  &:hover {
-    animation: bob 4s infinite;
   }
 }
 
