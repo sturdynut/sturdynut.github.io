@@ -80,17 +80,10 @@
       color: $white;
       line-height: 1.75;
       height: 75vh;
+      margin-bottom: 40px;
 
       @include when-using($laptop) {
         height: auto;
-      }
-    }
-
-    li + li {
-      margin-top: 15px;
-
-      @include when-using($laptop) {
-        margin-top: 30px;
       }
     }
 
