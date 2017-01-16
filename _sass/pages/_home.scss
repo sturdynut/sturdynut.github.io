@@ -104,10 +104,12 @@
 
 .intro-navigation {
   background: rgba(0, 0, 0, 0.4);
-  bottom: 0;
+  bottom: -100%;
   margin: 0;
   position: absolute;
   width: 100%;
+  animation: showIntroNavigation 2s;
+  animation-fill-mode: forwards;
   
   .intro-navigation__link {
     padding: 5px 0;

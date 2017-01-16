@@ -23,3 +23,21 @@
     transform: translateY(0);
   }
 }
+
+@keyframes showIntroNavigation {
+  0% {
+    bottom: -100%;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+@keyframes showPageMeta {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 0;
+  }
+}

@@ -8,9 +8,11 @@
   transition: transform 300ms ease-in-out;
   position: absolute;
   left: calc(-50% + 60px);
-  top: 150px;
+  top: -100%;
   transform: rotate(-90deg);
   width: 100%;
+  animation: showPageMeta 2s;
+  animation-fill-mode: forwards;
   // background-image: -webkit-linear-gradient(transparent -120%, $black 82%);
   // background-image: -o-linear-gradient(transparent -120%, $black 82%);
   // background-image: linear-gradient(transparent -120%, $black 82%);
