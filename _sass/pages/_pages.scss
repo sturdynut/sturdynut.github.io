@@ -7,28 +7,20 @@
 .page__meta {
   transition: transform 300ms ease-in-out;
   position: absolute;
-  left: calc(-50% + 60px);
-  top: -100%;
+  top: 140px;
+  left: -100%;
+  animation: showPageMetaLeft 2s;
+  animation-fill-mode: forwards;
   transform: rotate(-90deg);
   width: 100%;
-  animation: showPageMeta 2s;
-  animation-fill-mode: forwards;
-  // background-image: -webkit-linear-gradient(transparent -120%, $black 82%);
-  // background-image: -o-linear-gradient(transparent -120%, $black 82%);
-  // background-image: linear-gradient(transparent -120%, $black 82%);
-  // box-shadow: 0 -15px 25px 0 rgba(0, 0, 0, 0.9);
-  // border-radius: 3px 0 0 3px;
   
   @include when-using($tablet) {
-    top: 0;
+    top: -100%;
+    animation: showPageMeta 2s;
+    animation-fill-mode: forwards;
     left: 40px;
     box-shadow: none;
     transform: none;
-  }
-
-  @include when-using($laptop) {
-    // bottom: 60px;
-    // width: 40%;
   }
 }
 

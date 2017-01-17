@@ -41,3 +41,12 @@
     top: 0;
   }
 }
+
+@keyframes showPageMetaLeft {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: calc(-50% + 60px);
+  }
+}
