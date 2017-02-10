@@ -17,12 +17,12 @@ $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
-$primary-color: $red;
+$primary-color: $purple;
 $primary-color-dark: darken($primary-color, 15%);
 $primary-color-light: lighten($primary-color, 15%);
-$secondary-color: $orange;
+$secondary-color: $yellow;
 $tertiary-color: $dark-grey;
-$primary-color-compliment: $dark-grey;
+$primary-color-compliment: $white;
 
 $quote-color: $black;
 $link-color: darken($primary-color, 10%);
@@ -34,8 +34,7 @@ $title-color: $tan;
 $background-color: $black;
 $text-color: $black;
 
-/** Site Menu **/
-$menu-background-color: $red;
+$menu-background-color: $purple;
 $menu-item-color: $white;
 $menu-item-hover-color: $white;
 $menu-item-background-color: $menu-background-color;
@@ -43,5 +42,4 @@ $menu-item-background-hover-color: $white;
 $menu-trigger-color: $white;
 $menu-trigger-active-color: $white;
 
-/** Posts **/
 $keyword-color: $tertiary-color;

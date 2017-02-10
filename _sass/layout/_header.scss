@@ -187,9 +187,6 @@
   bottom: 0;
   transition: all 250ms;
   background-color: $menu-background-color;
-  background-image: -webkit-linear-gradient(-200deg, $yellow 1%, $orange 22%, $red 91%);
-  background-image: -o-linear-gradient(-200deg, $yellow 1%, $orange 22%, $red 91%);;
-  background-image: linear-gradient(-200deg, $yellow 1%, $orange 22%, $red 91%);;
   max-width: 600px;
   width: 100%;
   padding: 50px 15px 0;

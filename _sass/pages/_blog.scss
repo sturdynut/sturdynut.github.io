@@ -245,9 +245,9 @@ $post-spacer: 1.5rem;
   }
 
   h2 {
+    color: $primary-color;
     font-size: 2.4em;
-    border-bottom: 1px solid $tertiary-color;
-    text-align: left;
+    text-align: center;
     padding-bottom: 20px;
     margin-bottom: 40px;
 
@@ -486,7 +486,7 @@ $post-spacer: 1.5rem;
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: $primary-color;
+    background-color: $secondary-color;
     z-index: 1;
     transition: all 500ms;
     border-radius: 3px;
@@ -495,7 +495,7 @@ $post-spacer: 1.5rem;
   &:hover,
   &:active {
     animation: bob 2s infinite;
-    color: $primary-color-compliment;
+    color: $primary-color;
 
     &:after {
       top: 0;
