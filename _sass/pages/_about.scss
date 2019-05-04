@@ -13,7 +13,7 @@ $about-offset: 130px;
   @include when-using($tablet) {
     margin-bottom: 370px;
   }
-  
+
   @include when-using($laptop) {
     margin-bottom: 500px;
   }
@@ -27,10 +27,10 @@ $about-offset: 130px;
     font-size: 1rem;
 
     @include when-using($tablet) {
-      top: 400px;
+      top: 300px;
       font-size: 2rem;
     }
-    
+
     @include when-using($laptop) {
       top: 530px;
       font-size: 1.4rem;
@@ -44,14 +44,14 @@ $about-offset: 130px;
     > p {
       padding: 30px;
       line-height: 1.75;
-      font-size: 1.2em;
+      font-size: 1.2rem;
     }
 
     a {
       color: $yellow;
     }
 
-    .resume-button {
+    .cta-button {
       display: block;
       flex: 1;
       text-align: center;
@@ -61,9 +61,9 @@ $about-offset: 130px;
       color: lighten($yellow, 15%);
       transition: border 300ms, color 300ms;
       margin: 20px auto;
-      
+
       @include when-using($laptop) {
-        margin: 50px auto 30px;
+        margin: 20px auto;
         max-width: 450px;
       }
 
@@ -84,7 +84,7 @@ $about-offset: 130px;
     text-align: center;
     box-shadow: 0 0px 3px 0px rgba(0, 0, 0, 0.1);
   }
-  
+
   h1 {
     text-align: center;
     font-size: 3em;
@@ -107,34 +107,34 @@ $about-offset: 130px;
   }
 
   h2, h3 {
-    font-size: 2em;
+    font-size: 2rem;
     padding: 40px 0 15px;
     color: $primary-color;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    margin: 0 1em;
+    margin: 0;
 
     @include when-using($tablet) {
-      font-size: 2.4em;
+      font-size: 2.4rem;
       margin: 0 20px;
     }
   }
 
   p {
     padding-bottom: 20px;
-    font-size: 1.4em;
+    font-size: 1rem;
 
     @include when-using($tablet) {
-      font-size: 1.5em;
+      font-size: 1.1rem;
     }
 
     @include when-using($laptop) {
-      font-size: 2.2em;
+      font-size: 1.2rem;
     }
   }
 
   ul, ol {
     padding: 20px 40px;
-    font-size: 1em;
+    font-size: 1rem;
     margin: 0;
 
     @include when-using($laptop) {
@@ -170,26 +170,45 @@ $about-offset: 130px;
   .summary {
     position: relative;
 
-    ol li {
-      list-style: none;
-    }
-    
-    p:first-child {
-      padding: 20px;
-      background: $dark-grey;
+    .summary_intro {
+      padding: 2em;
       color: $white;
-      line-height: 1.75;
-      font-size: 1.2em;
+      background: $dark-grey;
+      line-height: 1.5;
+      font-size: 1rem;
+      text-align: justify;
+
+      .wave {
+        display: inline-block;
+        animation: wave 450ms infinite alternate-reverse;
+
+        &:hover {
+          animation: wave 200ms infinite alternate-reverse;
+        }
+      }
+
+      .unicorn {
+        display: inline-block;
+        &:hover {
+          animation: bob 450ms infinite alternate-reverse;
+        }
+      }
 
       @include when-using($laptop) {
-        text-align: center;
-        padding: 40px;
       }
+    }
+
+    .summary_highlights li {
+      color: $dark-grey;
+    }
+
+    ol li {
+      list-style: none;
     }
   }
 
   .social-information {
-    font-size: 1.2em;
+    font-size: 1.2rem;
     background: rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: left;
@@ -203,7 +222,7 @@ $about-offset: 130px;
     }
 
     @include when-using($laptop) {
-      font-size: 2em;
+      font-size: 2rem;
     }
   }
 
@@ -224,8 +243,8 @@ $about-offset: 130px;
 
     h2 {
       margin-top: 20px;
-      margin-bottom: 0;
-      font-size: 2em;
+      margin-bottom: -10px;
+      font-size: 2rem;
       background-color: transparent;
       box-shadow: none;
       color: $black;
@@ -237,15 +256,15 @@ $about-offset: 130px;
       }
 
       @include when-using($tablet) {
-        font-size: 2.4em;
+        font-size: 2.4rem;
       }
     }
   }
 
   .thank-you {
-    padding: 40px 0;
+    padding: 1em;
     background-color: $black;
-    font-size: 2.5em;
+    font-size: 2.5rem;
     position: relative;
     z-index: 1;
 
@@ -262,13 +281,12 @@ $about-offset: 130px;
     }
 
     @include when-using($tablet) {
-      padding: 30px;
-      font-size: 3em;
+      font-size: 1.5em;
     }
 
     @include when-using($laptop) {
-      padding: 60px;
-      font-size: 4em;
+      padding: 2em;
+      font-size: 2rem;
     }
   }
 }

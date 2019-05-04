@@ -6,6 +6,16 @@
   100% { transform: translateY(0); }
 }
 
+@keyframes wave {
+  0%   { transform: translate(0, 0); }
+  100% { transform: translate(-1px, 1px); }
+}
+
+@keyframes spin {
+  0%   { transform: rotate(0); }
+  100% { transform: rotate(360deg); }
+}
+
 @keyframes slideInLeft {
   0% {
     transform: translateX(-9000px);

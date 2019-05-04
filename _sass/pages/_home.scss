@@ -3,13 +3,50 @@
 */
 
 .page-home {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)), url('/images/matti2.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
   padding-bottom: 0;
   padding-top: 0;
   height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
+
+  &.page-home--cat-activated {
+    cursor: url(/images/cat-head.png), auto;
+
+    .scoreboard {
+      background-color: $purple;
+      animation: bob 450ms infinite;
+      opacity: 1;
+
+      &::after {
+        content: 'You are winning! 😻😻😻';
+        position: absolute;
+        left: calc(100% + 2px);
+        top: 0px;
+        background-color: $purple;
+        color: #fff;
+        font-size: 0.7em;
+        border-radius: 4px;
+        padding: 8px;
+        min-width: 109px;
+        text-align: center;
+      }
+    }
+  }
+
+  .page__content {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
   .site-logo {
     display: none;
@@ -21,10 +58,73 @@
       display: block;
     }
   }
+
+  .scoreboard {
+    position: absolute;
+    left: 1em;
+    bottom: 1em;
+    color: $white;
+    font-size: 0.9em;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 4px;
+    padding: 4px 0 4px 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    opacity: 0.8;
+    will-change: opacity;
+    display: none;
+    z-index: 100;
+
+    @include when-using($tablet) {
+      display: block;
+    }
+
+    &:hover {
+      opacity: 1;
+
+      &::after {
+        content: 'A score of 25 or more and you get a cat cursor 😻. Beware though your points may go away ☠️!';
+        position: absolute;
+        left: calc(100% + 2px);
+        top: -15px;
+        background-color: $purple;
+        color: #fff;
+        font-size: 0.7em;
+        border-radius: 4px;
+        padding: 8px;
+        min-width: 220px;
+        text-align: justify;
+      }
+    }
+
+    &__metric {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-right: 4px;
+
+      label {
+        padding: 0 0 2px 0;
+        margin: 0;
+        color: rgba(255, 255, 255, 0.6);
+        text-transform: uppercase;
+        font-size: 0.7em;
+      }
+
+      div {
+        color: rgba(255, 255, 255, 0.9);
+      }
+    }
+  }
 }
 
 .name-container {
   display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -60,7 +160,7 @@
     font-family: $button-font-family;
     font-weight: 100;
     line-height: 1;
-    
+
     @include when-using($tablet) {
       font-size: 2rem;
     }
@@ -102,24 +202,132 @@
   }
 }
 
+.home-featured-post {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1em;
+  border-radius: 8px 8px 4px 4px;
+
+  .page-home--cat-activated & {
+    cursor: url(/images/cat-head.png), auto;
+  }
+
+  @include when-using($tablet) {
+    max-width: calc(100vw - 6em);
+    display: flex;
+  }
+
+  @include when-using($laptop) {
+    max-width: 800px;
+  }
+
+  article {
+    padding: 0;
+    flex: 1;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.3);
+    border-radius: 8px 8px 4px 4px;
+  }
+
+  h1 {
+    font-family: $logo-font-family;
+    font-size: 2rem;
+    color: $text-color;
+    margin: 0;
+    background-color: $dark-grey;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+    line-height: 1;
+    border-radius: 8px 8px 0 0;
+    background-size: cover;
+
+    @include when-using($tablet) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  p {
+    color: $text-color;
+    font-size: rem;
+    padding: 2em 2em 0;
+    background: #fff;
+  }
+
+  &__cta {
+    display: block;
+    text-align: center;
+    padding: 2em 0;
+    color: rgba(0, 0, 0, .5);
+    background: #fff;
+    will-change: color;
+    transition: color 300ms;
+  }
+
+  &__meta {
+    font-size: 0.7em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2em 2em 1em;
+    background-color: $tan;
+    border-radius: 0 0 4px 4px;
+    font-style: italic;
+    text-transform: uppercase;
+    color: $dark-grey;
+
+    &__date,
+    &__author {
+      position: relative;
+    }
+
+    small {
+      color: $grey-color;
+      display: inline;
+      position: absolute;
+      top: -8px;
+      transform: rotate(-25deg);
+      left: -10px;
+    }
+  }
+
+  &:hover {
+    small {
+      color: rgba(0, 0, 0, .9);
+    }
+  }
+}
+
 .intro-navigation {
-  background: rgba(0, 0, 0, 0.4);
+  background: $dark-grey;
   bottom: -100%;
   margin: 0;
   position: absolute;
   width: 100%;
   animation: showIntroNavigation 2s;
   animation-fill-mode: forwards;
-  
+
+  @include when-using($laptop) {
+    max-width: 800px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 4px 4px 0 0;
+  }
+
   .intro-navigation__link {
-    padding: 5px 0;
+    padding: 0.25em 0;
     text-align: center;
     display: block;
-    font-size: 2.2rem;
+    font-size: 1.2rem;
     font-family: $header-font-family;
     color: $white;
     position: relative;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    &:hover,
+    &:active {
+      color: $white;
+    }
 
     span {
       position: relative;
@@ -128,8 +336,7 @@
     }
 
     @include when-using($tablet) {
-      padding: 30px;
-      font-size: 4rem;
+      font-size: 1.6rem;
       border-bottom-style: none;
       border-right: 1px solid rgba(255, 255, 255, 0.1);
 
@@ -140,10 +347,10 @@
         }
 
         &::after {
-          top: 0;
+          top: -10%;
         }
       }
-      
+
       &::after {
         content: ' ';
         position: absolute;
@@ -154,13 +361,14 @@
         z-index: 10;
         transition: top 300ms;
         width: 100%;
+        border-radius: 4px 4px 0 0;
       }
     }
   }
 
   ul {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin-bottom: 0;
 
     @include when-using($tablet) {

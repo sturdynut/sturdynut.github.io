@@ -15,8 +15,8 @@ classes: "page-blog"
       <span data-in-effect='fadeInDown'>No posts yet!</span>
     </div>
   {% endif %}
-  {% for post in site.posts %}
-    <ol class='featured-post-list'>
+  <ol class='featured-post-list'>
+    {% for post in site.posts %}
       <li>
         <article name='{{ post.title | replace:" ":"" }}' class='featured-post' style='background-image: linear-gradient( rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7) 100% ), url(../images/backgrounds/{{ post.background }})'>
           <a class='featured-post-url' href='{{ post.url | prepend: site.baseurl }}'>
@@ -33,8 +33,8 @@ classes: "page-blog"
           <a href='{{ post.url | prepend: site.baseurl }}' class='featured-post-button'><span>Read Post</span></a>
         </article>
       </li>
-    </ol>
-  {% endfor %}
+    {% endfor %}
+  </ol>
   <a class='btn-back' href='/'>
     <span class='icon'></span>
     <span class='text'>Back</span>

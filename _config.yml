@@ -11,7 +11,7 @@ github_username:  sturdynut
 
 # Build settings
 markdown: kramdown
-gems: [jekyll-paginate]
+plugins: [jekyll-paginate]
 paginate_path: /blog/page:num
 paginate: 5
 permalink: pretty

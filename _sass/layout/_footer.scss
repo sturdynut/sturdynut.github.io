@@ -2,20 +2,23 @@
  * Site footer
  */
 .site-footer {
-  font-size: 0.8em;
+  font-size: 0.6rem;
   color: $footer-text-color;
   width: 100%;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: $black;
+  background: $dark-grey;
   position: relative;
   z-index: 20;
 
   @include when-using($tablet) {
-    font-size: 1.2em;
+    font-size: 0.7rem;
     height: 60px;
+  }
+  @include when-using($laptop) {
+    font-size: 0.9rem;
   }
 }
 

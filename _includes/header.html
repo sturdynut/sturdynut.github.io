@@ -1,7 +1,21 @@
-<header class='site-header js-site-header'>
-
-  <a class='site-title-wrapper js-site-title-wrapper' href='{{ site.baseurl }}/'>
-    <svg class='site-logo' height='40' width='40' viewbox='0 -10 110 170' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
+<header class="site-header js-site-header">
+  <a
+    class="site-title-wrapper js-site-title-wrapper"
+    href="{{ site.baseurl }}/"
+  >
+    <svg class='site-logo' width="40" height="39" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" fill-rule="evenodd">
+        <path
+          d="M17.373 37.96c-.459-.032-1.772-.79-3.011-1.417-3.684-1.864-7.394-3.748-8.095-4.522-1.426-1.574-3.232-5.841-3.116-11.235.077-3.595 4.961-5.596 14.653-6.004 9.622.405 14.471 2.408 14.548 6.004.116 5.394-1.69 9.66-3.116 11.235-.7.774-4.689 2.696-8.373 4.56-1.314.665-2.326 1.062-3.413 1.388a.095.095 0 0 1-.077-.008z"
+          stroke="#333333"
+        />
+        <path
+          d="M32.256 23.433c.08-.845.116-1.73.096-2.647-.077-3.595-4.926-5.591-14.549-5.99v-.017c-9.691.408-14.575 2.41-14.652 6.007-.02.907.015 1.782.093 2.617l-.099-.004c-.74-.074-1.237-.836-1.493-2.285-.384-2.174-1.888-8.9-.353-10.109 1.535-1.208 5.398-4.49 14.495-5.902 7.357.85 10.748 1.341 17.116 4.431 1.41 2.846 1.192 10.805 1.197 11.58.005.774 12.613 1.511-.907 2.268-.313.018-.628.035-.944.051z"
+          fill="transparent"
+        />
+      </g>
+    </svg>
+    <!-- <svg class='site-logo' height='40' width='40' viewbox='0 -10 110 170' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
         <g id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'>
             <g id='logo'>
                 <g id='light'>
@@ -10,82 +24,95 @@
                 </g>
             </g>
         </g>
-    </svg>
+    </svg> -->
   </a>
-
 </header>
 
-<a href='javascript:;' class='site-nav-trigger js-site-nav-trigger'>
-  <svg class='hamburger-menu' width="30" height="26" xmlns="http://www.w3.org/2000/svg" version="1.1">
-    <path stroke='#000000' d='M 0 3 L 100 3 Z' stroke-width='6px' />
-    <path stroke='#000000' d='M 0 13 L 100 13 Z' stroke-width='6px' />
-    <path stroke='#000000' d='M 0 23 L 100 23 Z' stroke-width='6px' />
+<a href="javascript:;" class="site-nav-trigger js-site-nav-trigger">
+  <svg
+    class="hamburger-menu"
+    width="30"
+    height="26"
+    xmlns="http://www.w3.org/2000/svg"
+    version="1.1"
+  >
+    <path stroke="#000000" d="M 0 3 L 100 3 Z" stroke-width="6px" />
+    <path stroke="#000000" d="M 0 13 L 100 13 Z" stroke-width="6px" />
+    <path stroke="#000000" d="M 0 23 L 100 23 Z" stroke-width="6px" />
   </svg>
 </a>
 
-<nav class='site-nav js-site-nav'>
-  <ul class='site-nav-pages site-nav-pages-info'>
-    <li class='site-nav-page'>
-      <a href='/about' class='featured-button'>
+<nav class="site-nav js-site-nav">
+  <ul class="site-nav-pages site-nav-pages-info">
+    <li class="site-nav-page">
+      <a href="/" class="featured-button">
+        <span>Home</span>
+      </a>
+    </li>
+    <li class="site-nav-page">
+      <a href="/about" class="featured-button">
         <span>About</span>
       </a>
     </li>
-    <li class='site-nav-page'>
-      <a href='/projects' class='featured-button'>
+    <li class="site-nav-page">
+      <a href="/projects" class="featured-button">
         <span>Projects</span>
       </a>
     </li>
-    <li class='site-nav-page'>
-      <a href='/blog' class='featured-button'>
+    <li class="site-nav-page">
+      <a href="/blog" class="featured-button">
         <span>Blog</span>
       </a>
     </li>
   </ul>
-  <h3 class='site-nav-group'>
+  <h3 class="site-nav-group">
     Check out my work
   </h3>
-  <ul class='site-nav-pages site-nav-pages-work'>
-    <li class='site-nav-page'>
-      <a href='https://github.com/sturdynut' target='_blank'>
+  <ul class="site-nav-pages site-nav-pages-work">
+    <li class="site-nav-page">
+      <a href="https://github.com/sturdynut" target="_blank">
         <span>GitHub</span>
-        <span class='site-nav-post-meta'>{% include icon-github.svg %}</span>
+        <span class="site-nav-post-meta">{% include icon-github.svg %}</span>
       </a>
     </li>
-    <li class='site-nav-page'>
-      <a href='http://codepen.io/sturdynut/' target='_blank'>
+    <li class="site-nav-page">
+      <a href="http://codepen.io/sturdynut/" target="_blank">
         <span>CodePen</span>
-        <span class='site-nav-post-meta'>{% include icon-codepen.svg %}</span>
+        <span class="site-nav-post-meta">{% include icon-codepen.svg %}</span>
       </a>
     </li>
-    <li class='site-nav-page'>
-      <a href='https://dribbble.com/sturdynut' target='_blank'>
+    <li class="site-nav-page">
+      <a href="https://dribbble.com/sturdynut" target="_blank">
         <span>Dribbble</span>
-        <span class='site-nav-post-meta'>{% include icon-dribbble.svg %}</span>
+        <span class="site-nav-post-meta">{% include icon-dribbble.svg %}</span>
       </a>
     </li>
   </ul>
-  <h3 class='site-nav-group'>
+  <h3 class="site-nav-group">
     Connect with me
   </h3>
-  <ul class='site-nav-pages site-nav-pages-channels'>
-    <li class='site-nav-page'>
-      <a href='https://twitter.com/sturdynut' target='_blank'>
+  <ul class="site-nav-pages site-nav-pages-channels">
+    <li class="site-nav-page">
+      <a href="https://twitter.com/sturdynut" target="_blank">
         <span>Twitter</span>
-        <span class='site-nav-post-meta'>{% include icon-twitter.svg %}</span>
+        <span class="site-nav-post-meta">{% include icon-twitter.svg %}</span>
       </a>
     </li>
-    <li class='site-nav-page'>
-      <a href='https://www.linkedin.com/in/mattisalokangas' target='_blank'>
+    <li class="site-nav-page">
+      <a href="https://www.linkedin.com/in/mattisalokangas" target="_blank">
         <span>LinkedIn</span>
-        <span class='site-nav-post-meta'>{% include icon-linkedin.svg %}</span>
+        <span class="site-nav-post-meta">{% include icon-linkedin.svg %}</span>
       </a>
     </li>
-    <li class='site-nav-page'>
-      <a href='mailto:matti@sturdynut.com' title='matti@sturdynut.com' target='_blank'>
+    <li class="site-nav-page">
+      <a
+        href="mailto:matti@sturdynut.com"
+        title="matti@sturdynut.com"
+        target="_blank"
+      >
         <span>Email</span>
-        <span class='site-nav-post-meta'>{% include icon-telegram.svg %}</span>
+        <span class="site-nav-post-meta">{% include icon-telegram.svg %}</span>
       </a>
     </li>
   </ul>
-
 </nav>

@@ -16,7 +16,7 @@
   line-height: 85px;
   font-size: 6rem;
   z-index: 20;
-  
+
   @include when-using($tablet) {
     display: block;
     transform: scale(1.5);
@@ -105,7 +105,7 @@
 
     &:hover,
     &:active {
-      color: $primary-color;
+      color: $white;
     }
   }
 
@@ -123,7 +123,7 @@
         top: 0;
       }
     }
-    
+
     &::after {
       content: ' ';
       position: absolute;

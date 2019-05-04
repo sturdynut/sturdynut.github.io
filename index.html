@@ -3,6 +3,45 @@ layout: default
 classes: index
 ---
 
+<script type="x-shader/x-vertex" id="vertexshader">
+
+  attribute float size;
+  attribute vec3 customColor;
+
+  varying vec3 vColor;
+
+  void main() {
+
+    vColor = customColor;
+
+    vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+
+    gl_PointSize = size * ( 300.0 / -mvPosition.z );
+
+    gl_Position = projectionMatrix * mvPosition;
+
+  }
+
+</script>
+
+<script type="x-shader/x-fragment" id="fragmentshader">
+
+  uniform vec3 color;
+  uniform sampler2D texture;
+
+  varying vec3 vColor;
+
+  void main() {
+
+    gl_FragColor = vec4( color * vColor, 1.0 );
+
+    gl_FragColor = gl_FragColor * texture2D( texture, gl_PointCoord );
+
+    if ( gl_FragColor.a < ALPHATEST ) discard;
+
+  }
+
+</script>
 <section class='page page-home'>
   <aside class='page__meta'>
     <div class='name-container'>
@@ -10,6 +49,36 @@ classes: index
       <h2 class='name-container__title'><a href='/about'>UI | UX | Software Craftsman</a></h2>
     </div>
   </aside>
+  <main class='page__content'>
+    {% assign post = site.posts[0] %}
+    <a class='home-featured-post' href='{{ post.url | prepend: site.baseurl }}'>
+      <article name='{{ post.title | replace:" ":"" }}'>
+        <h1 style='background-image: url(../images/backgrounds/{{ post.background }})'>
+          {{ post.title }}
+        </h1>
+        <p>
+          {{ post.excerpt }}
+        </p>
+        <small class='home-featured-post__cta'>Keep reading...</small>
+        <div class='home-featured-post__meta'>
+          <span class='home-featured-post__meta__date'><small>date</small>{{ post.date | date: '%b %-d, %Y' }}</span>
+          {% if post.author %}
+            <div class="home-featured-post__meta__author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <span itemprop="name"><small>by</small> {{ post.author }}</span>
+            </div>
+          {% endif %}
+        </div>
+      </article>
+    </a>
+  </main>
+  <div class='threejs'>
+    <div class='scoreboard'>
+        <div class='scoreboard__metric'>
+          <label for='hits'>Score</label>
+          <div class='js-scoreboard-score' id='hits'></div>
+        </div>
+      </div>
+  </div>
   <nav class='intro-navigation' role='navigation'>
     <ul>
       <li>

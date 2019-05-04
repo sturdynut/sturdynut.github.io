@@ -17,7 +17,7 @@ $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
-$primary-color: $purple;
+$primary-color: $red-2;
 $primary-color-dark: darken($primary-color, 15%);
 $primary-color-light: lighten($primary-color, 15%);
 $secondary-color: $yellow;
@@ -34,12 +34,12 @@ $title-color: $tan;
 $background-color: $black;
 $text-color: $black;
 
-$menu-background-color: $purple;
+$menu-background-color: $dark-grey;
 $menu-item-color: $white;
 $menu-item-hover-color: $white;
 $menu-item-background-color: $menu-background-color;
-$menu-item-background-hover-color: $white;
+$menu-item-background-hover-color: $red-2;
 $menu-trigger-color: $white;
-$menu-trigger-active-color: $white;
+$menu-trigger-active-color: $primary-color;
 
 $keyword-color: $tertiary-color;
