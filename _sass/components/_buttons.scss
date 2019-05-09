@@ -80,7 +80,7 @@
   font-size: 1.6rem;
   transition: all 100ms;
   color: $secondary-color;
-  line-height: 60px;
+  line-height: 50px;
   background: $blue;
   position: relative;
   text-align: center;
@@ -88,6 +88,7 @@
   text-indent: 0;
   transition: all 300ms;
 
+  .about-page &,
   .intro-navigation &,
   .site-nav & {
     border: 1px solid rgba(255, 255, 255, 0.4);
@@ -99,6 +100,7 @@
     color: $secondary-color;
   }
 
+  .about-page &,
   .site-nav & {
     background-color: transparent;
     color: $white;
@@ -136,6 +138,7 @@
       transition: all 500ms;
       width: 100%;
 
+      .about-page &,
       .site-nav & {
         display: none;
       }

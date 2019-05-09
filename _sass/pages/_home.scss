@@ -29,7 +29,7 @@
         font-size: 0.7em;
         border-radius: 4px;
         padding: 8px;
-        min-width: 109px;
+        min-width: 90px;
         text-align: center;
       }
     }
@@ -265,7 +265,7 @@
   }
 
   &__meta {
-    font-size: 0.7em;
+    font-size: 0.9em;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -282,12 +282,13 @@
     }
 
     small {
+      font-size: 0.6em;
       color: $grey-color;
       display: inline;
       position: absolute;
-      top: -8px;
+      top: -5px;
       transform: rotate(-25deg);
-      left: -10px;
+      left: -7px;
     }
   }
 

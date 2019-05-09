@@ -2,93 +2,56 @@
  * Projects section
  */
 
-.projects-section {
-  max-width: 1200px;
-  margin-bottom: 80px;
+ .page.projects-section {
+  height: 100%;
+  background-color: $yellow;
+  // max-width: 1200px;
+  // margin-bottom: 80px;
+  // background-color: $dark-grey;
 
   @include when-using($tablet) {
     margin-bottom: 20px;
+
+    .page-banner-image {
+      height: 100vh;
+    }
   }
 
-  h1, h2, h3 {
-    padding: 0 20px;
-    text-align: center;
-    box-shadow: 0 0px 3px 0px rgba(0, 0, 0, 0.1);
-  }
-  
   h1 {
     text-align: center;
     font-size: 3em;
     padding: 0;
     margin: 0;
-    color: $white;
+    color: $black;
+    position: relative;
+    z-index: 200;
+    top: 70px;
+    box-shadow: none;
 
     @include when-using($tablet) {
       font-size: 4em;
+      top: 0;
     }
 
     @include when-using($laptop) {
-      color: $white;
       z-index: 100;
       position: fixed;
-      top: 190px;
-      left: -80px;
+      top: 150px;
+      left: -84px;
       transform: rotate(-90deg);
     }
   }
 
-  h2, h3 {
-    font-size: 2em;
-    color: $primary-color;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    margin: 0 1em;
-
-    @include when-using($tablet) {
-      font-size: 2.4em;
-      margin: 0 20px;
-    }
-
-    @include when-using($laptop) {
-      font-size: 4em;
-    }
-  }
-
-  p {
-    padding: 20px;
-    font-size: 1.2em;
-    text-align: center;
-
-    @include when-using($tablet) {
-      font-size: 1.5em;
-      max-width: 650px;
-      margin: 0 auto;
-    }
-
-    @include when-using($laptop) {
-      font-size: 1.6em;
-      padding: 30px 0;
-    }
-  }
-
-  ul, ol {
+  .projects-list {
     padding: 0;
-    font-size: 1em;
+    font-size: 1rem;
     margin: 0;
 
-    @include when-using($laptop) {
-      padding: 60px;
-    }
-
-    li {
-      padding: 20px 0;
-      color: $white;
-      line-height: 1.75;
-      height: 75vh;
-      margin-bottom: 40px;
-
-      @include when-using($laptop) {
-        height: auto;
-      }
+    @include when-using($tablet) {
+      margin: 0 25px 0 0;
+      flex-wrap: wrap;
+      display: flex;
+      flex-direction: column;
     }
 
     i {
@@ -99,55 +62,188 @@
       padding: 20px 0;
     }
   }
+
+  .page-content {
+    margin-top: 178px;
+
+    @include when-using($tablet) {
+      margin-top: 70px;
+      padding-left: 80px;
+    }
+  }
 }
 
 .project {
-  &__links {
-    display: flex;
-    margin: 20px auto;
-    padding: 0 20px;
+  padding: 1em 1em 2em;
+  flex: 1;
+  color: $white;
+  line-height: 1.75;
+  background: $black;
+  position: relative;
+  z-index: 100;
+
+  @include when-using($tablet) {
+    padding-bottom: 0;
+  }
+
+  @include when-using($laptop) {
+    height: 70vh;
+    min-height: 650px;
+  }
+
+  h2, h3 {
+    font-size: 1.4rem;
+    padding: 0 16px;
+    margin: 0;
+    text-align: left;
+    color: $white;
+    box-shadow: none;
+    position: absolute;
+    top: -26px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: $black;
+    z-index: 100;
 
     @include when-using($tablet) {
-      margin: 40px auto;
-      max-width: 580px;
+      font-size: 1.5rem;
+      top: -40px;
+    }
+
+    @include when-using($laptop) {
+      font-size: 2.4rem;
+      top: -52px;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+
+  span {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  & + & {
+    margin-top: 4em;
+
+    @include when-using($laptop) {
+      margin-top: 8em;
+    }
+  }
+
+  &__info {
+    @include when-using($tablet) {
+      display: flex;
+      flex-direction: row;
+      padding: 1em 1em 2em;
+    }
+  }
+
+  &__desc {
+    color: $white;
+    text-align: justify;
+    padding: 1em 2em;
+    font-size: 0.9rem;
+    line-height: 1.2;
+
+    @include when-using($tablet) {
+      font-size: 1.1rem;
+      padding: 0 3em 0 0;
+    }
+
+    @include when-using($laptop) {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__links {
+    display: flex;
+    margin: 0;
+    padding: 1em 2em 0;
+    flex-direction: row;
+
+    @include when-using($tablet) {
+      flex: 1;
+      flex-basis: 200px;
+      display: flex;
+      align-items: center;
       padding: 0;
     }
 
     > a {
       display: block;
-      flex: 1;
       text-align: center;
-      padding: 15px 20px;
-      border: 1px solid lighten($primary-color, 15%);
+      padding: 0.5em 1em;
+      border: 1px solid $yellow;
       border-radius: 45px;
-      color: lighten($primary-color, 15%);
+      color: $yellow;
       transition: border 300ms, color 300ms;
+      width: 100%;
 
-      &:hover {
-        color: $primary-color;
-        border-color: $primary-color;
+      &.site-link {
+        @include when-using($tablet) {
+          padding: 0;
+          border-radius: 4px;
+          line-height: 1;
+          height: 45px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-left: auto;
+          margin-right: 2em;
+          flex: 1;
+          max-width: 150px;
+        }
       }
 
-      &:first-child {
-        margin-right: 20px;
+      &.project-link {
+        border-style: none;
+        position: absolute;
+        right: 10px;
+        top: 174px;
+        background: #333;
+        padding: 0;
+        border-radius: 50%;
+        height: 45px;
+        width: 45px;
+        z-index: 101;
+
+        svg {
+          height: 45px;
+          width: 45px;
+          fill: $yellow;
+        }
+
+        @include when-using($tablet) {
+          position: static;
+          border-radius: 0;
+          background-color: transparent;
+        }
+      }
+
+      &:hover {
+        color: $yellow;
+        border-color: $yellow;
       }
     }
   }
 
   &__image {
     background-repeat: none;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top left;
     border-radius: 4px;
     height: 200px;
     width: 100%;
+    z-index: 100;
 
     @include when-using($tablet) {
       height: 40vh;
     }
 
     @include when-using($laptop) {
+      box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.9);
+      height: 100%;
     }
 
     .how-to-flexbox & {
@@ -161,5 +257,198 @@
     .who-said-wat & {
       background-image: url('/images/projects/who-said-wat.png');
     }
+
+    .rogue-barbers & {
+      background-image: url('/images/projects/rogue-barbers.jpg');
+    }
   }
 }
+
+// .summary {
+//   position: relative;
+
+//   .summary_intro {
+//     padding: 2em;
+//     color: $white;
+//     background: $white;
+//     line-height: 1.5;
+//     font-size: 1rem;
+//     text-align: justify;
+
+//     .wave {
+//       display: inline-block;
+//       animation: wave 450ms infinite alternate-reverse;
+
+//       &:hover {
+//         animation: wave 200ms infinite alternate-reverse;
+//       }
+//     }
+
+//     .unicorn {
+//       display: inline-block;
+//       &:hover {
+//         animation: bob 450ms infinite alternate-reverse;
+//       }
+//     }
+
+//     @include when-using($laptop) {
+//     }
+//   }
+
+//   .summary_highlights li {
+//     color: $white;
+//   }
+
+//   ol li {
+//     list-style: none;
+//   }
+// }
+
+
+
+
+// .page-content {
+//   position: relative;
+//   z-index: 1;
+//   top: $about-offset;
+//   padding: 0;
+//   padding-bottom: $about-offset;
+//   // background-color: rgba(255, 255, 255, 0.9);
+//   font-size: 1rem;
+
+//   @include when-using($tablet) {
+//     top: 130px;
+//     font-size: 2rem;
+//   }
+
+//   @include when-using($laptop) {
+//     top: 41px;
+//     font-size: 1.4rem;
+//     margin-left: 60px;
+//   }
+
+//   &__section {
+//     background: darken($dark-grey, 3%);
+//     color: $dark-grey;
+
+//     > p {
+//       padding: 30px;
+//       line-height: 1.75;
+//       font-size: 1.2rem;
+//     }
+
+//     a {
+//       color: $dark-grey;
+//     }
+
+//     .cta-button {
+//       display: block;
+//       flex: 1;
+//       text-align: center;
+//       padding: 15px 20px;
+//       border: 1px solid lighten($dark-grey, 15%);
+//       border-radius: 45px;
+//       color: lighten($dark-grey, 15%);
+//       transition: border 300ms, color 300ms;
+//       margin: 20px auto;
+
+//       @include when-using($laptop) {
+//         margin: 20px auto;
+//         max-width: 450px;
+//       }
+
+//       &:hover {
+//         color: $dark-grey;
+//         border-color: $dark-grey;
+//       }
+//     }
+//   }
+
+//   &__section--alt {
+//     background: darken($dark-grey, 6%);
+//     color: $white;
+//   }
+
+//   .social-information {
+//     font-size: 1.2rem;
+//     background: rgba(0, 0, 0, 0.1);
+//     padding: 20px;
+//     text-align: left;
+//     line-height: 1.75;
+
+//     @include when-using($tablet) {
+//       font-size: 1.5em;
+//       padding: 30px;
+//       border-radius: 20px;
+//       margin: 0 30px;
+//     }
+
+//     @include when-using($laptop) {
+//       font-size: 2rem;
+//     }
+//   }
+
+//   .details {
+//     padding: 20px;
+//     background-color: $tan;
+//     position: relative;
+
+//     @include when-using($laptop) {
+//       padding: 40px;
+//       position: relative;
+//       z-index: 1;
+//     }
+
+//     a {
+//       color: $red;
+//     }
+
+//     h2 {
+//       margin-top: 20px;
+//       margin-bottom: -10px;
+//       font-size: 2rem;
+//       background-color: transparent;
+//       box-shadow: none;
+//       color: $black;
+//       padding: 0;
+//       text-align: left;
+
+//       &:first-child {
+//         margin-top: 0;
+//       }
+
+//       @include when-using($tablet) {
+//         font-size: 2.4rem;
+//       }
+//     }
+//   }
+
+//   .thank-you {
+//     padding: 1em;
+//     background-color: $black;
+//     font-size: 2.5rem;
+//     position: relative;
+//     z-index: 1;
+
+//     a {
+//       display: block;
+//       text-align: center;
+//       font-family: $header-font-family;
+//       color: $red;
+//       background: -webkit-linear-gradient(58deg, $red 0%, $orange 94%);
+//       background: -o-linear-gradient(58deg, $red 0%, $orange 94%);
+//       background: linear-gradient(148deg, $red 0%, $orange 94%);
+//       -webkit-background-clip: text;
+//       -webkit-text-fill-color: transparent;
+//     }
+
+//     @include when-using($tablet) {
+//       font-size: 1.5em;
+//     }
+
+//     @include when-using($laptop) {
+//       padding: 2em;
+//       font-size: 2rem;
+//     }
+//   }
+// }

@@ -1,42 +1,53 @@
 ---
 layout: default
 title: "Projects"
-excerpt: "Projects that I built or am working on."
+excerpt: "Projects and examples of my work."
 classes: Projects
 tags:
   - Matti Salokangas
   - projects
+  - work
 ---
 
 <section class='page projects-section'>
   <h1>Projects</h1>
-  <ul class='projects-list'>
-    <li class='how-to-flexbox project'>
-      <h2>How to Flexbox</h2>
-      <p>Built using Angular 2, this is a teaching app to help developers better understand flexbox.</p>
-      <a href='http://howtoflexbox.com' target='_blank' class='project__image'></a>
-      <div class='project__links'>
-        <a class='project-link' href='https://github.com/sturdynut/how-to-flexbox' target='_blank'>Github Repo</a>
-        <a class='site-link' href='http://howtoflexbox.com' target='_blank'>View Site</a>
-      </div>
-    </li>
-    <li class='moxie-art project'>
-      <h2>Moxie Art</h2>
-      <p>Built using Angular 1, this is an online gallery showcasing artwork.</p>
-      <a href='http://moxieart.studio' target='_blank' class='project__image'></a>
-      <div class='project__links'>
-        <a class='project-link' href='https://github.com/sturdynut/gallery' target='_blank'>Github Repo</a>
-        <a class='site-link' href='http://moxieart.studio' target='_blank'>View Site</a>
-      </div>
-    </li>
-    <li class='who-said-wat project'>
-      <h2>Who Said Wat</h2>
-      <p>Built using Angular 1, this is a guess-who game for our favorite quotes from the 2016 presidential election. 😬</p>
-      <a href='http://whosaidwat.com/' target='_blank' class='project__image'></a>
-      <div class='project__links'>
-        <a class='project-link' href='https://github.com/sturdynut/who-said-wat' target='_blank'>Github Repo</a>
-        <a class='site-link' href='http://whosaidwat.com/' target='_blank'>View Site</a>
-      </div>
-    </li>
-  </ul>
+  <img class='page-banner-image' src='../images/backgrounds/bg-main.jpeg' alt='' />
+  <div class='page-content'>
+    <ul class='projects-list'>
+      <li class='how-to-flexbox project'>
+        <a href='http://howtoflexbox.com' target='_blank' class='project__image'></a>
+        <div class='project__info'>
+          <h2>How to Flexbox</h2>
+          <p class='project__desc'>
+            Built using Angular 2, this is a teaching app to help developers better understand flexbox.
+          </p>
+          <div class='project__links'>
+            <a class='site-link' href='http://howtoflexbox.com' target='_blank'>View Site</a>
+            <a class='project-link' href='https://github.com/sturdynut/how-to-flexbox' target='_blank'>{% include icon-github.svg %}</a>
+          </div>
+        </div>
+      </li>
+      <li class='moxie-art project'>
+        <a href='http://moxieart.studio' target='_blank' class='project__image'></a>
+        <div class='project__info'>
+          <h2>Moxie Art</h2>
+          <p class='project__desc'>Built using Angular 1, this is an online gallery showcasing artwork.</p>
+          <div class='project__links'>
+            <a class='site-link' href='http://moxieart.studio' target='_blank'>View Site</a>
+            <a class='project-link' href='https://github.com/sturdynut/gallery' target='_blank'>{% include icon-github.svg %}</a>
+          </div>
+        </div>
+      </li>
+      <li class='rogue-barbers project'>
+        <a href='http://roguebarbers.com/' target='_blank' class='project__image'></a>
+        <div class='project__info'>
+          <h2>Rogue Barbers</h2>
+          <p class='project__desc'>Built using Shopify, this online store was built for a barber shop.</p>
+          <div class='project__links'>
+            <a class='site-link' href='http://roguebarbers.com/' target='_blank'>View Site</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
 </section>

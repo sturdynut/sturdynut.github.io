@@ -93,8 +93,8 @@
       camera.position.z = 250;
 
       scene = new THREE.Scene();
-      // scene.background = new THREE.TextureLoader().load('/images/backgrounds/' + Math.ceil(Math.random() * 46) + '.jpg');
-      scene.background = new THREE.TextureLoader().load('/images/backgrounds/bg-main.jpeg');
+      scene.background = new THREE.TextureLoader().load('/images/backgrounds/' + Math.ceil(Math.random() * 46) + '.jpg');
+      // scene.background = new THREE.TextureLoader().load('/images/backgrounds/bg-main.jpeg');
       // scene.background = new THREE.TextureLoader().load('/images/backgrounds/46.jpg');
       /*
         BoxGeometry(width : Float, height : Float, depth : Float, widthSegments : Integer, heightSegments : Integer, depthSegments : Integer)
@@ -251,6 +251,9 @@
           }
 
           // Kill off intersections to reduce points
+          // Better way possibly would be to do an interval that
+          // kills them off after a given set of time...
+          // i.e. () => if (count > 25 && timeElapsed > 10sec) reduce by 1...every 500ms
           window.setTimeout(function() {
             delete intersected[intersectIndex];
 

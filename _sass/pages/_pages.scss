@@ -1,3 +1,8 @@
+.site-content {
+  position: relative;
+  min-height: 100vh;
+}
+
 .page {
   margin: 0 auto;
   padding: 0;
@@ -13,7 +18,7 @@
   animation-fill-mode: forwards;
   transform: rotate(-90deg);
   width: 100%;
-  
+
   @include when-using($tablet) {
     top: -100%;
     animation: showPageMeta 2s;
@@ -30,10 +35,13 @@
 
 .page-banner-image {
   width: 100%;
-  max-width: 1200px;
+  // max-width: 1200px;
   margin: 0 auto;
   display: block;
   position: fixed;
   top: 0;
+  left: 0;
   z-index: 1;
+  background-size: cover;
+  object-fit: cover;
 }
