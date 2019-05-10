@@ -69,7 +69,7 @@
     }
 
     var bg = '/images/backgrounds/' + Math.ceil(Math.random() * 46) + '.jpg';
-    document.querySelector('.page-banner-image').setAttribute('src', bg);
+    document.querySelector('.page-banner-image--dynamic').setAttribute('src', bg);
   }
 
   function initThreeJS() {

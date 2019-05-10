@@ -40,6 +40,7 @@ $about-offset: 130px;
     display: inline-block;
     left: 50%;
     transform: translateX(-50%);
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
 
     @include when-using($tablet) {
       font-size: 4em;
@@ -47,7 +48,7 @@ $about-offset: 130px;
     }
 
     @include when-using($laptop) {
-      color: $red-2;
+      color: $white;
       background-color: transparent;
       z-index: 100;
       position: fixed;
@@ -309,6 +310,7 @@ $about-offset: 130px;
 
         &__row {
           flex: 1;
+          padding-bottom: 1em;
 
           p {
             padding-left: 20px;
@@ -335,7 +337,7 @@ $about-offset: 130px;
         }
 
         @include when-using($tablet) {
-          font-size: 2.4rem;
+          margin-bottom: 0;
         }
       }
     }

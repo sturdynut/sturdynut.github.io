@@ -121,20 +121,19 @@ li {
 /**
  * Headings
  */
-h1, h2, h3 {
-  color: $heading-color;
-  font-family: $header-font-family;
-}
-h1, h2, h3, h4, h5, h6 {
-  font-weight: normal;
-}
-
 h1 {
+  color: $heading-color;
+  font-family: $primary-header-font-family;
+  font-weight: normal;
   text-align: left;
   font-size: 5em;
   margin-bottom: 40px;
   padding-right: 20px;
-  color: $white;
+}
+h2, h3 {
+  color: $heading-color;
+  font-family: $secondary-header-font-family;
+  font-weight: bold;
 }
 
  /**

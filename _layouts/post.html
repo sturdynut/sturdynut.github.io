@@ -7,10 +7,10 @@
     {% include header.html %}
 
     <main class="site-content js-site-content" role="main">
-      <div class='post-container' style='background-image: linear-gradient( rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.3) 100% ), url(/images/backgrounds/{{ page.background }})'>
+      <div class='post-container'>
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-          <header class="post-header" id="top">
+          <header class="post-header" id="top" style='background-image: linear-gradient( rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.3) 100% ), url(/images/backgrounds/{{ page.background }})'>
             <div class="post-title-container">
               <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
               <p class="post-meta">

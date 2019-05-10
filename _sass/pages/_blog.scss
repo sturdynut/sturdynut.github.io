@@ -9,19 +9,6 @@ $post-spacer: 1.5rem;
 /**
  * Posts
  */
-.post-container {
-  background-repeat: no-repeat;
-  padding-top: 80px;
-
-  @include when-using($tablet) {
-    background-size: cover;
-  }
-
-  @include when-using($laptop) {
-    padding-top: 120px;
-  }
-}
-
 .post {
   margin: 0 auto;
 }
@@ -40,8 +27,17 @@ $post-spacer: 1.5rem;
 
 .post-header {
   color: $white;
-  padding: 60px 0 0;
+  padding: 80px 0 0;
   text-align: right;
+  background-repeat: no-repeat;
+
+  @include when-using($tablet) {
+    background-size: cover;
+  }
+
+  @include when-using($laptop) {
+    padding-top: 120px;
+  }
 }
 
 .post-title-container {
@@ -56,6 +52,7 @@ $post-spacer: 1.5rem;
   text-align: center;
   margin: 0;
   padding: 0;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
 
   @include when-using($tablet) {
     font-size: 5em;
@@ -248,15 +245,10 @@ $post-spacer: 1.5rem;
     color: $primary-color;
     font-size: 2.4em;
     text-align: center;
-    padding-bottom: 20px;
-    margin-bottom: 40px;
+    padding-bottom: 0;
 
     &:not(:nth-child(1)) {
       margin-top: 40px;
-    }
-
-    @include when-using($laptop) {
-      font-size: 3.6em;
     }
   }
 
@@ -264,10 +256,6 @@ $post-spacer: 1.5rem;
     color: $primary-color;
     margin-top: 50px;
     font-size: 2em;
-
-    @include when-using($laptop) {
-      font-size: 2.8em;
-    }
   }
 
   h4 {
@@ -330,7 +318,7 @@ $post-spacer: 1.5rem;
   }
 
   .highlight {
-    border-radius: 0;
+    border-radius: 4px;
 
     pre, code {
       border-color: transparent;

@@ -29,7 +29,7 @@
         font-size: 0.7em;
         border-radius: 4px;
         padding: 8px;
-        min-width: 90px;
+        min-width: 110px;
         text-align: center;
       }
     }
@@ -320,7 +320,7 @@
     text-align: center;
     display: block;
     font-size: 1.2rem;
-    font-family: $header-font-family;
+    font-family: $primary-header-font-family;
     color: $white;
     position: relative;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
