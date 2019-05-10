@@ -5,9 +5,6 @@
  .page.projects-section {
   height: 100%;
   background-color: $yellow;
-  // max-width: 1200px;
-  // margin-bottom: 80px;
-  // background-color: $dark-grey;
 
   @include when-using($tablet) {
     margin-bottom: 20px;
@@ -67,8 +64,9 @@
     margin-top: 178px;
 
     @include when-using($tablet) {
-      margin-top: 70px;
-      padding-left: 80px;
+      margin-top: 130px;
+      padding-left: calc(80px + 1em);
+      padding-right: calc(40px + 1em);
     }
   }
 }
@@ -81,9 +79,11 @@
   background: $black;
   position: relative;
   z-index: 100;
+  border-radius: 4px;
 
   @include when-using($tablet) {
     padding-bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
   }
 
   @include when-using($laptop) {
@@ -104,15 +104,21 @@
     transform: translateX(-50%);
     background: $black;
     z-index: 100;
+    width: calc(100% - 5em);
+    text-align: center;
+    border-radius: 4px 4px 0 0;
 
     @include when-using($tablet) {
       font-size: 1.5rem;
-      top: -40px;
+      top: -32px;
+      padding-left: 30px;
+      padding-right: 30px;
+      width: auto;
+      border-radius: 4px;
     }
 
     @include when-using($laptop) {
       font-size: 2.4rem;
-      top: -52px;
       padding-left: 30px;
       padding-right: 30px;
     }
@@ -147,7 +153,8 @@
 
     @include when-using($tablet) {
       font-size: 1.1rem;
-      padding: 0 3em 0 0;
+      padding: 2em;
+      text-align: center;;
     }
 
     @include when-using($laptop) {
@@ -155,10 +162,60 @@
     }
   }
 
+  &__tech {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em 0 0;
+
+    @include when-using($tablet) {
+      padding: 0;
+    }
+
+    &--shopify svg path:nth-child(4) {
+      fill: $white;
+    }
+    &--angular svg path {
+      fill: $white;
+    }
+
+    &__label {
+      display: inline-block;
+      font-size: 0.7em;
+      transform: rotate(-2deg);
+      background-color: $yellow;
+      color: $dark-grey;
+      padding: 1px 3px;
+      margin-right: 1em;
+    }
+
+    .project-link {
+      border-style: none;
+      padding: 0;
+      border-radius: 50%;
+      height: 45px;
+      width: 45px;
+      z-index: 101;
+      margin-left: 0.5em;
+
+      svg {
+        height: 45px;
+        width: 45px;
+        fill: $yellow;
+      }
+
+      @include when-using($tablet) {
+        position: static;
+        border-radius: 0;
+        background-color: transparent;
+      }
+    }
+  }
+
   &__links {
     display: flex;
     margin: 0;
-    padding: 1em 2em 0;
+    padding: 1em 0 0;
     flex-direction: row;
 
     @include when-using($tablet) {
@@ -173,10 +230,10 @@
       display: block;
       text-align: center;
       padding: 0.5em 1em;
-      border: 1px solid $yellow;
+      background: $yellow;
       border-radius: 45px;
-      color: $yellow;
-      transition: border 300ms, color 300ms;
+      color: $dark-grey;
+      transition: background-color 300ms;
       width: 100%;
 
       &.site-link {
@@ -189,40 +246,13 @@
           align-items: center;
           justify-content: center;
           margin-left: auto;
-          margin-right: 2em;
           flex: 1;
           max-width: 150px;
         }
       }
 
-      &.project-link {
-        border-style: none;
-        position: absolute;
-        right: 10px;
-        top: 174px;
-        background: #333;
-        padding: 0;
-        border-radius: 50%;
-        height: 45px;
-        width: 45px;
-        z-index: 101;
-
-        svg {
-          height: 45px;
-          width: 45px;
-          fill: $yellow;
-        }
-
-        @include when-using($tablet) {
-          position: static;
-          border-radius: 0;
-          background-color: transparent;
-        }
-      }
-
       &:hover {
-        color: $yellow;
-        border-color: $yellow;
+        background: darken($yellow, 5%);
       }
     }
   }
@@ -244,6 +274,10 @@
     @include when-using($laptop) {
       box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.9);
       height: 100%;
+    }
+
+    .dutch-bros-menu & {
+      background-image: url('/images/projects/dutch-bros-menu.png');
     }
 
     .how-to-flexbox & {

@@ -1,1 +1,11 @@
-<svg height="512" width="512" xmlns="http://www.w3.org/2000/svg"><path d="M216.879 268.426h78.241L256 174.372l-39.121 94.054zM256 26.001L42.635 102.395l32.652 283.081L256 485.999l180.712-100.523 32.653-283.081L256 26.001zm133.688 350.956h-49.904l-26.9-67.153H199.321l-26.903 67.153h-50.003L256 76.827l133.688 300.13z" fill="#dd0031"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="42px" height="45px" viewBox="0 0 42 45" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>icon-angular</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-angular" fill="#000000" fill-rule="nonzero">
+            <path d="M17.1331731,23.7154018 L24.8264423,23.7154018 L20.9798077,14.5145089 L17.1331731,23.7154018 Z M20.9798077,0 L0,7.47321429 L3.21057692,35.1662946 L20.9798077,45 L38.7490385,35.1662946 L41.9596154,7.47321429 L20.9798077,0 Z M34.125,34.3325893 L29.2182692,34.3325893 L26.5730769,27.7633929 L15.4067308,27.7633929 L12.7615385,34.3325893 L7.84471154,34.3325893 L20.9798077,4.97209821 L34.125,34.3325893 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>
