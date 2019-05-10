@@ -59,9 +59,25 @@
     initNavigation();
     initTextAnimations();
     initThreeJS();
+    initProjectsPage();
+  }
+
+  function initProjectsPage() {
+    // Guard
+    if (!document.querySelector('.page-banner-image')) {
+      return;
+    }
+
+    var bg = '/images/backgrounds/' + Math.ceil(Math.random() * 46) + '.jpg';
+    document.querySelector('.page-banner-image').setAttribute('src', bg);
   }
 
   function initThreeJS() {
+    // Guard
+    if (!document.querySelector('.threejs')) {
+      return;
+    }
+
     var renderer, scene, camera;
     var spinDirection = true;
     // var isTargetedByMouse = true;
