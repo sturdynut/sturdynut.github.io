@@ -4,7 +4,7 @@
 
  .page.projects-section {
   height: 100%;
-  background-color: $yellow;
+  background-color: $dark-grey;
 
   @include when-using($tablet) {
     margin-bottom: 20px;
@@ -81,14 +81,22 @@
   z-index: 100;
   border-radius: 4px;
 
+  & + & {
+    margin-top: 4em;
+
+    @include when-using($laptop) {
+      margin-top: 5em;
+    }
+  }
+
   @include when-using($tablet) {
     padding-bottom: 0;
     background: rgba(0, 0, 0, 0.8);
   }
 
   @include when-using($laptop) {
-    height: 70vh;
-    min-height: 650px;
+    height: 50vh;
+    min-height: 570px;
   }
 
   h2, h3 {
@@ -126,14 +134,6 @@
 
   span {
     color: rgba(255, 255, 255, 0.8);
-  }
-
-  & + & {
-    margin-top: 4em;
-
-    @include when-using($laptop) {
-      margin-top: 8em;
-    }
   }
 
   &__info {
@@ -175,16 +175,16 @@
     &--shopify svg path:nth-child(4) {
       fill: $white;
     }
-    &--angular svg path {
-      fill: $white;
+    &--angular > svg path {
+      fill: #b52e31;
     }
 
     &__label {
       display: inline-block;
       font-size: 0.7em;
       transform: rotate(-2deg);
-      background-color: $yellow;
-      color: $dark-grey;
+      background-color: $red-2;
+      color: $white;
       padding: 1px 3px;
       margin-right: 1em;
     }
