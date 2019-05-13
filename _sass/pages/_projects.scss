@@ -54,7 +54,6 @@
     width: 100%;
     position: relative;
     z-index: 100;
-    background-color: $tan;
 
     @include when-using($tablet) {
       margin: 100px 25px 0 0;
@@ -63,7 +62,6 @@
       flex-direction: column;
       align-items: center;
       padding: 0;
-      background-color: transparent;
     }
 
     i {
