@@ -1,6 +1,10 @@
 .site-content {
   position: relative;
   min-height: 100vh;
+
+  @include when-using($laptop) {
+    padding-top: 69px;
+  }
 }
 
 .page {

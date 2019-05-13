@@ -58,13 +58,13 @@
 
     initNavigation();
     initTextAnimations();
-    initThreeJS();
-    initProjectsPage();
+    // initThreeJS();
+    initDynamicPageBanner();
   }
 
-  function initProjectsPage() {
+  function initDynamicPageBanner() {
     // Guard
-    if (!document.querySelector('.page-banner-image')) {
+    if (!document.querySelector('.page-banner-image--dynamic')) {
       return;
     }
 
@@ -77,6 +77,8 @@
     if (!document.querySelector('.threejs')) {
       return;
     }
+
+    document.querySelector('.threejs').style.display = 'block';
 
     var renderer, scene, camera;
     var spinDirection = true;

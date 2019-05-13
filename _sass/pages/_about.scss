@@ -172,9 +172,10 @@ $about-offset: 130px;
       padding: 2rem;
 
       @include when-using($laptop) {
-        background-color: $dark-grey;
+        background-color: transparent;
         display: flex;
         flex-direction: column;
+        padding-top: 0;
       }
 
       li {

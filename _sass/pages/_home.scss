@@ -2,6 +2,10 @@
   Home Page Styles
 */
 
+.threejs {
+  display: none;
+}
+
 .page-home {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
   padding-bottom: 0;
@@ -46,6 +50,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 100;
   }
 
   .site-logo {
@@ -295,100 +300,6 @@
   &:hover {
     small {
       color: rgba(0, 0, 0, .9);
-    }
-  }
-}
-
-.intro-navigation {
-  background: $dark-grey;
-  bottom: -100%;
-  margin: 0;
-  position: absolute;
-  width: 100%;
-  animation: showIntroNavigation 2s;
-  animation-fill-mode: forwards;
-
-  @include when-using($laptop) {
-    max-width: 800px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 4px 4px 0 0;
-  }
-
-  .intro-navigation__link {
-    padding: 0.25em 0;
-    text-align: center;
-    display: block;
-    font-size: 1.2rem;
-    font-family: $primary-header-font-family;
-    color: $white;
-    position: relative;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-
-    &:hover,
-    &:active {
-      color: $white;
-    }
-
-    span {
-      position: relative;
-      z-index: 20;
-      transition: color 300ms;
-    }
-
-    @include when-using($tablet) {
-      font-size: 1.6rem;
-      border-bottom-style: none;
-      border-right: 1px solid rgba(255, 255, 255, 0.1);
-
-      &:hover,
-      &:active {
-        span {
-          color: $primary-color-compliment;
-        }
-
-        &::after {
-          top: -10%;
-        }
-      }
-
-      &::after {
-        content: ' ';
-        position: absolute;
-        top: 100%;
-        right: 0;
-        bottom: 0;
-        background-color: $primary-color;
-        z-index: 10;
-        transition: top 300ms;
-        width: 100%;
-        border-radius: 4px 4px 0 0;
-      }
-    }
-  }
-
-  ul {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 0;
-
-    @include when-using($tablet) {
-      flex-direction: row;
-    }
-
-    li {
-      margin: 0;
-      padding: 0;
-      flex: 1;
-      list-style: none;
-
-      @include when-using($tablet) {
-        margin: 0;
-
-        &:last-child .intro-navigation__link {
-          border-radius: 0 0 $border-radius 0;
-        }
-      }
     }
   }
 }
