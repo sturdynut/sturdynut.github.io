@@ -2,9 +2,9 @@
   position: relative;
   min-height: 100vh;
 
-  @include when-using($laptop) {
-    padding-top: 69px;
-  }
+  // @include when-using($laptop) {
+  //   padding-top: 69px;
+  // }
 }
 
 .page {
@@ -39,7 +39,7 @@
 
 .page-banner-image {
   width: 100%;
-  // max-width: 1200px;
+  height: 100%;
   margin: 0 auto;
   display: block;
   position: fixed;

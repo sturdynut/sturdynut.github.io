@@ -43,7 +43,7 @@ classes: index
 
 </script>
 <section class='page page-home'>
-  <img class='page-banner-image' src='/images/backgrounds/6.jpg' alt='' />
+  <!-- <img class='page-banner-image' src='/images/backgrounds/6.jpg' alt='' /> -->
   <aside class='page__meta'>
     <div class='name-container'>
       <h1 class='name-container__name'>Matti Salokangas</h1>
@@ -51,26 +51,39 @@ classes: index
     </div>
   </aside>
   <main class='page__content'>
-    {% assign post = site.posts[2] %}
-    <a class='home-featured-post' href='{{ post.url | prepend: site.baseurl }}'>
-      <article name='{{ post.title | replace:" ":"" }}'>
-        <h1 style='background-image: url(../images/backgrounds/{{ post.background }})'>
-          {{ post.title }}
-        </h1>
-        <p>
-          {{ post.excerpt }}
-        </p>
-        <small class='home-featured-post__cta'>Keep reading...</small>
-        <div class='home-featured-post__meta'>
-          <span class='home-featured-post__meta__date'><small>date</small>{{ post.date | date: '%b %-d, %Y' }}</span>
-          {% if post.author %}
-            <div class="home-featured-post__meta__author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-              <span itemprop="name"><small>by</small> {{ post.author }}</span>
+    <ul class='featured-posts js-slider'>
+      {% for post in site.posts %}
+        <li class='home-featured-post'>
+          <article name='{{ post.title | replace:" ":"" }}'>
+            <h1 style='background-image: url(../images/backgrounds/{{ post.background }})'>
+              {{ post.title }}
+            </h1>
+            <p>
+              {{ post.excerpt }}
+            </p>
+            <a class='home-featured-post__cta' href='{{ post.url | prepend: site.baseurl }}'>
+              <small>Keep reading...</small>
+            </a>
+            <div class='home-featured-post__meta'>
+              <span class='home-featured-post__meta__date'><small>date</small>{{ post.date | date: '%b %-d, %Y' }}</span>
+              {% if post.author %}
+                <div class="home-featured-post__meta__author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                  <span itemprop="name"><small>by</small> {{ post.author }}</span>
+                </div>
+              {% endif %}
             </div>
-          {% endif %}
-        </div>
-      </article>
-    </a>
+          </article>
+        </li>
+      {% endfor %}
+    </ul>
+    <div class='featured-posts__buttons js-slider-buttons'>
+      <button type='button' class='featured-posts__button js-slider-prev slick-prev'>
+        <span class='icon icon-arrow-left'></span>
+      </button>
+      <button type='button' class='featured-posts__button js-slider-next slick-next'>
+        <span class='icon icon-arrow-right'></span>
+      </button>
+    </div>
   </main>
   <div class='threejs'>
     <div class='scoreboard'>
