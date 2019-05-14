@@ -60,10 +60,15 @@
     initTextAnimations();
     initThreeJS();
     initDynamicPageBanner();
-    initSlider();
+    initSlider(function() {
+      document.querySelector('.featured-posts')
+        .classList.add('animated', 'fadeIn')
+      document.querySelector('.js-slider-buttons')
+        .classList.add('animated', 'fadeIn')
+    });
   }
 
-  function initSlider() {
+  function initSlider(cb) {
     // Guard
     if (!document.querySelector('.js-slider')) {
       return;
@@ -73,12 +78,14 @@
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: true,
-      adaptiveHeight: false,
-      autoplaySpeed: 5000,
+      adaptiveHeight: true,
+      autoplaySpeed: 30000,
       appendArrow: '.js-slider-buttons',
       prevArrow: '.js-slider-prev',
       nextArrow: '.js-slider-next'
     });
+
+    cb();
   }
 
   function initDynamicPageBanner() {
@@ -97,19 +104,8 @@
       return;
     }
 
-    document.querySelector('.threejs').style.display = 'block';
-
-    var renderer, scene, camera;
-    var spinDirection = true;
-    // var isTargetedByMouse = true;
-    var hitCount = 0;
-    var isGrowing = true;
-    var particles;
-
-    var PARTICLE_SIZE = 20;
-
-    var raycaster, intersects;
-    var mouse, particleXOffset, particleYOffset, intersected = {}; //INTERSECTED;
+    var renderer, scene, camera, particles, raycaster, intersects, mouse, particleXOffset, particleYOffset, intersected = {};
+    var PARTICLE_SIZE = 15;
 
     init();
     animate();
@@ -117,7 +113,7 @@
     function init() {
       var container = document.querySelector('.threejs');
       var cameraAspect = window.innerWidth / window.innerHeight; // Camera frustum aspect ratio.
-      var cameraFov = 20; // Camera frustum vertical field of view.
+      var cameraFov = 15; // Camera frustum vertical field of view.
       var cameraNear = 1; // Camera frustum near plane.
       var cameraFar = 10000; // Camera frustum far plane.
 
@@ -130,21 +126,7 @@
       camera.position.z = 250;
 
       scene = new THREE.Scene();
-      scene.background = new THREE.TextureLoader().load('/images/backgrounds/' + Math.ceil(Math.random() * 46) + '.jpg');
-      // scene.background = new THREE.TextureLoader().load('/images/backgrounds/bg-main.jpeg');
-      // scene.background = new THREE.TextureLoader().load('/images/backgrounds/46.jpg');
-      /*
-        BoxGeometry(width : Float, height : Float, depth : Float, widthSegments : Integer, heightSegments : Integer, depthSegments : Integer)
-        width — Width; that is, the length of the edges parallel to the X axis. Optional; defaults to 1.
-        height — Height; that is, the length of the edges parallel to the Y axis. Optional; defaults to 1.
-        depth — Depth; that is, the length of the edges parallel to the Z axis. Optional; defaults to 1.
-        widthSegments — Number of segmented rectangular faces along the width of the sides. Optional; defaults to 1.
-        heightSegments — Number of segmented rectangular faces along the height of the sides. Optional; defaults to 1.
-        depthSegments — Number of segmented rectangular faces along the depth of the sides. Optional; defaults to 1.
-      */
-      // Cube
-      // var vertices = new THREE.BoxGeometry(200, 200, 200, 64, 64, 64).vertices;
-      // Sphere
+      scene.background = new THREE.TextureLoader().load('/images/backgrounds/bg-main.jpeg');
       var vertices = new THREE.SphereGeometry(100, 60, 60).vertices;
       var positions = new Float32Array(vertices.length * 3);
       var colors = new Float32Array(vertices.length * 3);
@@ -156,17 +138,12 @@
       for (var i = 0, l = vertices.length; i < l; i++) {
         vertex = vertices[i];
         vertex.toArray(positions, i * 3);
-
-        // color.setHSL(288, 0.21, 0.52); // Purple
-        // color.setHSL(55, 0.93, 0.68); // Yellow
-        color.setHSL(0, 0, 1); // White
+        color.setHSL(0, 0, 1);
         color.toArray(colors, i * 3);
 
-        // sizes[i] = PARTICLE_SIZE * 0.25;
-        sizes[i] = Math.max(10, Math.random() * 40);
+        sizes[i] = PARTICLE_SIZE;
       }
 
-      // Cube
       var geometry = new THREE.BufferGeometry();
       geometry.addAttribute('position', new THREE.BufferAttribute(positions, 3));
       geometry.addAttribute('customColor', new THREE.BufferAttribute(colors, 3));
@@ -184,53 +161,37 @@
         alphaTest: 0.9
       });
 
-      // Torus
-      // var geometry = new THREE.TorusGeometry( 15, 60, 20, 100 );
-      // var material = new THREE.MeshBasicMaterial( { color: 0xFFFFFF, wireframe: true, wireframeLinejoin: 'round', wireframeLinewidth: 1, wireframeLinecap: 'round' } );
-      // var mesh = new THREE.Mesh( geometry, material );
-      // scene.add( mesh );
-
       particles = new THREE.Points(geometry, material);
+      particles.rotation.x += 5000;
+      particles.rotation.y += 0;
       scene.add(particles);
-
-      //
 
       renderer = new THREE.WebGLRenderer();
       renderer.setPixelRatio(window.devicePixelRatio);
       renderer.setSize(window.innerWidth, window.innerHeight);
       container.appendChild(renderer.domElement);
-
-      //
+      document.querySelector('.threejs').style.display = 'block';
 
       raycaster = new THREE.Raycaster();
       mouse = new THREE.Vector2();
 
-      //
+      window.addEventListener('resize', function() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
 
-      window.addEventListener('resize', onWindowResize, false);
-      document.addEventListener('mousemove', onDocumentMouseMove, false);
-      // window.setInterval(function () {
-      //   spinDirection = !spinDirection;
-      // }, 10000);
-    }
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      }, false);
 
-    function onDocumentMouseMove(event) {
-      event.preventDefault();
+      document.addEventListener('mousemove', function (event) {
+        event.preventDefault();
 
-      mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-      mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-    }
-
-    function onWindowResize() {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-
-      renderer.setSize(window.innerWidth, window.innerHeight);
+        mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+        mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+      }, false);
     }
 
     function animate() {
       requestAnimationFrame(animate);
-
       render();
     }
 
@@ -248,49 +209,28 @@
     function render() {
       var geometry = particles.geometry;
       var attributes = geometry.attributes;
-      var STEP = 0.05;
-      var MAX_HIT = 2;
-      var PRIZE_SCORE = 25;
+      var PRIZE_SCORE = 100;
       raycaster.setFromCamera(mouse, camera);
       intersects = raycaster.intersectObject(particles);
 
       // Spin it!
       particleXOffset = 0.00005;
       particleYOffset = 0.0001;
-      particles.rotation.x = spinDirection
-        ? particles.rotation.x + particleXOffset
-        : particles.rotation.x - particleXOffset;
-      particles.rotation.y = spinDirection
-        ? particles.rotation.y + particleYOffset
-        : particles.rotation.y - particleYOffset;
+      particles.rotation.x += particleXOffset;
+      particles.rotation.y -= particleYOffset;
 
       // Check for intersections with the cursor
       if (intersects.length > 0) {
-        if (hitCount <= MAX_HIT && isGrowing) {
-          hitCount += STEP;
-        } else if (!isGrowing) {
-          hitCount -= STEP;
-        }
-
-        if (hitCount >= MAX_HIT) {
-          isGrowing = false;
-          } else if (hitCount < STEP) {
-          isGrowing = true;
-        }
-
         for (var i = 0, l = intersects.length; i < l; i++) {
           var intersectIndex = intersects[i].index;
           var previouslyIntersected = intersected[intersectIndex];
           if (!previouslyIntersected) {
-            attributes.size.array[intersectIndex] = PARTICLE_SIZE * Math.max(0.5, hitCount);
+            attributes.size.array[intersectIndex] = PARTICLE_SIZE * 2;
             attributes.size.needsUpdate = true;
             intersected[intersectIndex] = true;
           }
 
           // Kill off intersections to reduce points
-          // Better way possibly would be to do an interval that
-          // kills them off after a given set of time...
-          // i.e. () => if (count > 25 && timeElapsed > 10sec) reduce by 1...every 500ms
           window.setTimeout(function() {
             delete intersected[intersectIndex];
 
@@ -303,7 +243,6 @@
       }
 
       renderScore(PRIZE_SCORE);
-
       renderer.render(scene, camera);
     }
   }

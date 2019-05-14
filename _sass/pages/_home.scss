@@ -58,6 +58,10 @@
     }
   }
 
+  .js-slider-buttons {
+    opacity: 0;
+  }
+
   .site-logo {
     display: none;
 
@@ -95,7 +99,7 @@
       opacity: 1;
 
       &::after {
-        content: 'A score of 25 or more and you get a cat cursor 😻. Beware though your points may go away ☠️!';
+        content: 'A score of 100 or more and you get a cat cursor 😻. Beware though your points may go away ☠️!';
         position: absolute;
         left: calc(100% + 2px);
         top: -15px;
@@ -214,8 +218,9 @@
 
 .featured-posts {
   width: 100%;
-  max-width: 400px;
+  max-width: 800px;
   position: relative;
+  opacity: 0;
 
   &__buttons {
     display: flex;
@@ -284,7 +289,7 @@
     margin: 0;
     background-color: $dark-grey;
     color: #fff;
-    padding: 1em;
+    padding: 0.5em 1em;
     text-align: center;
     line-height: 1;
     border-radius: 8px 8px 0 0;
@@ -293,6 +298,8 @@
     @include when-using($tablet) {
       padding-left: 0;
       padding-right: 0;
+      padding-top: 1em;
+      padding-bottom: 1em;
     }
   }
 
@@ -301,6 +308,8 @@
     font-size: rem;
     padding: 2em 2em 0;
     background: #fff;
+    text-align: center;
+    max-height: 50vh;
   }
 
   &__cta {

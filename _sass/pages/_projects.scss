@@ -112,7 +112,7 @@
   flex: 1;
   color: $tan;
   line-height: 1.75;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.5);
   position: relative;
   z-index: 100;
 
@@ -165,6 +165,7 @@
       flex-direction: row;
       padding: 1em 2em;
       box-shadow: 0 -1px 1px 0px rgba(0, 0, 0, 0.5);
+      background: $black;
     }
   }
 

@@ -6,6 +6,7 @@ title: "Angular CLI"
 author: "Matti Salokangas"
 description: A guide to building the classic TodoMVC using Angular CLI.
 comments: true
+excerpt: This is a guide to build the Angular 2 Todo MVC application using the Angular CLI.
 keywords: angular, angular cli, cli
 tags:
   - angular
