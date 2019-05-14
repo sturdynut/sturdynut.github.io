@@ -12,19 +12,19 @@
   <meta property="og:type"               content="article" />
   <meta property="og:title"              content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
   <meta property="og:description"        content="{% if page.description %}{{ page.description }}{% else %}Full stack software developer that excels in UI/UX with over 12 years of professional experience. 🦄{% endif %}" />
-  <meta property="og:image"              content="{% if page.background %}http://sturdynut.com/images/backgrounds/{{ page.background }}{% else %}http://sturdynut.com/images/logo.png{% endif %}" />
+  <meta property="og:image"              content="{% if page.background %}https://sturdynut.com/images/backgrounds/{{ page.background }}{% else %}https://sturdynut.com/images/logo.png{% endif %}" />
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
   <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}Full stack software developer that excels in UI/UX with over 12 years of professional experience. 🦄{% endif %}">
-  <meta name="twitter:image" content="{% if page.background %}http://sturdynut.com/images/backgrounds/{{ page.background }}{% else %}http://sturdynut.com/images/logo.png{% endif %}">
+  <meta name="twitter:image" content="{% if page.background %}https://sturdynut.com/images/backgrounds/{{ page.background }}{% else %}https://sturdynut.com/images/logo.png{% endif %}">
   <meta name="twitter:site" content="@sturdynut">
   <meta name="twitter:creator" content="@sturdynut">
 
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
 
-  <link rel="icon" href="https://www.sturdynut.com/fav-icon.png" type="image/png" />
+  <link rel="icon" href="https://sturdynut.com/fav-icon.png" type="image/png" />
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
