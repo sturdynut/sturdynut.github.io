@@ -5,6 +5,7 @@
  .page.projects-section {
   height: 100%;
   background-color: $dark-grey;
+  padding-bottom: 3em;
 
   @include when-using($tablet) {
     margin-bottom: 20px;
@@ -50,18 +51,22 @@
   .projects-list {
     padding: 0;
     font-size: 1rem;
-    margin: 0 0 2em 0;
+    margin: 1em 0 2em;
     width: 100%;
     position: relative;
     z-index: 100;
 
     @include when-using($tablet) {
-      margin: 100px 25px 0 0;
+      margin: 2em 25px 0 0;
       flex-wrap: wrap;
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 0;
+    }
+
+    @include when-using($laptop) {
+
     }
 
     i {
@@ -81,6 +86,24 @@
       padding-left: calc(80px + 1em);
       padding-right: calc(40px + 1em);
     }
+
+    &__summary {
+      position: relative;
+      z-index: 100;
+      margin: 40px auto 0;
+      color: rgba(255, 255, 255, 0.7);
+      padding: 0 2em;
+      text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+
+      @include when-using($tablet) {
+        text-align: center;
+      }
+
+      @include when-using($laptop) {
+        text-align: center;
+        margin: 100px auto 0;
+      }
+    }
   }
 }
 
@@ -89,7 +112,7 @@
   flex: 1;
   color: $tan;
   line-height: 1.75;
-  background: $black;
+  background: rgba(0, 0, 0, 0.8);
   position: relative;
   z-index: 100;
 
@@ -241,6 +264,8 @@
       color: $tan;
       transition: background-color 300ms;
       width: 100%;
+      font-family: $primary-header-font-family;
+      font-size: 1.4rem;
 
       &.site-link {
         @include when-using($tablet) {
@@ -258,7 +283,7 @@
       }
 
       &:hover {
-        background: darken($yellow, 5%);
+        background: darken($primary-color, 5%);
       }
     }
   }
@@ -268,7 +293,6 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top left;
-    border-radius: 4px;
     height: 200px;
     width: 100%;
     margin: 0 auto;
@@ -277,7 +301,6 @@
 
     @include when-using($tablet) {
       height: 40vh;
-      border-radius: 4px 4px 0 0;
       box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.9);
       width: calc(100% - 4em);
     }

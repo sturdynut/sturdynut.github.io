@@ -91,7 +91,7 @@
   .about-page &,
   .intro-navigation &,
   .site-nav & {
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 45px;
     font-family: $logo-font-family;
   }
@@ -152,5 +152,49 @@
   span {
     position: relative;
     z-index: 2;
+  }
+}
+
+.bouncing-button {
+  margin-top: 40px;
+  padding: 10px 30px;
+  font-size: 1em;
+  transition: all 100ms;
+  color: $white;
+  opacity: 0;
+  font-family: $button-font-family;
+  position: relative;
+  border-radius: 3px;
+
+  .featured-post.active & {
+    opacity: 1;
+  }
+
+  span {
+    position: relative;
+    z-index: 2;
+  }
+
+  &:after {
+    content: ' ';
+    position: absolute;
+    top: 40px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $secondary-color;
+    z-index: 1;
+    transition: all 500ms;
+    border-radius: 3px;
+  }
+
+  &:hover,
+  &:active {
+    animation: bob 2s infinite;
+    color: $dark-grey;
+
+    &:after {
+      top: 0;
+    }
   }
 }
