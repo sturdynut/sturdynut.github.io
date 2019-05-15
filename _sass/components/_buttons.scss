@@ -58,21 +58,13 @@
 
 .btn-top {
   position: fixed;
-  bottom: 60px;
+  bottom: 70px;
   right: 40px;
-  display: none;
-  display: flex;
-  justify-content: center;
-  align-content: center;
   z-index: 50;
   color: $primary-color;
 
   .icon {
     font-size: 2rem;
-  }
-
-  @include when-using($tablet) {
-    bottom: 40px;
   }
 }
 

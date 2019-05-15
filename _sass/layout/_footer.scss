@@ -5,17 +5,27 @@
   font-size: 0.6rem;
   color: $footer-text-color;
   width: 100%;
-  height: 40px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background: $black;
-  position: relative;
+  position: absolute;
   z-index: 20;
+  height: 40px;
+  padding-left: 1em;
+  padding-right: 1em;
 
   @include when-using($tablet) {
     font-size: 0.7rem;
     height: 60px;
+    padding-left: 2em;
+    padding-right: 2em;
+    flex-direction: row;
+
+    &__tech {
+      margin-left: auto;
+    }
   }
   @include when-using($laptop) {
     font-size: 0.9rem;

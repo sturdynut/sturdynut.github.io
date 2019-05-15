@@ -5,7 +5,7 @@ background: "39.jpg"
 title: "Staying Uncomfortable"
 author: Matti Salokangas
 comments: true
-excerpt: One of the biggest struggles I have dealt with as a software developer is feeling like I need to know everything.  That by not knowing, I have failed to fulfill my duty as a software developer.  I know I'm not alone here.  We have all felt this, whether it be in life or at work.  Over the years this has tapered off, but it is still there...
+excerpt: One of the biggest struggles I have dealt with as a software developer is feeling like I need to know everything.  That by not knowing, I have failed to fulfill my duty as a software developer.  I know I'm not alone here.
 tags:
   - staying uncomfortable
   - imposter syndrome
