@@ -306,10 +306,6 @@
       width: calc(100% - 4em);
     }
 
-    @include when-using($laptop) {
-      height: 100%;
-    }
-
     .dutch-bros-menu & {
       background-image: url('/images/projects/dutch-bros-menu.png');
     }
