@@ -126,8 +126,6 @@
 
   @include when-using($tablet) {
     padding: 0;
-    height: 50vh;
-    min-height: 370px;
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
