@@ -2,8 +2,7 @@
 title: Matti Salokangas, front-end developer in Oregon, USA
 email: matti.salokangas@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  I am Matti Salokangas, a front-end developer from Oregon.
-  I have a full-stack background, but have found my niche in the front-end.
+  Full stack software developer that excels in UI/UX, communication and leadership with 12+ years of professional experience.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://sturdynut.com" # the base hostname & protocol for your site
 twitter_username: sturdynut
@@ -11,7 +10,9 @@ github_username:  sturdynut
 
 # Build settings
 markdown: kramdown
-plugins: [jekyll-paginate]
+plugins:
+  - jekyll-paginate
+  - jekyll-minifier
 paginate_path: /blog/page:num
 paginate: 5
 permalink: pretty
