@@ -209,7 +209,7 @@
     function render() {
       var geometry = particles.geometry;
       var attributes = geometry.attributes;
-      var PRIZE_SCORE = 10;
+      var PRIZE_SCORE = 25;
       raycaster.setFromCamera(mouse, camera);
       intersects = raycaster.intersectObject(particles);
 
