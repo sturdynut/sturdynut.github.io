@@ -1,11 +1,11 @@
 # Site settings
-title: Matti Salokangas, front-end developer in Oregon, USA
+title: Matti Salokangas, full stack software developer
 email: matti.salokangas@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Full stack software developer that excels in UI/UX, communication and leadership with 12+ years of professional experience.
+  I make things with code
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://sturdynut.com" # the base hostname & protocol for your site
-twitter_username: sturdynut
+twitter_username: matticodes
 github_username:  sturdynut
 
 # Build settings

@@ -8,12 +8,13 @@
 
 .page-home {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
-  padding-bottom: 0;
-  padding-top: 0;
-  height: 100vh;
+  background-image: url('/images/backgrounds/milky-way.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
+  padding-bottom: 0;
+  padding-top: 0;
+  height: 100vh;
 
   &.page-home--cat-activated {
     cursor: url(/images/cat-head.png), auto;
@@ -27,13 +28,13 @@
         content: 'You are winning! 😻😻😻';
         position: absolute;
         left: calc(100% + 2px);
-        top: 0px;
+        top: -17px;
         background-color: $purple;
         color: #fff;
-        font-size: 0.7em;
+        font-size: 1rem;
         border-radius: 4px;
         padding: 8px;
-        min-width: 100px;
+        min-width: 150px;
         text-align: center;
       }
     }
@@ -99,16 +100,16 @@
       opacity: 1;
 
       &::after {
-        content: 'A score of 100 or more and you get a cat cursor 😻. Beware though your points may go away ☠️!';
+        content: 'A score of 10 or more and you get a cat cursor 😻. Beware though your points may go away ☠️!';
         position: absolute;
         left: calc(100% + 2px);
-        top: -15px;
+        top: -45px;
         background-color: $purple;
         color: #fff;
-        font-size: 0.7em;
+        font-size: 1rem;
         border-radius: 4px;
         padding: 8px;
-        min-width: 220px;
+        min-width: 280px;
         text-align: justify;
       }
     }

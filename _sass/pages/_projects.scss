@@ -88,12 +88,14 @@
     }
 
     &__summary {
+      background-color: $secondary-color;
+      border-radius: 3px;
+      color: #333;
+      margin: 40px auto 0;
+      max-width: 430px;
+      padding: 1em;
       position: relative;
       z-index: 100;
-      margin: 40px auto 0;
-      color: rgba(255, 255, 255, 0.7);
-      padding: 0 2em;
-      text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
 
       @include when-using($tablet) {
         text-align: center;
@@ -102,17 +104,19 @@
       @include when-using($laptop) {
         text-align: center;
         margin: 100px auto 0;
+        left: -20px;
       }
     }
   }
 }
 
 .project {
+  border-radius: 3px;
   padding: 1em 1em 2em;
   flex: 1;
   color: $tan;
   line-height: 1.75;
-  background: rgba(0, 0, 0, 0.5);
+  background: $dark-grey;
   position: relative;
   z-index: 100;
 

@@ -2,7 +2,7 @@ $main-nav-height: 50px;
 
 .main-navigation {
   display: none;
-  background: rgba(0, 0, 0, .8);
+  background: rgba(0, 0, 0, 0.5);
   bottom: -100%;
   margin: 0;
   position: absolute;
@@ -22,7 +22,7 @@ $main-nav-height: 50px;
     animation: none;
     height: $main-nav-height;
     z-index: 10003;
-    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
   }
 
   .main-navigation__link {

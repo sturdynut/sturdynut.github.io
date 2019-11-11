@@ -126,7 +126,7 @@
       camera.position.z = 250;
 
       scene = new THREE.Scene();
-      scene.background = new THREE.TextureLoader().load('/images/backgrounds/bg-main.jpeg');
+      // scene.background = new THREE.TextureLoader().load('/images/backgrounds/bg-main.jpeg');
       var vertices = new THREE.SphereGeometry(100, 60, 60).vertices;
       var positions = new Float32Array(vertices.length * 3);
       var colors = new Float32Array(vertices.length * 3);
@@ -166,7 +166,7 @@
       particles.rotation.y += 0;
       scene.add(particles);
 
-      renderer = new THREE.WebGLRenderer();
+      renderer = new THREE.WebGLRenderer({ alpha: true });
       renderer.setPixelRatio(window.devicePixelRatio);
       renderer.setSize(window.innerWidth, window.innerHeight);
       container.appendChild(renderer.domElement);
@@ -209,7 +209,7 @@
     function render() {
       var geometry = particles.geometry;
       var attributes = geometry.attributes;
-      var PRIZE_SCORE = 100;
+      var PRIZE_SCORE = 10;
       raycaster.setFromCamera(mouse, camera);
       intersects = raycaster.intersectObject(particles);
 
