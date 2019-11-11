@@ -1,0 +1,139 @@
+---
+layout: experiment
+title: "P5JS - Experiment"
+---
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+<script>
+"use strict";
+
+/*
+  Globals 🌎
+*/
+
+const width = window.innerWidth;
+const height = window.innerHeight;
+const maxCircleWidth = 100;
+const minCircleWidth = 1;
+const defaultCircleWidth = 5;
+let circleWidth = defaultCircleWidth;
+let growing = 1;
+let circleStep = 1;
+let currentX = -999;
+let currentY = -999;
+let drawCount = 0;
+
+/*
+  Helpers 🛠
+*/
+
+function appendInfo() {
+  const div = document.createElement('div');
+  div.style.cssText = `
+    bottom: 10px;
+    opacity: 0.5;
+    left: 10px;
+    position: absolute;
+    height: 20px;
+    width: 100%;
+    z-index: 100;
+  `;
+  div.innerHTML = '<a href="https://p5js.org/" rel="nofollow" target="_blank">Built using p5js</a>'
+  document.body.appendChild(div);
+}
+
+function updateCoordinates(x, y) {
+  currentX = x;
+  currentY = y;
+}
+
+// Courtesy of https://flatuicolors.com/ 🙏❤️
+const colors = {
+  turbo: () => fill(249, 202, 36),
+  spicedNectarine: () => fill(255, 190, 118),
+  quinceJelly: () => fill(240, 147, 43),
+  orangeVille: () => fill(225, 112, 85),
+  firstDate: () => fill(250, 177, 160),
+  pinkGlamour: () => fill(255, 121, 121),
+  carminePink: () => fill(235, 77, 75),
+  lightGreenishBlue: () => fill(85, 239, 196),
+  mintLeaf: () => fill(0, 184, 148),
+  juneBud: () => fill(186, 220, 88),
+  pureApple: () => fill(106, 176, 76),
+  fadedPoster: () => fill(129, 236, 236),
+  middleBlue: () => fill(126, 214, 223),
+  robinsEggBlue: () => fill(0, 206, 201),
+  greenLandGreen: () => fill(34, 166, 179),
+  robinsEggBlue: () => fill(0, 206, 201),
+  greenDarnerTail: () => fill(116, 185, 255),
+  electronBlue: () => fill(9, 132, 227),
+  helioTrope: () => fill(224, 86, 253),
+  steelPink: () => fill(190, 46, 221),
+  shyMoment: () => fill(162, 155, 254),
+  exodusFruit: () => fill(104, 109, 224),
+  blurple: () => fill(72, 52, 212),
+  deepKoamaru: () => fill(48, 51, 107),
+  deepCove: () => fill(19, 15, 64),
+}
+
+const colorKeys = Object.keys(colors);
+const colorsCount = colorKeys.length;
+let sequentialCounter = 0;
+let sequentialDirection = 1;
+const randomFillIndex = () => Math.round(Math.random() * (colorsCount - 1));
+const sequentialFillIndex = () => {
+  if (sequentialCounter === 0) {
+    sequentialDirection = 1;
+  } else if (sequentialCounter === colorsCount - 1) {
+    sequentialDirection = 0;
+  }
+
+  sequentialCounter += sequentialDirection ? 1 : -1;
+
+  return sequentialCounter;
+}
+const fillByIndex = (index) => colors[colorKeys[index]]();
+
+/*
+  P5 Setup 🏗 and Draw 🎨
+*/
+
+function setup() {
+  createCanvas(width, height, 'p2d');
+  background(246, 229, 141);
+  noStroke();
+
+  if (Modernizr.touch) {
+    window.addEventListener('touchmove', (touchEvent) => {
+      // todo: multiple touches?
+      const [ touch ] = touchEvent.touches;
+      const { pageX, pageY } = touch;
+      updateCoordinates(pageX, pageY);
+    });
+  } else {
+    window.addEventListener('mousemove', ({x, y}) => updateCoordinates(x,y));
+  }
+
+  appendInfo();
+}
+
+function draw() {
+  if (drawCount === 0 || drawCount % 5 === 0) {
+    // fillByIndex(randomFillIndex());
+    fillByIndex(sequentialFillIndex());
+  }
+
+  if (circleWidth === maxCircleWidth) {
+    growing = 0;
+  } else if (circleWidth === minCircleWidth) {
+    growing = 1;
+  }
+
+  circleWidth += growing ? circleStep : -circleStep;
+
+  circle(currentX, currentY, circleWidth);
+
+  drawCount += 1;
+}
+</script>
