@@ -3,6 +3,7 @@ layout: experiment
 title: "P5JS - Experiment"
 ---
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/inobounce/0.2.0/inobounce.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
 <script>
@@ -106,7 +107,6 @@ function setup() {
 
   if (Modernizr.touch) {
     window.addEventListener('touchmove', (touchEvent) => {
-      // todo: multiple touches?
       const [ touch ] = touchEvent.touches;
       const { pageX, pageY } = touch;
       updateCoordinates(pageX, pageY);

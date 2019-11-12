@@ -6,7 +6,9 @@
   left: 0;
   margin: 0;
   overflow: hidden;
+  overscroll-behavior: none;
   right: 0;
   top: 0;
+  touch-action: none;
   width: 100vw;
 }
