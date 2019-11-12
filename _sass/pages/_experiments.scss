@@ -1,4 +1,12 @@
 .page-experiment {
+  bottom: 0;
+  height: 100vh;
   padding: 0;
-  margin:0;
+  position: absolute;
+  left: 0;
+  margin: 0;
+  overflow: hidden;
+  right: 0;
+  top: 0;
+  width: 100vw;
 }
