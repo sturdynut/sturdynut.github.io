@@ -1,6 +1,6 @@
 ---
 layout: experiment
-title: "P5JS - Experiment"
+title: "P5JS - Ink Experiment"
 ---
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/inobounce/0.2.0/inobounce.min.js"></script>
@@ -9,64 +9,84 @@ title: "P5JS - Experiment"
 <script>
 "use strict";
 
-
-
-function Velocity() {
-  this.positionQueue = []
-  this.timeQueue = []
-}
-
-Velocity.prototype.reset = function() {
-  this.positionQueue.splice(0)
-  this.timeQueue.splice(0)
-}
-
-Velocity.prototype.pruneQueue = function(ms) {
-  //pull old values off of the queue
-  while(this.timeQueue.length && this.timeQueue[0] < (Date.now() - ms)) {
-    this.timeQueue.shift()
-    this.positionQueue.shift()
-  }
-}
-
-Velocity.prototype.updatePosition = function(position) {
-  this.positionQueue.push(position)
-  this.timeQueue.push(Date.now())
-  this.pruneQueue(50)
-}
-
-Velocity.prototype.getVelocity = function() {
-  this.pruneQueue(1000)
-  var length = this.timeQueue.length
-  if(length < 2) return 0
-
-  var distance = this.positionQueue[length-1] - this.positionQueue[0]
-    , time = (this.timeQueue[length-1] - this.timeQueue[0]) / 1000
-
-  return distance / time
-}
-
 /*
   Globals 🌎
 */
 
-const velocity = new Velocity();
 const width = window.innerWidth;
 const height = window.innerHeight;
-const maxCircleWidth = 300;
-const minCircleWidth = 1;
-const defaultCircleWidth = 5;
-let circleWidth = defaultCircleWidth;
-let previousCircleWidth = circleWidth;
-let growing = 1;
-let circleStep = 1;
+let accelerating = false;
 let currentX = -999;
 let currentY = -999;
+let circleWidth = 100;
+let maxCircleWidth = 150;
+let minCircleWidth = 10;
+const distances = [];
 let drawCount = 0;
+let r = randomRGB();
+let rIncreasing = true;
+let g = randomRGB();
+let gIncreasing = true;
+let b = randomRGB();
+let bIncreasing = true;
 
 /*
   Helpers 🛠
 */
+
+function updateRGB() {
+  const rIncrement = 1 //randomRGB();
+  const gIncrement = 1 //randomRGB();
+  const bIncrement = 1 //randomRGB();
+
+  r = r + (rIncreasing ? rIncrement : -rIncrement);
+  g = g + (gIncreasing ? gIncrement : -gIncrement);
+  b = b + (bIncreasing ? bIncrement : -bIncrement);
+
+  if (r >= 255) {
+    rIncreasing = false;
+  } else if (r <= 0) {
+    rIncreasing = true;
+  }
+  if (g >= 255) {
+    gIncreasing = false;
+  } else if (r <= 0) {
+    gIncreasing = true;
+  }
+  if (b >= 255) {
+    bIncreasing = false;
+  } else if (r <= 0) {
+    bIncreasing = true;
+  }
+}
+
+function randomRGB() {
+  return Math.round(Math.random() * 256, 0);
+}
+
+function average(data){
+  var sum = data.reduce(function(sum, value){
+    return sum + value;
+  }, 0);
+
+  var avg = sum / data.length;
+  return avg;
+}
+
+function standardDeviation(values){
+  var avg = average(values);
+
+  var squareDiffs = values.map(function(value){
+    var diff = value - avg;
+    var sqrDiff = diff * diff;
+    return sqrDiff;
+  });
+
+  var avgSquareDiff = average(squareDiffs);
+
+  var stdDev = Math.sqrt(avgSquareDiff);
+  return stdDev;
+}
 
 function appendInfo() {
   const div = document.createElement('div');
@@ -83,59 +103,47 @@ function appendInfo() {
   document.body.appendChild(div);
 }
 
-function updateCoordinates(x, y) {
+function updateCurrentXY(x, y) {
+  const lastX = currentX;
+  const lastY = currentY;
+
   currentX = x;
   currentY = y;
 
-  velocity.updatePosition(x);
-}
+  const a = Math.abs(currentX - lastX);
+  const b = Math.abs(currentY - lastY);
 
-// Courtesy of https://flatuicolors.com/ 🙏❤️
-const colors = {
-  turbo: () => fill(249, 202, 36),
-  spicedNectarine: () => fill(255, 190, 118),
-  quinceJelly: () => fill(240, 147, 43),
-  orangeVille: () => fill(225, 112, 85),
-  firstDate: () => fill(250, 177, 160),
-  pinkGlamour: () => fill(255, 121, 121),
-  carminePink: () => fill(235, 77, 75),
-  lightGreenishBlue: () => fill(85, 239, 196),
-  mintLeaf: () => fill(0, 184, 148),
-  juneBud: () => fill(186, 220, 88),
-  pureApple: () => fill(106, 176, 76),
-  fadedPoster: () => fill(129, 236, 236),
-  middleBlue: () => fill(126, 214, 223),
-  robinsEggBlue: () => fill(0, 206, 201),
-  greenLandGreen: () => fill(34, 166, 179),
-  robinsEggBlue: () => fill(0, 206, 201),
-  greenDarnerTail: () => fill(116, 185, 255),
-  electronBlue: () => fill(9, 132, 227),
-  helioTrope: () => fill(224, 86, 253),
-  steelPink: () => fill(190, 46, 221),
-  shyMoment: () => fill(162, 155, 254),
-  exodusFruit: () => fill(104, 109, 224),
-  blurple: () => fill(72, 52, 212),
-  deepKoamaru: () => fill(48, 51, 107),
-  deepCove: () => fill(19, 15, 64),
-}
+  const distance = Math.sqrt(Math.pow(a, 2), Math.pow(b, 2));
+  distances.push(distance);
 
-const colorKeys = Object.keys(colors);
-const colorsCount = colorKeys.length;
-let sequentialCounter = 0;
-let sequentialDirection = 1;
-const randomFillIndex = () => Math.round(Math.random() * (colorsCount - 1));
-const sequentialFillIndex = () => {
-  if (sequentialCounter === 0) {
-    sequentialDirection = 1;
-  } else if (sequentialCounter === colorsCount - 1) {
-    sequentialDirection = 0;
+  while (distances.length > 10) {
+    distances.shift();
   }
-
-  sequentialCounter += sequentialDirection ? 1 : -1;
-
-  return sequentialCounter;
 }
-const fillByIndex = (index) => colors[colorKeys[index]]();
+
+function begin() {
+  window.setInterval(() => {
+    let deviation = standardDeviation(distances);
+    deviation = isNaN(deviation) ? 1 : deviation;
+
+    if (deviation > 0.5) {
+      accelerating = true;
+    } else {
+      accelerating = false;
+    }
+
+    const incrementValue = 1 * deviation / 100;
+    const increment = accelerating ? -1 : 1;
+    const proposedCircleWidth = Math.abs(circleWidth + increment);
+
+    circleWidth = proposedCircleWidth >= maxCircleWidth
+      ? maxCircleWidth
+      : proposedCircleWidth <= minCircleWidth
+        ? minCircleWidth
+        : proposedCircleWidth;
+
+  }, 100);
+}
 
 /*
   P5 Setup 🏗 and Draw 🎨
@@ -150,36 +158,20 @@ function setup() {
     window.addEventListener('touchmove', (touchEvent) => {
       const [ touch ] = touchEvent.touches;
       const { pageX, pageY } = touch;
-      updateCoordinates(pageX, pageY);
+      updateCurrentXY(pageX, pageY);
     });
   } else {
-    window.addEventListener('mousemove', ({x, y}) => updateCoordinates(x,y));
+    window.addEventListener('mousemove', ({x, y}) => updateCurrentXY(x,y));
   }
 
   appendInfo();
+  begin();
 }
 
 function draw() {
-  if (drawCount === 0 || drawCount % 5 === 0) {
-    // fillByIndex(randomFillIndex());
-    fillByIndex(sequentialFillIndex());
-  }
+  fill(r, g, b);
 
-  if (circleWidth === maxCircleWidth) {
-    growing = 0;
-  } else if (circleWidth === minCircleWidth) {
-    growing = 1;
-  }
-
-  // circleWidth += growing ? circleStep : -circleStep;
-
-  const v = Math.abs(velocity.getVelocity());
-  const potentialNextWidth = Math.round(maxCircleWidth / v * 100);
-  const nextMinWidth = previousCircleWidth * 1.2;
-  circleWidth = nextMinWidth //Math.min(nextMinWidth, potentialNextWidth);
-  previousCircleWidth = circleWidth;
-
-  console.log(circleWidth);
+  updateRGB();
 
   circle(currentX, currentY, circleWidth);
 
