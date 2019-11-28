@@ -16,9 +16,18 @@
   padding-top: 0;
   height: 100vh;
 
-  &.page-home--cat-activated {
-    cursor: url(/images/cat-head.png), auto;
-
+  &.page-home--cat-activated-level-1 {
+    cursor: url("/images/cat-head-1.png"), auto;
+  }
+  &.page-home--cat-activated-level-2 {
+    cursor: url("/images/cat-head-2.png"), auto;
+  }
+  &.page-home--cat-activated-level-3 {
+    cursor: url("/images/cat-head-3.png"), auto;
+  }
+  &.page-home--cat-activated-level-1,
+  &.page-home--cat-activated-level-2,
+  &.page-home--cat-activated-level-3 {
     .scoreboard {
       background-color: $purple;
       animation: bob 450ms infinite;
@@ -218,16 +227,23 @@
 }
 
 .featured-posts {
-  width: 100%;
-  max-width: 800px;
-  position: relative;
   opacity: 0;
+  width: 100%;
+
+  @include when-using($tablet) {
+    bottom: 1em;
+    max-width: 300px;
+    position: absolute !important;
+    right: 1em;
+  }
 
   &__buttons {
     display: flex;
     width: 100%;
-    max-width: 200px;
+    max-width: 260px;
     margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   &__button {
@@ -263,8 +279,14 @@
   padding: 0 1em;
   border-radius: 8px 8px 4px 4px;
 
-  .page-home--cat-activated & {
-    cursor: url(/images/cat-head.png), auto;
+  .page-home--cat-activated-level-1 & {
+    cursor: url("/images/cat-head-1.png"), auto;
+  }
+  .page-home--cat-activated-level-2 & {
+    cursor: url("/images/cat-head-2.png"), auto;
+  }
+  .page-home--cat-activated-level-3 & {
+    cursor: url("/images/cat-head-3.png"), auto;
   }
 
   @include when-using($tablet) {

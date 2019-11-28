@@ -24,14 +24,11 @@ header, footer, nav, article, main {
  * Basic styling
  */
 
-html {
-  overflow-x: hidden;
+* {
   box-sizing: border-box;
 }
 
 body {
-  width: 100%;
-  overflow-x: hidden;
   font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
   color: $text-color;
   background-color: $background-color;
@@ -45,6 +42,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
+  width: 100%;
 }
 
 /**

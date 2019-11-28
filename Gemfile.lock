@@ -3,6 +3,10 @@ GEM
   specs:
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    babel-source (5.8.35)
+    babel-transpiler (0.7.0)
+      babel-source (>= 4.0, < 6)
+      execjs (~> 2.0)
     colorator (1.1.0)
     concurrent-ruby (1.1.5)
     cssminify2 (2.0.1)
@@ -30,6 +34,8 @@ GEM
       pathutil (~> 0.9)
       rouge (>= 1.7, < 4)
       safe_yaml (~> 1.0)
+    jekyll-babel (1.1.0)
+      babel-transpiler
     jekyll-feed (0.12.1)
       jekyll (>= 3.7, < 5.0)
     jekyll-minifier (0.1.10)
@@ -79,6 +85,7 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll (~> 3.8.5)
+  jekyll-babel
   jekyll-feed (~> 0.6)
   jekyll-minifier
   jekyll-paginate

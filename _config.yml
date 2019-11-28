@@ -1,5 +1,5 @@
 # Site settings
-title: Matti Salokangas, full stack software developer
+title: Matti Salokangas | Full stack software developer
 email: matti.salokangas@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   I make things with code
@@ -13,6 +13,7 @@ markdown: kramdown
 plugins:
   - jekyll-paginate
   - jekyll-minifier
+  - jekyll-babel
 paginate_path: /blog/page:num
 paginate: 5
 permalink: pretty

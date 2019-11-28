@@ -1,76 +1,72 @@
-'use strict';
+---
+---
+
+// 'use strict';
 
 (function() {
 
-  // Custom objects
-
-  var ScrollBeast = function() {};
-
-  ScrollBeast.prototype.smoothScroll = function(target) {
-    target = $('[name="' + target + '"]');
-
-    if (target.length) {
-      $('html, body').velocity('stop')
-        .velocity('scroll', {
-          duration: 400,
-          easing: 'linear',
-          offset: target.offset().top
-        });
-
-      return false;
-    }
-  };
-
-  // Window objects
-
-  window.sturdy = window.sturdy || {};
-  sturdy.scrollBeast = new ScrollBeast();
-  sturdy.checkTopPosition = checkTopPosition;
-  sturdy.hints = {
-    isLaptop: function() {
-      return $(window).width() >= 1024;
-    }
-  };
+  // 🌏 Helpers
+  window.sturdy = {
+    CONSTANTS: {
+      CURSORS: {
+        CAT_1: 'page-home--cat-activated-level-1',
+        CAT_2: 'page-home--cat-activated-level-2',
+        CAT_3: 'page-home--cat-activated-level-3',
+      }
+    },
+    animateElement: ($element, effect, inCallback) => {
+      $element.textillate({
+        minDisplayTime: 0,
+        in: {
+          effect: effect,
+          sync: false,
+          callback: inCallback
+        }
+      });
+    },
+    checkTopPosition: () => {
+      if (window.pageYOffset > 300) {
+        $('.btn-top').fadeIn();
+        sturdy.classAdd('.site-header', 'site-header--condensed');
+        sturdy.classAdd('.site-nav-trigger', 'site-nav-trigger--condensed');
+      } else {
+        $('.btn-top').fadeOut();
+        sturdy.classRemove('.site-header', 'site-header--condensed');
+        sturdy.classRemove('.site-nav-trigger', 'site-nav-trigger--condensed');
+      }
+    },
+    classAdd: (selector, cssClass) => sturdy.query(selector).classList.add(cssClass),
+    classRemove: (selector, cssClass) => sturdy.query(selector).classList.remove(cssClass),
+    classRemoveAll: (selectors, cssClass) => sturdy.queryAll(selectors).forEach(
+      element => element.classList.remove(cssClass)
+    ),
+    classToggleAll: (selectors, cssClass) => sturdy.queryAll(selectors).forEach(
+      element => element.classList.toggle(cssClass)
+    ),
+    eventAdd: (element, event, handler, options) => element.addEventListener(event, handler, options),
+    guard: (selector) => !sturdy.query(selector),
+    query: selector => document.querySelector(selector),
+    queryAll: selectors => document.querySelectorAll(selectors)
+  }
 
   // Initialization
 
-  $(init);
-
   function init() {
-    $(function() {
-      $('a[href*="#"]:not([href="#"])').click(function() {
-        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-          var target = $(this.hash);
-          target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-          if (target.length) {
-            $('html, body').animate({
-              scrollTop: target.offset().top
-            }, 1000);
-            return false;
-          }
-        }
-      });
-    });
-
-    $('.site-content').on('click', function() {
-      $('.js-site-nav,.js-site-nav-trigger').removeClass('active');
-    });
-
     initNavigation();
     initTextAnimations();
     initThreeJS();
     initDynamicPageBanner();
     initSlider(function() {
-      document.querySelector('.featured-posts')
+      sturdy.query('.featured-posts')
         .classList.add('animated', 'fadeIn')
-      document.querySelector('.js-slider-buttons')
+      sturdy.query('.js-slider-buttons')
         .classList.add('animated', 'fadeIn')
     });
   }
 
   function initSlider(cb) {
     // Guard
-    if (!document.querySelector('.js-slider')) {
+    if (!sturdy.query('.js-slider')) {
       return;
     }
 
@@ -89,29 +85,27 @@
   }
 
   function initDynamicPageBanner() {
-    // Guard
-    if (!document.querySelector('.page-banner-image--dynamic')) {
+    if (sturdy.guard('.page-banner-image--dynamic')) {
       return;
     }
 
     var bg = '/images/backgrounds/' + Math.ceil(Math.random() * 5) + '.jpg';
-    document.querySelector('.page-banner-image--dynamic').setAttribute('src', bg);
+    sturdy.query('.page-banner-image--dynamic').setAttribute('src', bg);
   }
 
   function initThreeJS() {
-    // Guard
-    if (!document.querySelector('.threejs')) {
+    if (sturdy.guard('.threejs')) {
       return;
     }
 
     var renderer, scene, camera, particles, raycaster, intersects, mouse, particleXOffset, particleYOffset, intersected = {};
     var PARTICLE_SIZE = 15;
 
-    init();
+    create();
     animate();
 
-    function init() {
-      var container = document.querySelector('.threejs');
+    function create() {
+      var container = sturdy.query('.threejs');
       var cameraAspect = window.innerWidth / window.innerHeight; // Camera frustum aspect ratio.
       var cameraFov = 15; // Camera frustum vertical field of view.
       var cameraNear = 1; // Camera frustum near plane.
@@ -126,12 +120,10 @@
       camera.position.z = 250;
 
       scene = new THREE.Scene();
-      // scene.background = new THREE.TextureLoader().load('/images/backgrounds/bg-main.jpeg');
       var vertices = new THREE.SphereGeometry(100, 60, 60).vertices;
       var positions = new Float32Array(vertices.length * 3);
       var colors = new Float32Array(vertices.length * 3);
       var sizes = new Float32Array(vertices.length);
-
       var vertex;
       var color = new THREE.Color();
 
@@ -170,19 +162,19 @@
       renderer.setPixelRatio(window.devicePixelRatio);
       renderer.setSize(window.innerWidth, window.innerHeight);
       container.appendChild(renderer.domElement);
-      document.querySelector('.threejs').style.display = 'block';
+      sturdy.query('.threejs').style.display = 'block';
 
       raycaster = new THREE.Raycaster();
       mouse = new THREE.Vector2();
 
-      window.addEventListener('resize', function() {
+      sturdy.eventAdd(window, 'resize', () => {
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
 
         renderer.setSize(window.innerWidth, window.innerHeight);
       }, false);
 
-      document.addEventListener('mousemove', function (event) {
+      sturdy.eventAdd(document, 'mousemove', (event) => {
         event.preventDefault();
 
         mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
@@ -197,12 +189,26 @@
 
     function renderScore(prizeScore) {
       var intersectedCount = Object.keys(intersected).length;
-      document.querySelector('.js-scoreboard-score').innerHTML = intersectedCount;
+      sturdy.query('.js-scoreboard-score').innerHTML = intersectedCount;
 
-      if (intersectedCount >= prizeScore) {
-        document.querySelector('.page-home').classList.toggle('page-home--cat-activated', true);
+      const selector = ".page-home";
+
+      if (intersectedCount >= prizeScore * 8) {
+        sturdy.classRemove(selector, sturdy.CONSTANTS.CURSORS.CAT_1);
+        sturdy.classRemove(selector, sturdy.CONSTANTS.CURSORS.CAT_2);
+        sturdy.classAdd(selector, sturdy.CONSTANTS.CURSORS.CAT_3);
+      } else if (intersectedCount >= prizeScore * 4) {
+        sturdy.classRemove(selector, sturdy.CONSTANTS.CURSORS.CAT_1);
+        sturdy.classRemove(selector, sturdy.CONSTANTS.CURSORS.CAT_3);
+        sturdy.classAdd(selector, sturdy.CONSTANTS.CURSORS.CAT_2);
+      } else if (intersectedCount >= prizeScore) {
+        sturdy.classRemove(selector, sturdy.CONSTANTS.CURSORS.CAT_2);
+        sturdy.classRemove(selector, sturdy.CONSTANTS.CURSORS.CAT_3);
+        sturdy.classAdd(selector, sturdy.CONSTANTS.CURSORS.CAT_1);
       } else {
-        document.querySelector('.page-home').classList.toggle('page-home--cat-activated', false);
+        sturdy.classRemove(selector, sturdy.CONSTANTS.CURSORS.CAT_1);
+        sturdy.classRemove(selector, sturdy.CONSTANTS.CURSORS.CAT_2);
+        sturdy.classRemove(selector, sturdy.CONSTANTS.CURSORS.CAT_3);
       }
     }
 
@@ -248,59 +254,39 @@
   }
 
   function initNavigation() {
-    $('.js-site-nav-trigger')
-      .on('click', function() {
-        $('.js-site-nav,.js-site-nav-trigger,.js-site-title-wrapper,.js-site-header,.js-site-content')
-          .toggleClass('active');
-      });
+    const selectors = '.js-site-nav, .js-site-nav-trigger, .js-site-title-wrapper, .js-site-header, .js-site-content';
 
-    $(window).on('scroll', _.throttle(sturdy.checkTopPosition, 50));
-    $(window).on('resize', _.throttle(sturdy.checkTopPosition, 50));
+    const siteContentEl = sturdy.query('.site-content');
+    const jsSiteNavTriggerEl = sturdy.query('.js-site-nav-trigger');
+
+    sturdy.eventAdd(siteContentEl,
+      'click',
+      () => sturdy.classRemoveAll(selectors, 'active')
+    );
+
+    sturdy.eventAdd(jsSiteNavTriggerEl,
+      'click',
+      () => sturdy.classToggleAll(selectors, 'active')
+    );
+
+    sturdy.eventAdd(window, 'scroll', _.throttle(sturdy.checkTopPosition, 50));
+    sturdy.eventAdd(window, 'resize', _.throttle(sturdy.checkTopPosition, 50));
 
     sturdy.checkTopPosition();
   }
 
   function initTextAnimations() {
-    animateElement($('.featured-post-heading'), 'fadeIn');
-    $('.featured-post').addClass('active');
+    sturdy.animateElement($('.featured-post-heading'), 'fadeIn');
 
-    $(function() {
-      $('[data-in-effect]').textillate({
-        loop: false,
-        autoStart: true
-      });
-    });
-  }
-
-  // Private
-
-  function checkTopPosition() {
-    if ($(window).scrollTop() > 300) {
-      $('.btn-top').fadeIn();
-      if (!sturdy.hints.isLaptop()) {
-        $('.btn-back').fadeOut();
-      }
-      $('.site-header').addClass('site-header--condensed');
-      $('.site-nav-trigger').addClass('site-nav-trigger--condensed');
-    } else {
-      $('.btn-top').fadeOut();
-      if (!sturdy.hints.isLaptop()) {
-        $('.btn-back').fadeIn();
-      }
-      $('.site-header').removeClass('site-header--condensed');
-      $('.site-nav-trigger').removeClass('site-nav-trigger--condensed');
+    if (!sturdy.guard('.featured-post')) {
+      sturdy.classAdd('.featured-post', 'active');
     }
-  }
 
-  function animateElement($element, effect, inCallback) {
-    $element.textillate({
-      minDisplayTime: 0,
-      in: {
-        effect: effect,
-        sync: false,
-        callback: inCallback
-      }
+    $('[data-in-effect]').textillate({
+      loop: false,
+      autoStart: true
     });
   }
 
+  init();
 })();

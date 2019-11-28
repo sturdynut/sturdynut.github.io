@@ -6,8 +6,7 @@
   font-family: $button-font-family;
 }
 
-.btn-top,
-.btn-back {
+.btn-top {
   display: block;
   text-align: center;
   color: $secondary-color;
@@ -34,26 +33,6 @@
   .text {
     display: none;
   }
-}
-
-.btn-back {
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-
-  .icon {
-    font-size: 2rem;
-    color: $white;
-  }
-
-  @include when-using($tablet) {
-    top: 30px;
-    left: 30px;
-  }
-
 }
 
 .btn-top {
