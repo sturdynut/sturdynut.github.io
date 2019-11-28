@@ -11,7 +11,6 @@
   align-items: center;
   min-height: 60px;
   padding: 1em;
-  // background-color: $black;
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.01);
 
   &.active {
@@ -28,6 +27,16 @@
     position: relative;
     top: -3px;
 
+    .site-header--condensed & {
+      opacity: 0.2;
+      will-change: opacity;
+      transition: opacity 300ms;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
     path {
       &:last-child,
       &:first-child {
@@ -43,16 +52,6 @@
           stroke: $primary-color;
         }
       }
-    }
-  }
-
-  .site-title {
-    margin-left: 5px;
-    opacity: 1;
-    transition: opacity 300ms;
-
-    .site-header--condensed & {
-      opacity: 0;
     }
   }
 }
@@ -76,6 +75,16 @@
 
   @include when-using($laptop) {
     padding-right: 1em;
+
+    &--condensed {
+      opacity: 0.2;
+      will-change: opacity;
+      transition: opacity 300ms;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
   }
 
   &:hover,
@@ -118,8 +127,6 @@
     transform: rotate(180deg);
 
     @include when-using($tablet) {
-      // top: 30px;
-
       path:nth-child(1) {
         transform: scale(1.15) rotate(51deg);
       }
@@ -143,10 +150,6 @@
     stroke-width: 6px;
     transition: all 300ms;
     transform: none;
-
-    .site-nav-trigger--condensed & {
-      stroke: $primary-color;
-    }
 
     .active & {
       stroke: $menu-trigger-active-color;

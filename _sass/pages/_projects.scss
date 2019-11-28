@@ -70,7 +70,7 @@
     }
 
     i {
-      color: rgba(255,255,255,0.8);
+      color: rgba(255, 255, 255, 0.8);
       font-size: 0.8em;
       text-align: center;
       display: block;
@@ -88,17 +88,26 @@
     }
 
     &__summary {
-      background-color: $secondary-color;
-      border-radius: 3px;
-      color: #333;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 55px;
       margin: 40px auto 0;
-      max-width: 500px;
+      max-width: 800px;
       padding: 1em;
       position: relative;
       z-index: 100;
 
       @include when-using($tablet) {
         text-align: center;
+
+        .site-content--condensed & {
+          opacity: 0.2;
+          will-change: opacity;
+          transition: opacity 300ms;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
       }
 
       @include when-using($laptop) {
@@ -292,10 +301,10 @@
   }
 
   &__image {
-    background-repeat: none;
+    background-repeat: no-repeat;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: top left;
+    background-position: top center;
     height: 200px;
     width: 100%;
     margin: 0 auto;

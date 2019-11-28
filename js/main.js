@@ -12,7 +12,10 @@
         CAT_1: 'page-home--cat-activated-level-1',
         CAT_2: 'page-home--cat-activated-level-2',
         CAT_3: 'page-home--cat-activated-level-3',
-      }
+      },
+      LAPTOP_BREAKPOINT: 1024,
+      OFFSET_BREAKPOINT_TWO: 200,
+      OFFSET_BREAKPOINT_ONE: 10,
     },
     animateElement: ($element, effect, inCallback) => {
       $element.textillate({
@@ -24,8 +27,18 @@
         }
       });
     },
-    checkTopPosition: () => {
-      if (window.pageYOffset > 300) {
+    augmentForOffset: () => {
+      if (window.outerWidth < sturdy.CONSTANTS.LAPTOP_BREAKPOINT) {
+        return false;
+      }
+
+      if (window.pageYOffset > sturdy.CONSTANTS.OFFSET_BREAKPOINT_ONE) {
+        sturdy.classAdd('.site-content', 'site-content--condensed');
+      } else {
+        sturdy.classRemove('.site-content', 'site-content--condensed');
+      }
+
+      if (window.pageYOffset > sturdy.CONSTANTS.OFFSET_BREAKPOINT_TWO) {
         $('.btn-top').fadeIn();
         sturdy.classAdd('.site-header', 'site-header--condensed');
         sturdy.classAdd('.site-nav-trigger', 'site-nav-trigger--condensed');
@@ -269,10 +282,10 @@
       () => sturdy.classToggleAll(selectors, 'active')
     );
 
-    sturdy.eventAdd(window, 'scroll', _.throttle(sturdy.checkTopPosition, 50));
-    sturdy.eventAdd(window, 'resize', _.throttle(sturdy.checkTopPosition, 50));
+    sturdy.eventAdd(window, 'scroll', _.throttle(sturdy.augmentForOffset, 50));
+    sturdy.eventAdd(window, 'resize', _.throttle(sturdy.augmentForOffset, 50));
 
-    sturdy.checkTopPosition();
+    sturdy.augmentForOffset();
   }
 
   function initTextAnimations() {
