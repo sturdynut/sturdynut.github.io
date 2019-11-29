@@ -1,0 +1,187 @@
+---
+layout: experiment
+title: "P5JS - Ink Experiment"
+---
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/inobounce/0.2.0/inobounce.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+<script>
+"use strict";
+
+/*
+  Globals 🌎
+*/
+
+const deviationBreakpoint = 2;
+const distances = [];
+const height = window.innerHeight;
+const maxDistances = 100;
+const subdivisionCount = 24;
+const width = window.innerWidth;
+
+let accelerating = false;
+let circleWidth = 25;
+let currentX = -999;
+let currentY = -999;
+let drawCount = 0;
+let maxCircleWidth = 50;
+let minCircleWidth = 5;
+
+let r = randomRGB();
+let rIncreasing = true;
+let g = randomRGB();
+let gIncreasing = true;
+let b = randomRGB();
+let bIncreasing = true;
+
+/*
+  Helpers 🛠
+*/
+
+function drawCircle() {
+  const xOffset = width / 2;
+  const yOffset = height / 2;
+
+  let deviation = standardDeviation(distances);
+  deviation = isNaN(deviation) ? deviationBreakpoint : deviation;
+
+  if (deviation > deviationBreakpoint) {
+    accelerating = true;
+  } else {
+    accelerating = false;
+  }
+
+  const incrementBy = accelerating ? -1 : 1;
+  const proposedCircleWidth = Math.abs(circleWidth + incrementBy);
+
+  circleWidth = proposedCircleWidth >= maxCircleWidth
+    ? maxCircleWidth
+    : proposedCircleWidth <= minCircleWidth
+      ? minCircleWidth
+      : proposedCircleWidth;
+
+  const offsetX = currentX - xOffset;
+  const offsetY = currentY - yOffset;
+  ambientLight(60, 60, 60);
+  pointLight(255, 255, 255, offsetX, offsetY, 500);
+  shininess(1000);
+  specularMaterial(r, g, b);
+  translate(offsetX, offsetY, 1);
+  sphere(circleWidth, subdivisionCount, subdivisionCount);
+}
+
+function updateRGB() {
+  const rIncrement = 1;
+  const gIncrement = 1;
+  const bIncrement = 1;
+
+  r = r + (rIncreasing ? rIncrement : -rIncrement);
+  g = g + (gIncreasing ? gIncrement : -gIncrement);
+  b = b + (bIncreasing ? bIncrement : -bIncrement);
+
+  if (r >= 255) {
+    rIncreasing = false;
+  } else if (r <= 0) {
+    rIncreasing = true;
+  }
+  if (g >= 255) {
+    gIncreasing = false;
+  } else if (r <= 0) {
+    gIncreasing = true;
+  }
+  if (b >= 255) {
+    bIncreasing = false;
+  } else if (r <= 0) {
+    bIncreasing = true;
+  }
+}
+
+function randomRGB() {
+  return Math.round(Math.random() * 256, 0);
+}
+
+function average(data){
+  const sum = data.reduce((sum, value) => sum + value, 0);
+
+  return sum / data.length;
+}
+
+function standardDeviation(values){
+  const avg = average(values);
+
+  const squareDiffs = values.map((value) => {
+    const diff = value - avg;
+    const sqrDiff = diff * diff;
+    return sqrDiff;
+  });
+
+  const avgSquareDiff = average(squareDiffs);
+
+  const stdDev = Math.sqrt(avgSquareDiff);
+
+  return stdDev;
+}
+
+function appendInfo() {
+  const div = document.createElement('div');
+  div.style.cssText = `
+    bottom: 10px;
+    opacity: 0.5;
+    left: 10px;
+    position: absolute;
+    height: 20px;
+    width: 100%;
+    z-index: 100;
+  `;
+  div.innerHTML = '<a href="https://p5js.org/" rel="nofollow" target="_blank">Built using p5js</a>'
+  document.body.appendChild(div);
+}
+
+function updateCurrentXY(x, y) {
+  const lastX = currentX;
+  const lastY = currentY;
+
+  currentX = x;
+  currentY = y;
+
+  const a = Math.abs(currentX - lastX);
+  const b = Math.abs(currentY - lastY);
+
+  const distance = Math.sqrt(Math.pow(a, 2), Math.pow(b, 2));
+  distances.push(distance);
+
+  while (distances.length > maxDistances) {
+    distances.shift();
+  }
+}
+
+/*
+  P5 Setup 🏗 and Draw 🎨
+*/
+
+function setup() {
+  setAttributes('antialias', true);
+  createCanvas(width, height, WEBGL);
+  background(246, 229, 141);
+  noStroke();
+
+  if (Modernizr.touch) {
+    window.addEventListener('touchmove', (touchEvent) => {
+      const [ touch ] = touchEvent.touches;
+      const { pageX, pageY } = touch;
+      updateCurrentXY(pageX, pageY);
+    });
+  } else {
+    window.addEventListener('mousemove', ({x, y}) => updateCurrentXY(x,y));
+  }
+
+  appendInfo();
+}
+
+function draw() {
+  updateRGB();
+  drawCircle();
+  drawCount = drawCount + 1;
+}
+</script>
