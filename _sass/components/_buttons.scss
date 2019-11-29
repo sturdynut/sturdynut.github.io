@@ -132,14 +132,9 @@
   font-size: 1em;
   transition: all 100ms;
   color: $white;
-  opacity: 0;
   font-family: $button-font-family;
   position: relative;
   border-radius: 3px;
-
-  .featured-post.active & {
-    opacity: 1;
-  }
 
   span {
     position: relative;

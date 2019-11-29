@@ -232,9 +232,17 @@
 
   @include when-using($tablet) {
     bottom: 1em;
+    max-height: 50vh;
     max-width: 300px;
     position: absolute !important;
     right: 1em;
+
+    .slick-slider,
+    .slick-list,
+    .slick-track,
+    .slick-slide {
+      max-height: 50vh;
+    }
   }
 
   &__buttons {
@@ -328,7 +336,7 @@
 
   p {
     color: $text-color;
-    font-size: rem;
+    font-size: 1rem;
     padding: 2em 2em 0;
     background: #fff;
     text-align: center;
@@ -337,12 +345,14 @@
 
   &__cta {
     display: block;
-    text-align: center;
-    padding: 2em 0;
-    color: rgba(0, 0, 0, .5);
-    background: #fff;
-    will-change: color;
-    transition: color 300ms;
+  }
+
+  &__excerpt {
+    display: block;
+
+    @include when-using($tablet) {
+      display: none;
+    }
   }
 
   &__meta {

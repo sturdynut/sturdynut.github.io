@@ -457,16 +457,10 @@ $post-spacer: 1.5rem;
   padding: 0;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  transition: opacity 100ms;
 
   @include when-using($tablet) {
     justify-content: flex-end;
     align-items: flex-end;
-  }
-
-  .featured-post.active & {
-    opacity: 1;
   }
 }
 

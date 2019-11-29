@@ -55,16 +55,13 @@ classes: index
       <ul class='js-slider'>
         {% for post in site.posts %}
           <li class='home-featured-post'>
-            <article name='{{ post.title | replace:" ":"" }}'>
+          <a class='home-featured-post__cta' href='{{ post.url | prepend: site.baseurl }}'>
               <h1 style='background-image: url(../images/backgrounds/{{ post.background }})'>
                 {{ post.title }}
               </h1>
               <p class='home-featured-post__excerpt'>
                 {{ post.excerpt }}
               </p>
-              <a class='home-featured-post__cta' href='{{ post.url | prepend: site.baseurl }}'>
-                <small>Keep reading...</small>
-              </a>
               <div class='home-featured-post__meta'>
                 <span class='home-featured-post__meta__date'><small>date</small>{{ post.date | date: '%b %-d, %Y' }}</span>
                 {% if post.author %}
@@ -73,7 +70,7 @@ classes: index
                   </div>
                 {% endif %}
               </div>
-            </article>
+            </a>
           </li>
         {% endfor %}
       </ul>

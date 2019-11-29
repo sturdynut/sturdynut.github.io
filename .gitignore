@@ -4,3 +4,4 @@ _site
 npm-debug.log
 .DS_Store
 .imdone
+.vscode

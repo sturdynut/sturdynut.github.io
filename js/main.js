@@ -78,8 +78,7 @@
   }
 
   function initSlider(cb) {
-    // Guard
-    if (!sturdy.query('.js-slider')) {
+    if (sturdy.guard('.js-slider')) {
       return;
     }
 
@@ -133,7 +132,7 @@
       camera.position.z = 250;
 
       scene = new THREE.Scene();
-      var vertices = new THREE.SphereGeometry(100, 60, 60).vertices;
+      var vertices = new THREE.TorusKnotGeometry( 60, 20, 100, 20 ).vertices;
       var positions = new Float32Array(vertices.length * 3);
       var colors = new Float32Array(vertices.length * 3);
       var sizes = new Float32Array(vertices.length);
@@ -180,19 +179,19 @@
       raycaster = new THREE.Raycaster();
       mouse = new THREE.Vector2();
 
-      sturdy.eventAdd(window, 'resize', () => {
+      sturdy.eventAdd(window, 'resize', _.throttle(() => {
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
 
         renderer.setSize(window.innerWidth, window.innerHeight);
-      }, false);
+      }, 50), false);
 
-      sturdy.eventAdd(document, 'mousemove', (event) => {
+      sturdy.eventAdd(document, 'mousemove', _.throttle((event) => {
         event.preventDefault();
 
         mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
         mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-      }, false);
+      }, 50), false);
     }
 
     function animate() {
