@@ -13,16 +13,20 @@ title: "P5JS - Ink Experiment"
   Globals 🌎
 */
 
-const width = window.innerWidth;
+const deviationBreakpoint = 2;
+const distances = [];
 const height = window.innerHeight;
+const maxDistances = 100;
+const width = window.innerWidth;
+
 let accelerating = false;
+let circleWidth = 100;
 let currentX = -999;
 let currentY = -999;
-let circleWidth = 100;
-let maxCircleWidth = 150;
-let minCircleWidth = 10;
-const distances = [];
 let drawCount = 0;
+let maxCircleWidth = 200;
+let minCircleWidth = 5;
+
 let r = randomRGB();
 let rIncreasing = true;
 let g = randomRGB();
@@ -34,10 +38,34 @@ let bIncreasing = true;
   Helpers 🛠
 */
 
-function updateRGB() {
-  const rIncrement = 1 //randomRGB();
-  const gIncrement = 1 //randomRGB();
-  const bIncrement = 1 //randomRGB();
+function drawCircle() {
+  let deviation = standardDeviation(distances);
+  deviation = isNaN(deviation) ? deviationBreakpoint : deviation;
+
+  if (deviation > deviationBreakpoint) {
+    accelerating = true;
+  } else {
+    accelerating = false;
+  }
+
+  const incrementBy = accelerating ? -1 : 1;
+  const proposedCircleWidth = Math.abs(circleWidth + incrementBy);
+
+  circleWidth = proposedCircleWidth >= maxCircleWidth
+    ? maxCircleWidth
+    : proposedCircleWidth <= minCircleWidth
+      ? minCircleWidth
+      : proposedCircleWidth;
+
+  circle(currentX, currentY, circleWidth);
+}
+
+function fillColor() {
+  fill(r, g, b);
+
+  const rIncrement = 1;
+  const gIncrement = 1;
+  const bIncrement = 1;
 
   r = r + (rIncreasing ? rIncrement : -rIncrement);
   g = g + (gIncreasing ? gIncrement : -gIncrement);
@@ -65,26 +93,24 @@ function randomRGB() {
 }
 
 function average(data){
-  var sum = data.reduce(function(sum, value){
-    return sum + value;
-  }, 0);
+  const sum = data.reduce((sum, value) => sum + value, 0);
 
-  var avg = sum / data.length;
-  return avg;
+  return sum / data.length;
 }
 
 function standardDeviation(values){
-  var avg = average(values);
+  const avg = average(values);
 
-  var squareDiffs = values.map(function(value){
-    var diff = value - avg;
-    var sqrDiff = diff * diff;
+  const squareDiffs = values.map((value) => {
+    const diff = value - avg;
+    const sqrDiff = diff * diff;
     return sqrDiff;
   });
 
-  var avgSquareDiff = average(squareDiffs);
+  const avgSquareDiff = average(squareDiffs);
 
-  var stdDev = Math.sqrt(avgSquareDiff);
+  const stdDev = Math.sqrt(avgSquareDiff);
+
   return stdDev;
 }
 
@@ -116,33 +142,9 @@ function updateCurrentXY(x, y) {
   const distance = Math.sqrt(Math.pow(a, 2), Math.pow(b, 2));
   distances.push(distance);
 
-  while (distances.length > 10) {
+  while (distances.length > maxDistances) {
     distances.shift();
   }
-}
-
-function begin() {
-  window.setInterval(() => {
-    let deviation = standardDeviation(distances);
-    deviation = isNaN(deviation) ? 1 : deviation;
-
-    if (deviation > 0.5) {
-      accelerating = true;
-    } else {
-      accelerating = false;
-    }
-
-    const incrementValue = 1 * deviation / 100;
-    const increment = accelerating ? -1 : 1;
-    const proposedCircleWidth = Math.abs(circleWidth + increment);
-
-    circleWidth = proposedCircleWidth >= maxCircleWidth
-      ? maxCircleWidth
-      : proposedCircleWidth <= minCircleWidth
-        ? minCircleWidth
-        : proposedCircleWidth;
-
-  }, 100);
 }
 
 /*
@@ -165,16 +167,11 @@ function setup() {
   }
 
   appendInfo();
-  begin();
 }
 
 function draw() {
-  fill(r, g, b);
-
-  updateRGB();
-
-  circle(currentX, currentY, circleWidth);
-
-  drawCount += 1;
+  fillColor();
+  drawCircle();
+  drawCount = drawCount + 1;
 }
 </script>
