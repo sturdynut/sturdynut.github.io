@@ -30,7 +30,7 @@ In the simplest sense, CouchDB is a NoSQL database that stores your data as JSON
 
 ### Replication
 
-Replication is the feature that makes CouchDB stand out in the crowd of NoSQL databases.  It uses HTTP to synchronize your JSON documents between 2 peers over HTTP using the CouchDB API and will automagically resolve conflicts for you, or so they say. More on this point later.
+Replication is the feature that makes CouchDB stand out in the crowd of NoSQL databases.  It uses HTTP to synchronize your JSON documents between 2 peers using the CouchDB API.  CouchDB will also automagically resolve conflicts for you using a nifty algorithm (more on this later).
 
 ## Configuration
 
@@ -107,7 +107,7 @@ However, Here is a simplified way to approach solving for this:
 
 Do not use arrays as children when possible.  It is better to have a separate document to store each child and use an ID to reference the parent.
 
-Given the examples below, if the *BAD* example was to go offline and a new friend was added, upon going back online the other peers record would win resulting in a conflict and a winner that would not have the friend added.
+Given the examples below, if the *BAD* example was to go offline and a new friend was added, upon going back online it could be lost.
 
 _Examples:_
 
@@ -153,17 +153,17 @@ _Examples:_
 }
 ```
 
-In general you should strive to use conflict-free replicated data types.
+In general, you should strive to use conflict-free replicated data types.
 
 A CRDT "is a data structure which can be replicated across multiple computers in a network, where the replicas can be updated independently and concurrently without coordination between the replicas, and where it is always mathematically possible to resolve inconsistencies which might result" [ref](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type)
 
 ### How to Filter what is Replicated
 
-By default everything will be replicated, however what happens when you do not want to replicate everything?
+By default everything will be replicated however, what happens when you do not want to replicate everything?
 
 ### Filter Functions
 
-Filter functions are a built in mechanism within CouchDB that allow you to filter your data using a function.
+Filter functions are a built-in mechanism within CouchDB that allow you to filter your data using a function.
 
 _Tip:_ You return `true` from your filter function to keep documents
 
@@ -171,7 +171,7 @@ _NOTE: CouchDB uses an old JS engine so ES6/2015 JS will not work_
 
 *Example*
 
-The example below will filter out any document whose color is not "red".
+The example below will filter out the color "red".
 
 ```
 {
