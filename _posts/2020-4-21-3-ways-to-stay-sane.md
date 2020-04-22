@@ -26,11 +26,11 @@ There are many studies done on meditation.  Here is one from [Harvard](https://n
 
 4 days a week I get out at lunch and run 1 mile.  It takes 10-15 minutes, sometimes longer and sometimes it is raining and sucks.  But, every single time I do it, I never ever regret it.  It flushes your body with endorphins that chemically make you feel good, plus you get the satisfaction of knowing that you once again did something hard.
 
-When I can't run, because my ankle hurts or some other reason I will walk.  I always get out and away to remove my mind from the situation.  I find that this is a secondary benefit to this, is that it is a reason to mix up my environment.  But, what if you can't get outside?  You can also create an environment.  Chose a place in your house and through down a yoga mat, put on some music, change it up and get creative.  You just need to switch it up and get your body moving.
+When I can't run, because my ankle hurts or some other reason I will walk.  I always get out and away to remove my mind from the situation.  I find that this is a secondary benefit to this; mixing up my environment.  But, what if you can't get outside?  You can also create an environment.  Choose a place in your house and throw down a yoga mat, put on some music, change it up and get creative.  You just need to switch it up and get your body moving.
 
 ## Virtual Hangouts
 
-I recently started hanging out with a few of my friends either using the House Party app or Zoom.  It was a bit odd at first, but after a few sessions I really look forward to them now.  Seeing other faces and talking with other humans has really helped me feeling so isolated.  It does not have to be anything complicated, just jump in and start hanging out.  Conversations will flow and soon enough you'll find yourself laughing with your friends at home, totally forgetting about our crazy situation we find ourselves in.
+I recently started hanging out with a few of my friends either using the House Party app or Zoom.  It was a bit odd at first, but after a few sessions I really look forward to them now.  Seeing other faces and talking with other humans has really helped me from feeling so isolated.  It does not have to be anything complicated, just jump in and start hanging out.  Conversations will flow and soon enough you'll find yourself laughing with your friends at home, totally forgetting about our crazy situation we find ourselves in.
 
 ## Summing it up
 
@@ -42,6 +42,6 @@ To re-cap, I like to think that these 3 things hit these key areas:
 - Physical / Mental health through exercise
 - Connection / Spiritual health through virtual hangouts
 
-It really is about balance and right now it is really easy to get out of balance.  So, stay motivated, do the the hard things and eventually the hard things will become easy and essential.
+It really is about balance and right now it is really easy to get out of balance.  So, stay motivated, do the hard things and eventually the hard things will become easy and essential.
 
 ❤
