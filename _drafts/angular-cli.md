@@ -4,10 +4,7 @@ layout: post
 background: "43.jpg"
 title: "Angular CLI"
 author: "Matti Salokangas"
-description: A guide to building the classic TodoMVC using Angular CLI.
 comments: true
-excerpt: This is a guide to build the Angular 2 Todo MVC application using the Angular CLI.
-keywords: angular, angular cli, cli
 tags:
   - angular
   - angular-cli
@@ -407,4 +404,3 @@ Your final app should look something like this:
 ![image](/images/posts/angular-cli/styled.png)
 
 I hope this gave you a taste of Angular CLI, if you run into any issues feel free to post in the comments section below.
-

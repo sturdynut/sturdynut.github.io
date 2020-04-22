@@ -64,8 +64,8 @@ function drawCircle() {
   const offsetX = currentX - xOffset;
   const offsetY = currentY - yOffset;
   ambientLight(60, 60, 60);
-  pointLight(255, 255, 255, offsetX, offsetY, 500);
-  shininess(1000);
+  pointLight(255, 255, 255, offsetX, offsetY, 100);
+  shininess(100);
   specularMaterial(r, g, b);
   translate(offsetX, offsetY, 1);
   sphere(circleWidth, subdivisionCount, subdivisionCount);
