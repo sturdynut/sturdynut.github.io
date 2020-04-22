@@ -34,13 +34,13 @@ I recently started hanging out with a few of my friends either using the House P
 
 ## Summing it up
 
-These 3 things have made a substantial impact on my overall well being and I hope it is helpful for you.
+These activities have made a substantial impact on my overall well being and I hope that they help you too.  Trying all of these at one time might be too much, so maybe just start with one.
 
-To re-cap, I like to think that these 3 things hit these key areas:
+To re-cap, here are the 3 things I do to help keep me sane and on good days, pretty happy ^_^
 
-- Emotional / Mental health through meditation
-- Physical / Mental health through exercise
-- Connection / Spiritual health through virtual hangouts
+- Meditation: Emotional / Mental
+- Exercise: Physical / Mental
+- Virtual Hangouts: Connection / Spiritual
 
 It really is about balance and right now it is really easy to get out of balance.  So, stay motivated, do the hard things and eventually the hard things will become easy and essential.
 
