@@ -20,7 +20,7 @@ There are many studies proving the variety of benefits from a regular meditation
 
 It seems like it isn't a lot, as if it isn't worth the effort.  But, consider if you are trying to hold back the relentless tide of the ocean and each day it gains a little more ground.  Day after day the tide encroaches on you until you are drowning and no longer know what is up and what is down.  Meditation is like pushing back the tide just enough each day to keep it at bay.
 
-There are many studies done on meditation.  Here is one from [Harvard](https://news.harvard.edu/gazette/story/2018/04/harvard-researchers-study-how-mindfulness-may-change-the-brain-in-depressed-patients/) and here is list of research done by [Headspace](https://www.headspace.com/science/meditation-research).
+There are many studies done on meditation.  Here is one from [Harvard](https://news.harvard.edu/gazette/story/2018/04/harvard-researchers-study-how-mindfulness-may-change-the-brain-in-depressed-patients/) and here is list of research done by [Headspace](https://www.headspace.com/science/meditation-research).  Lastly, here is another great source with testimonials from 42 people on mindfulness from [OutwitTrade](https://outwittrade.com/mindfulness-benefits/).
 
 ## Exercise
 
