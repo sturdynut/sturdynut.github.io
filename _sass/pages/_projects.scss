@@ -88,13 +88,19 @@
     }
 
     &__summary {
-      background-color: rgba(255, 255, 255, 0.8);
-      border-radius: 55px;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 5px;
+      color: #fff;
       margin: 40px auto 0;
       max-width: 800px;
       padding: 1em;
       position: relative;
       z-index: 100;
+
+      a {
+        color: #fff;
+        border-bottom: solid 1px #fff;
+      }
 
       @include when-using($tablet) {
         text-align: center;
@@ -125,7 +131,7 @@
   flex: 1;
   color: $tan;
   line-height: 1.75;
-  background: $dark-grey;
+  background: rgba(0, 0, 0, 0.9);
   position: relative;
   z-index: 100;
 
@@ -335,6 +341,10 @@
 
     .rogue-barbers & {
       background-image: url('/images/projects/rogue-barbers.jpg');
+    }
+
+    .habit-star & {
+      background-image: url('/images/projects/habit-star.jpeg');
     }
   }
 }
