@@ -15,7 +15,15 @@
     "statusBarItem.hoverBackground": "#46fa2f",
     "statusBar.foreground": "#15202b",
     "statusBar.border": "#72fb61",
-    "titleBar.border": "#72fb61"
+    "titleBar.border": "#72fb61",
+    "sash.hoverBorder": "#9efc93",
+    "statusBar.debuggingBackground": "#ea61fb",
+    "statusBar.debuggingBorder": "#ea61fb",
+    "statusBar.debuggingForeground": "#15202b",
+    "statusBarItem.remoteBackground": "#72fb61",
+    "statusBarItem.remoteForeground": "#15202b",
+    "tab.activeBorder": "#9efc93",
+    "commandCenter.border": "#15202b99"
   },
   "peacock.color": "#72fb61",
   "eslint.enable": false

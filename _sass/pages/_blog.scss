@@ -236,6 +236,7 @@ $post-spacer: 1.5rem;
 
     @include when-using($laptop) {
       font-size: 3em;
+      line-height: 0.8;
     }
   }
 
