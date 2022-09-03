@@ -1,7 +1,7 @@
 ---
 disqus: http://sturdynut.com/blog/evolution-of-a-component.html
 layout: post
-background: "37.jpg"
+background: "10.jpg"
 title: "Evolution of a Component"
 author: Matti Salokangas
 comments: true

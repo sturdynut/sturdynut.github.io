@@ -69,12 +69,14 @@
     initTextAnimations();
     initThreeJS();
     initDynamicPageBanner();
-    initSlider(function() {
-      sturdy.query('.featured-posts')
-        .classList.add('animated', 'fadeIn')
-      sturdy.query('.js-slider-buttons')
-        .classList.add('animated', 'fadeIn')
-    });
+    // initSlider(function() {
+    //   sturdy.query('.featured-posts')
+    //     .classList.add('animated', 'fadeIn')
+    //   sturdy.query('.js-slider-buttons')
+    //     .classList.add('animated', 'fadeIn')
+    // });
+    sturdy.query('.featured-posts')
+        .classList.add('animated', 'bounceIn')
   }
 
   function initSlider(cb) {

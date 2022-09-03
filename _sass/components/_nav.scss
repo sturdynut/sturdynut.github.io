@@ -3,7 +3,7 @@ $main-nav-height-condensed: 35px;
 
 .main-navigation {
   display: none;
-  background: rgba(0, 0, 0, 0.5);
+  // background: rgba(0, 0, 0, 0.5);
   bottom: -100%;
   margin: 0;
   position: absolute;
@@ -23,7 +23,7 @@ $main-nav-height-condensed: 35px;
     animation: none;
     height: $main-nav-height;
     z-index: 10003;
-    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+    // box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
 
     .site-header--condensed & {
       height: $main-nav-height-condensed;
@@ -61,7 +61,7 @@ $main-nav-height-condensed: 35px;
     @include when-using($tablet) {
       font-size: 1.6rem;
       border-bottom-style: none;
-      border-right: 1px solid rgba(255, 255, 255, 0.1);
+      // border-right: 1px solid rgba(255, 255, 255, 0.1);
 
       &:hover,
       &:active {

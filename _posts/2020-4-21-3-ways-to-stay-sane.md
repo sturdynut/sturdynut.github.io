@@ -1,7 +1,7 @@
 ---
 disqus: http://sturdynut.com/blog/3-ways-to-stay-sane.html
 layout: post
-background: "34.jpg"
+background: "8.jpg"
 title: "3 Ways to Stay Sane"
 author: Matti Salokangas
 comments: true
