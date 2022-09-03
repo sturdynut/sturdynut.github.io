@@ -57,7 +57,7 @@
     z-index: 100;
 
     @include when-using($tablet) {
-      margin: 2em 25px 0 0;
+      margin: 6em 25px 0 0;
       flex-wrap: wrap;
       display: flex;
       flex-direction: column;
@@ -131,7 +131,7 @@
   flex: 1;
   color: $tan;
   line-height: 1.75;
-  background: rgba(0, 0, 0, 0.9);
+  background: $primary-color;
   position: relative;
   z-index: 100;
 
@@ -181,8 +181,8 @@
       display: flex;
       flex-direction: row;
       padding: 1em 2em;
-      box-shadow: 0 -1px 1px 0px rgba(0, 0, 0, 0.5);
-      background: $black;
+      box-shadow: 0 -1px 1px 0px $primary-color;
+      background: $primary-color;
     }
   }
 
@@ -321,6 +321,11 @@
       height: 40vh;
       box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.9);
       width: calc(100% - 4em);
+
+      &:hover {
+        height: 100vh;
+        background-size: cover;
+      }
     }
 
     .dutch-bros-menu & {
@@ -344,7 +349,7 @@
     }
 
     .habit-star & {
-      background-image: url('/images/projects/habit-star.jpeg');
+      background-image: url('/images/projects/habit-star.png');
     }
   }
 }
