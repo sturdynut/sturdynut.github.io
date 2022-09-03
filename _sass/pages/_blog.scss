@@ -82,10 +82,12 @@ $post-spacer: 1.5rem;
   }
 
   img {
-    width: 90px;
+    width: 120px;
     height: 90px;
     margin: -45px 0 10px;
-    border: 4px solid $white;
+    // border: 4px solid $white;
+    border-radius: 0;
+    object-fit: contain;
 
     .featured-post-meta & {
       border-style: none;
@@ -94,7 +96,7 @@ $post-spacer: 1.5rem;
 
     @include when-using($tablet) {
       font-size: 5rem;
-      width: 120px;
+      width: 180px;
       height: 120px;
       margin-top: -60px;
     }
